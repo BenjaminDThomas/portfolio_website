@@ -4,28 +4,76 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio Website - Benjamin Thomas</title>
-    <meta name="description" content="UX design portfolio of Ben Thomas showcasing the full design process from research and ideation to prototyping, testing, coding, and final product delivery.">
-    <!-- CSS -->
+    <meta name="description" content="UX design portfolio of Ben Thomas — research, ideation, prototyping, testing, coding and delivery." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600;700&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/grid.css" />
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-
-    </nav>>
-
-    <!-- Main -->
+    <!-- ------- Navigation ------- -->
+    <nav class="site-nav" aria-label="Site navigation">
+        <a href="index.html" class="nav__logo" aria-label="Ben Thomas — Homepage">
+            <img src="images/logo.webp" alt="Ben Thomas logo" />
+        </a>
+    </nav>
+    <!-- ------- Main ------- -->
     <main>
-
-    </main>>
-
-    <!-- Footer -->
-     <footer>
-        
-     </footer>
-
-    <!-- Scripts -->
-    <script src="js/"></script>
+        <!-- ------- Hero ------- -->
+        <section class="hero" id="hero" aria-label="Hero">
+            <!-- Left panel -->
+            <article class="hero__left" id="heroLeft">
+                <div class="hero__left-content">
+                    <p class="hero__label"><span>UX</span> Designer</p>
+                    <p class="hero__sub">Crafting systems through discipline.</p>
+                    <h1 class="hero__statement">
+                        I train<br>
+                        <em>discipline.</em><br><br>
+                        I design<br>
+                        <em>systems.</em>
+                    </h1>
+                    <a href="projects.html" class="btn-outline">View Projects</a>
+                </div>
+            </article>
+            <!-- Right panel -->
+            <article class="hero__right" id="heroRight">
+                <div class="hero__right-content">
+                    <p class="hero__tagline">
+                        Discipline <span class="arrow">→</span> Structure <span class="arrow">→</span><br>
+                        Performance
+                    </p>
+                    <a href="workflow.html" class="btn-outline">My Workflow</a>
+                </div>
+            </article>
+        </section>
+    </main>
+    <!-- ------- Footer ------- -->
+    <footer class="site-footer">
+        <div class="footer__grid">
+            <div class="footer__col">
+                <h3>Explore</h3>
+                <nav aria-label="Explore">
+                    <a href="workflow.html">Workflow</a>
+                    <a href="projects.html">Projects</a>
+                </nav>
+            </div>
+            <div class="footer__col footer__col--contact">
+                <p class="footer__contact-label">Get in touch</p>
+                <a href="mailto:benthoma0s03@gmail.com" class="footer__email">benthoma0s03@gmail.com</a>
+            </div>
+            <div class="footer__col">
+                <h3>Discover</h3>
+                <nav aria-label="Discover">
+                    <a href="https://www.linkedin.com/in/benjamin-david-thomas/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a href="https://github.com/BenjaminDThomas" target="_blank" rel="noopener noreferrer">Github</a>
+                </nav>
+            </div>
+        </div>
+        <hr class="footer__divider" />
+        <p class="footer__copy">All content on this site is the creation and property of Benjamin Thomas.</p>
+    </footer>
+    <!-- ------- Scripts ------- -->
+    <script src="js/hero.js"></script>
 </body>
 </html>
