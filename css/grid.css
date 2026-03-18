@@ -29,6 +29,7 @@ Responsive
     .footer__grid { grid-template-columns: 1fr; padding: 0; gap: 32px; justify-items: center; }
     .footer__col { width: 180px; }
     .footer__col--contact { order: -1; }
+    .footer__col h2 { font-size: 0.85rem; font-weight: 600; color: rgba(255,255,255,0.75); letter-spacing: 0.2em; }
 }
 @media (max-width: 480px) {
     .hero__tagline { white-space: normal; }
