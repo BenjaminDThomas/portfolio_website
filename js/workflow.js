@@ -58,6 +58,36 @@ Workflow — Road + connectors
         { id: 'wfSegCoding',  cls: 'wf-section--coding',     stroke: '#60a5fa' },
         { id: 'wfSegEval',    cls: 'wf-section--evaluation', stroke: '#f87171' }
     ];
+    /* car + line colour per section */
+    var carColours = [
+        { cls: 'wf-section--gym',        colour: '#ffffff' },
+        { cls: 'wf-section--cycling',    colour: '#4ade80' },
+        { cls: 'wf-section--chess',      colour: '#a78bfa' },
+        { cls: 'wf-section--coding',     colour: '#60a5fa' },
+        { cls: 'wf-section--evaluation', colour: '#f87171' }
+    ];
+    /* coloured progress segments — one path per section, drawn in order */
+    var progressSegs = [];
+    function buildProgressSegs() {
+        progressSegs.forEach(function (p) { if (p.parentNode) p.parentNode.removeChild(p); });
+        progressSegs = [];
+        /* hero entry segment — white (matches gym/research section) */
+        var heroSeg = document.createElementNS(svgNS, 'path');
+        heroSeg.setAttribute('class', 'wf-road__progress');
+        heroSeg.setAttribute('stroke', '#ffffff');
+        heroSeg.style.filter = 'drop-shadow(0 0 6px #ffffff)';
+        road.insertBefore(heroSeg, car);
+        progressSegs.push({ el: heroSeg, colour: '#ffffff', sectionCls: null });
+        /* one segment per section */
+        carColours.forEach(function (c) {
+            var seg = document.createElementNS(svgNS, 'path');
+            seg.setAttribute('class', 'wf-road__progress');
+            seg.setAttribute('stroke', c.colour);
+            seg.style.filter = 'drop-shadow(0 0 6px ' + c.colour + ')';
+            road.insertBefore(seg, car);
+            progressSegs.push({ el: seg, colour: c.colour, sectionCls: c.cls });
+        });
+    }
     /* build road */
     function buildRoad() {
         if (!road) return;
@@ -77,7 +107,7 @@ Workflow — Road + connectors
         var fullPath = curve + ' L ' + gCx + ',' + gRoadEndY;
         if (roadBody) roadBody.setAttribute('d', fullPath);
         if (track)    track.setAttribute('d', fullPath);
-        if (progress) progress.setAttribute('d', fullPath);
+        if (progress) { progress.setAttribute('d', ''); progress.style.display = 'none'; }
         var heroDash = document.getElementById('wfHeroDash');
         if (heroDash) heroDash.setAttribute('d', curve);
         var sectionTops = segDefs.map(function (seg) { var sec = document.querySelector('.' + seg.cls); return sec ? pageY(sec) : null; });
@@ -91,7 +121,9 @@ Workflow — Road + connectors
         });
         var endDot = document.getElementById('wfEndDot');
         if (endDot) { endDot.setAttribute('cx', String(gCx)); endDot.setAttribute('cy', String(gRoadEndY)); }
-        if (car)    { car.setAttribute('cx', String(startX)); car.setAttribute('cy', '0'); }
+        /* initial car colour white to match gym section */
+        if (car) { car.setAttribute('cx', String(startX)); car.setAttribute('cy', '0'); car.setAttribute('fill', '#ffffff'); }
+        buildProgressSegs();
         updateRoadClip();
         document.documentElement.classList.remove('wf-measuring');
     }
@@ -132,11 +164,11 @@ Workflow — Road + connectors
             });
         });
     }
-    /* update road progress + car */
+    /* update road progress segments + car */
     function updateRoad() {
-        if (!progress || !track) return;
+        if (!track) return;
         var len = track.getTotalLength ? track.getTotalLength() : 0;
-        if (!len) return;
+        if (!len || !progressSegs.length) return;
         var roadScroll = gRoadEndY > window.innerHeight ? gRoadEndY - window.innerHeight : document.documentElement.scrollHeight - window.innerHeight;
         var pct = roadScroll > 0 ? Math.max(0, Math.min(window.pageYOffset / roadScroll, 1)) : 0;
         var scrollDriven = pct * len, drawLen = scrollDriven;
@@ -146,11 +178,58 @@ Workflow — Road + connectors
             for (var i = 0; i < 24; i++) { mid = (lo + hi) / 2; if (track.getPointAtLength(mid).y < targetDocY) { lo = mid; } else { hi = mid; } }
             drawLen = Math.min(Math.max(lo, scrollDriven), len);
         }
-        progress.style.strokeDasharray = drawLen + ' ' + len;
+        /* for each segment find its y range, clamp drawn length to that range */
+        progressSegs.forEach(function (seg, idx) {
+            var segStart, segEnd;
+            if (seg.sectionCls === null) {
+                /* hero segment covers from start to gFirstNodeY on the path */
+                segStart = 0;
+                if (track.getPointAtLength) {
+                    var slo = 0, shi = len, smid;
+                    for (var si = 0; si < 24; si++) { smid = (slo + shi) / 2; if (track.getPointAtLength(smid).y < gFirstNodeY) { slo = smid; } else { shi = smid; } }
+                    segEnd = slo;
+                } else { segEnd = len; }
+            } else {
+                var thisSec  = document.querySelector('.' + seg.sectionCls);
+                var nextSeg  = progressSegs[idx + 1];
+                var nextCls  = nextSeg ? nextSeg.sectionCls : null;
+                var nextSec  = nextCls ? document.querySelector('.' + nextCls) : null;
+                if (!thisSec || !track.getPointAtLength) { seg.el.setAttribute('d', ''); return; }
+                var thisTop = pageY(thisSec);
+                var slo2 = 0, shi2 = len, smid2;
+                for (var si2 = 0; si2 < 24; si2++) { smid2 = (slo2 + shi2) / 2; if (track.getPointAtLength(smid2).y < thisTop) { slo2 = smid2; } else { shi2 = smid2; } }
+                segStart = slo2;
+                if (nextSec) {
+                    var nextTop = pageY(nextSec);
+                    var slo3 = 0, shi3 = len, smid3;
+                    for (var si3 = 0; si3 < 24; si3++) { smid3 = (slo3 + shi3) / 2; if (track.getPointAtLength(smid3).y < nextTop) { slo3 = smid3; } else { shi3 = smid3; } }
+                    segEnd = slo3;
+                } else { segEnd = len; }
+            }
+            var clampedEnd = Math.min(drawLen, segEnd);
+            if (clampedEnd <= segStart) {
+                seg.el.setAttribute('d', '');
+                seg.el.style.strokeDasharray = '';
+            } else {
+                seg.el.setAttribute('d', track.getAttribute('d'));
+                var dashOffset = segStart;
+                var dashDraw   = clampedEnd - segStart;
+                seg.el.style.strokeDasharray  = '0 ' + dashOffset + ' ' + dashDraw + ' ' + len;
+                seg.el.style.strokeDashoffset = '0';
+            }
+        });
+        /* update car colour from current section */
         if (car && track.getPointAtLength) {
             var pt = track.getPointAtLength(drawLen);
             car.setAttribute('cx', String(pt.x));
             car.setAttribute('cy', String(pt.y));
+            var carColour = '#ffffff';
+            for (var ci = carColours.length - 1; ci >= 0; ci--) {
+                var csec = document.querySelector('.' + carColours[ci].cls);
+                if (csec && pt.y >= pageY(csec)) { carColour = carColours[ci].colour; break; }
+            }
+            car.setAttribute('fill', carColour);
+            car.style.filter = 'drop-shadow(0 0 10px ' + carColour + ')';
         }
         updateRoadClip();
     }
@@ -182,6 +261,12 @@ Workflow — Road + connectors
         scrollBtn[window.pageYOffset > 400 ? 'removeAttribute' : 'setAttribute']('hidden', '');
     }
     if (scrollBtn) { scrollBtn.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); }); }
+    /* smooth scroll focused cards to centre of viewport */
+    document.querySelectorAll('.wf-card').forEach(function (card) {
+        card.addEventListener('focus', function () {
+            setTimeout(function () { card.scrollIntoView({ behavior: 'smooth', block: 'center' }); }, 50);
+        });
+    });
     /* rebuild */
     function rebuild() { buildRoad(); buildConnectors(); updateRoad(); }
     var roadReady = false, lastScrollY = -1, lastDocH = -1, isResizing = false, resizeTimer = null;
@@ -221,18 +306,9 @@ Workflow — Road + connectors
     Array.prototype.forEach.call(document.querySelectorAll('img'), function (img) {
         if (!img.complete) { img.addEventListener('load', checkAndRebuild); img.addEventListener('error', checkAndRebuild); }
     });
-    /* smooth scroll focused cards to centre of viewport */
-    document.querySelectorAll('.wf-card').forEach(function (card) {
-        card.addEventListener('focus', function () {
-            setTimeout(function () {
-                card.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            }, 50);
-        });
-    });
-
     scheduleRebuild();
     window.addEventListener('load', function () {
         roadReady = false; scheduleRebuild();
         setTimeout(function () { roadReady = false; scheduleRebuild(); }, 300);
     });
-}());   
+}());           

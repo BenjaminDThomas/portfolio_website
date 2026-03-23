@@ -75,8 +75,8 @@ Road SVG
 .wf-road__seg--eval    { stroke: #f87171; }
 @keyframes laneMarch { from { stroke-dashoffset: 0; } to { stroke-dashoffset: 34; } }
 .wf-road__end      { fill: var(--red); filter: drop-shadow(0 0 10px rgba(216,44,46,1)); }
-.wf-road__progress { fill: none; stroke: var(--red); stroke-width: 2.5; stroke-linecap: butt; stroke-dasharray: 0 99999; filter: url(#roadGlow); opacity: 0.95; }
-.wf-road__car      { fill: var(--red); filter: drop-shadow(0 0 10px rgba(216,44,46,1)); }
+.wf-road__progress { fill: none; stroke-width: 2.5; stroke-linecap: butt; stroke-dasharray: 0 99999; filter: url(#roadGlow); opacity: 0.95; }
+.wf-road__car      { filter: drop-shadow(0 0 10px rgba(216,44,46,1)); }
 /*
 -----------
 Main
