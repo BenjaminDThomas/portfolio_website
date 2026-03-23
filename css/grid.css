@@ -12,7 +12,6 @@ Responsive
 -----------
 */
 @media (max-width: 768px) {
-    .site-nav { background: #0a0a0a; }
     .hero { height: auto; min-height: calc(100svh - var(--nav-h)); margin-top: var(--nav-h); }
     .hero__left,
     .hero__right { position: relative; left: auto !important; right: auto !important; width: 100% !important; height: 50svh; filter: none !important; }

@@ -3,29 +3,482 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio Workflow - Benjamin Thomas</title>
-    <meta name="description" content="UX design portfolio of Ben Thomas showcasing the full design process from research and ideation to prototyping, testing, coding, and final product delivery.">
-    <!-- CSS -->
+    <title>My Workflow — Benjamin Thomas</title>
+    <meta name="description" content="The UX workflow of Ben Thomas — from research and ideation through to prototyping, testing and delivery." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600;700&family=Barlow:wght@300;400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600;700&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet" /></noscript>
+    <script>if (history.scrollRestoration) history.scrollRestoration = 'manual'; window.scrollTo(0, 0);</script>
+    <meta property="og:title" content="My Workflow — Benjamin Thomas" />
+    <meta property="og:description" content="The UX workflow of Ben Thomas — from research and ideation through to prototyping, testing and delivery." />
+    <meta property="og:type" content="website" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/grid.css" />
+    <link rel="stylesheet" href="css/workflow.css" />
 </head>
-<body>
-    <!-- Navigation -->
-    <nav>
-
-    </nav>>
-
-    <!-- Main -->
-    <main>
-
-    </main>>
-
-    <!-- Footer -->
-     <footer>
-        
-     </footer>
-
-    <!-- Scripts -->
-    <script src="js/"></script>
+<body class="workflow-page">
+    <!-- ------- Navigation ------- -->
+    <nav class="site-nav" aria-label="Site navigation">
+        <a href="index.html" class="nav__logo" aria-label="Ben Thomas — Homepage">
+            <img src="images/logo.webp" alt="Ben Thomas logo" width="110" height="42" />
+        </a>
+        <ul class="nav__links" role="list">
+            <li><a href="workflow.html" class="nav__link nav__link--active" aria-current="page">Workflow</a></li>
+            <li><a href="projects.html" class="nav__link">Projects</a></li>
+        </ul>
+    </nav>
+    <!-- ------- Road SVG ------- -->
+    <svg class="wf-road" id="wfRoad" aria-hidden="true">
+        <defs>
+            <filter id="roadGlow" x="-50%" y="-10%" width="200%" height="120%">
+                <feGaussianBlur stdDeviation="3" result="blur"/>
+                <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+            </filter>
+        </defs>
+        <g id="wfConnectors"></g>
+        <path id="wfTrack"      class="wf-road__track" />
+        <path id="wfRoadBody"   class="wf-road__body" />
+        <path id="wfHeroDash"   class="wf-road__seg wf-road__seg--gym" />
+        <path id="wfSegGym"     class="wf-road__seg wf-road__seg--gym" />
+        <path id="wfSegCycling" class="wf-road__seg wf-road__seg--cycling" />
+        <path id="wfSegChess"   class="wf-road__seg wf-road__seg--chess" />
+        <path id="wfSegCoding"  class="wf-road__seg wf-road__seg--coding" />
+        <path id="wfSegEval"    class="wf-road__seg wf-road__seg--eval" />
+        <path id="wfProgress"   class="wf-road__progress" />
+        <circle id="wfEndDot"   class="wf-road__end" r="10" cx="0" cy="0" />
+        <circle id="wfCar"      class="wf-road__car" r="7"  cx="0" cy="0" />
+    </svg>
+    <!-- ------- Hero ------- -->
+    <header class="wf-hero">
+        <span class="wf-hero__bg" aria-hidden="true"></span>
+        <div class="wf-hero__content">
+            <img src="workflow_images/gym_section/my_workflow_title.webp" alt="My Workflow" class="wf-hero__title" />
+            <p class="wf-hero__sub">A disciplined process. From research to reality.</p>
+        </div>
+    </header>
+    <figure class="wf-hero__punching-bag" aria-hidden="true">
+        <img src="workflow_images/gym_section/punching_bag.webp" alt="" />
+    </figure>
+    <!-- ------- Main ------- -->
+    <main class="wf-main" id="wf-main">
+        <aside class="wf-scroll-hint-wrap" aria-hidden="true">
+            <div class="wf-hero__scroll" id="wfScrollHint">
+                <span class="wf-hero__scroll__mouse"></span>
+                <span class="wf-hero__scroll__label">Scroll</span>
+            </div>
+        </aside>
+        <!-- ------- Section 1: Research ------- -->
+        <section class="wf-section wf-section--gym" id="s1" aria-labelledby="s1-ex">
+            <span class="wf-section__dot-bg" aria-hidden="true"></span>
+            <div class="wf-exercise-node wf-exercise-node--gym">
+                <p class="wf-exercise-node__num">Exercise 1</p>
+                <strong id="s1-ex" class="wf-exercise-node__name">Research</strong>
+            </div>
+            <ol class="wf-steps">
+                <!-- Step 01: User Personas -->
+                <li class="wf-step wf-step--right">
+                    <header class="wf-step__header">
+                        <span class="wf-step__pill wf-step__pill--gym">Step 01</span>
+                        <h2 class="wf-step__name">Personas</h2>
+                    </header>
+                    <article class="wf-card wf-card--persona" aria-labelledby="s1-card-title">
+                        <span class="wf-card__dot-bg" aria-hidden="true"></span>
+                        <header class="wf-card__header">
+                            <h3 id="s1-card-title" class="wf-card__title">User Personas <span class="wf-card__check" aria-hidden="true">✓</span></h3>
+                            <p class="wf-card__subtitle">Built fictional representation of target beginner gym attendee to guide design decisions</p>
+                        </header>
+                        <div class="persona-table">
+                            <p class="persona-table__name">
+                                <strong>Alex</strong> <span class="persona-table__divider" aria-hidden="true">‖</span> Age: 23
+                            </p>
+                            <hr class="persona-table__rule" />
+                            <p class="persona-table__meta">Occupation: Accountant ‖ Main Device: Desktop<br>Interests: Chess, Gym, Cycling</p>
+                            <div class="persona-table__grid">
+                                <section class="persona-quad persona-quad--actions" aria-label="Actions">
+                                    <h4 class="persona-quad__title">Actions</h4>
+                                    <ul><li>Logs workouts</li><li>Searches exercise guides</li><li>Explores nutrient guides</li></ul>
+                                </section>
+                                <section class="persona-quad persona-quad--pain" aria-label="Pain Points">
+                                    <h4 class="persona-quad__title">Pain Points</h4>
+                                    <ul><li>Poor typography</li><li>Content layout shifting</li><li>Exercises planning is complex</li></ul>
+                                </section>
+                                <section class="persona-quad persona-quad--opps" aria-label="Opportunities">
+                                    <h4 class="persona-quad__title">Opportunities</h4>
+                                    <ul><li>Image optimisation for performance</li><li>Responsive layout across devices</li><li>Exercise guide videos</li></ul>
+                                </section>
+                                <section class="persona-quad persona-quad--goals" aria-label="Goals">
+                                    <h4 class="persona-quad__title">Goals</h4>
+                                    <ul><li>View upcoming workout sessions</li><li>Check what exercises muscles target</li><li>Seek support with diet plans</li></ul>
+                                </section>
+                            </div>
+                        </div>
+                        <img src="workflow_images/gym_section/weights.webp" alt="" loading="lazy" class="persona-card__weights" aria-hidden="true" />
+                    </article>
+                </li>
+                <!-- Step 02: Empathy Map -->
+                <li class="wf-step wf-step--left wf-step--empathy">
+                    <header class="wf-step__header wf-step__header--flip">
+                        <span class="wf-step__pill wf-step__pill--gym">Step 02</span>
+                        <h2 class="wf-step__name">Empathy Map</h2>
+                    </header>
+                    <article class="wf-card wf-card--empathy" aria-labelledby="s1b-title">
+                        <span class="wf-card__dot-bg" aria-hidden="true"></span>
+                        <h3 id="s1b-title" class="wf-card__title">Empathy Map <span class="wf-card__check" aria-hidden="true">✓</span></h3>
+                        <figure class="empathy-map">
+                            <figcaption class="empathy-map__quote">"How do I make my workout more effective?"</figcaption>
+                            <div class="empathy-map__compass">
+                                <span class="empathy-map__line empathy-map__line--h" aria-hidden="true"></span>
+                                <span class="empathy-map__line empathy-map__line--v" aria-hidden="true"></span>
+                                <div class="empathy-map__center">
+                                    <img src="workflow_images/gym_section/weighted_persona_plate.webp" alt="User Alex represented as a weight plate" loading="lazy" />
+                                </div>
+                                <p class="empathy-map__label empathy-map__label--top">Thinks</p>
+                                <p class="empathy-map__label empathy-map__label--bottom">Does</p>
+                                <p class="empathy-map__label empathy-map__label--left">Says</p>
+                                <p class="empathy-map__label empathy-map__label--right">Feels</p>
+                                <p class="empathy-map__note empathy-map__note--tl">"I need a structured plan to stay consistent"</p>
+                                <p class="empathy-map__note empathy-map__note--tr">Frustrated when content is hard to navigate</p>
+                                <p class="empathy-map__note empathy-map__note--bl">"If I had a clean plan I'd go gym more"</p>
+                                <p class="empathy-map__note empathy-map__note--br">Follows workout steps using equipment</p>
+                            </div>
+                        </figure>
+                        <img src="workflow_images/gym_section/lat_pulldown_bar.webp" alt="" loading="lazy" class="empathy-card__lat" aria-hidden="true" />
+                    </article>
+                    <img src="workflow_images/gym_section/water_bottle.webp" alt="" loading="lazy" class="empathy-step__bottle" aria-hidden="true" />
+                </li>
+                <!-- Step 03: User Journey Map -->
+                <li class="wf-step wf-step--right">
+                    <header class="wf-step__header">
+                        <span class="wf-step__pill wf-step__pill--gym">Step 03</span>
+                        <h2 class="wf-step__name">User Journey<br>Map</h2>
+                    </header>
+                    <article class="wf-card wf-card--journey" aria-labelledby="s1c-title">
+                        <span class="wf-card__dot-bg" aria-hidden="true"></span>
+                        <header class="wf-card__header">
+                            <h3 id="s1c-title" class="wf-card__title">User Journey Map <span class="wf-card__check" aria-hidden="true">✓</span></h3>
+                            <p class="wf-card__subtitle">Mapped the gym user's experience across five stages to surface friction, goals and design opportunities.</p>
+                        </header>
+                        <ol class="journey-phases" role="region" aria-label="User journey map">
+                            <li class="journey-phase">
+                                <p class="journey-phase__label">Warm-Up</p>
+                                <p class="journey-phase__row journey-phase__row--step">Enters gym at front desk</p>
+                                <p class="journey-phase__row journey-phase__row--happy">Easily locates warm-up plan</p>
+                                <p class="journey-phase__row journey-phase__row--pain">Plan is hard to locate</p>
+                            </li>
+                            <li class="journey-phase">
+                                <p class="journey-phase__label">Onboarding</p>
+                                <p class="journey-phase__row journey-phase__row--step">Selects workout plan</p>
+                                <p class="journey-phase__row journey-phase__row--happy">Simplistic UI for workout layout</p>
+                                <p class="journey-phase__row journey-phase__row--pain">Exercise layout unstructured</p>
+                            </li>
+                            <li class="journey-phase">
+                                <p class="journey-phase__label">Session</p>
+                                <p class="journey-phase__row journey-phase__row--step">Selects current day's workout</p>
+                                <p class="journey-phase__row journey-phase__row--happy">Session shows whole workout plan</p>
+                                <p class="journey-phase__row journey-phase__row--pain">Workout cannot be located</p>
+                            </li>
+                            <li class="journey-phase">
+                                <p class="journey-phase__label">Exercise</p>
+                                <p class="journey-phase__row journey-phase__row--step">Completes exercise</p>
+                                <p class="journey-phase__row journey-phase__row--happy">Video guide helpful to perform</p>
+                                <p class="journey-phase__row journey-phase__row--pain">Unclear instructions</p>
+                            </li>
+                            <li class="journey-phase">
+                                <p class="journey-phase__label">Rest</p>
+                                <p class="journey-phase__row journey-phase__row--step">Rests till next set</p>
+                                <p class="journey-phase__row journey-phase__row--happy">Clear outlined rest times</p>
+                                <p class="journey-phase__row journey-phase__row--pain">Data missing — unstructured</p>
+                            </li>
+                        </ol>
+                        <ul class="journey-legend">
+                            <li class="journey-legend__item journey-legend__item--happy">✓ Happy</li>
+                            <li class="journey-legend__item journey-legend__item--pain">✕ Pain</li>
+                        </ul>
+                        <img src="workflow_images/gym_section/gym_planner_image.webp" alt="" loading="lazy" class="journey-planner" aria-hidden="true" />
+                    </article>
+                </li>
+                <!-- Step 04: Survey -->
+                <li class="wf-step wf-step--left wf-step--survey">
+                    <header class="wf-step__header wf-step__header--flip">
+                        <span class="wf-step__pill wf-step__pill--gym">Step 04</span>
+                        <h2 class="wf-step__name">Survey</h2>
+                    </header>
+                    <article class="wf-card wf-card--survey" aria-labelledby="s1d-title">
+                        <span class="wf-card__dot-bg" aria-hidden="true"></span>
+                        <header class="wf-card__header">
+                            <h3 id="s1d-title" class="wf-card__title">Survey Methodology <span class="wf-card__check" aria-hidden="true">✓</span></h3>
+                            <p class="wf-card__subtitle">Deployed a structured survey to gather usable data, following a four-step cyclical research methodology.</p>
+                        </header>
+                        <svg class="survey-svg" viewBox="0 0 500 290" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <defs>
+                                <marker id="arrowMid" markerWidth="10" markerHeight="10" refX="5" refY="3" orient="auto">
+                                    <path d="M0,0 L0,6 L10,3 z" fill="rgba(216,44,46,0.9)" />
+                                </marker>
+                            </defs>
+                            <path class="survey-svg__loop" d="M 250,140 C 220,95 148,42 90,62 C 32,82 18,130 40,168 C 62,206 142,224 198,193 C 228,177 248,160 250,140" fill="none" stroke="rgba(216,44,46,0.75)" stroke-width="2.5" marker-mid="url(#arrowMid)" />
+                            <path class="survey-svg__loop" d="M 250,140 C 278,95 352,42 410,62 C 468,82 482,130 460,168 C 438,206 358,224 302,193 C 272,177 252,160 250,140" fill="none" stroke="rgba(216,44,46,0.75)" stroke-width="2.5" marker-mid="url(#arrowMid)" />
+                            <rect x="165" y="116" width="170" height="52" rx="26" fill="rgba(216,44,46,0.15)" stroke="rgba(216,44,46,0.6)" stroke-width="1.5"/>
+                            <text x="250" y="137" text-anchor="middle" font-family="'Barlow Condensed', sans-serif" font-size="11" font-weight="700" letter-spacing="1" fill="rgba(255,255,255,0.9)">IDENTIFY USABLE DATA</text>
+                            <text x="250" y="155" text-anchor="middle" font-family="'Barlow Condensed', sans-serif" font-size="11" font-weight="700" letter-spacing="1" fill="rgba(255,255,255,0.9)">FOR IMPROVEMENT</text>
+                            <circle cx="78"  cy="68"  r="26" fill="rgba(216,44,46,0.9)" />
+                            <text x="78"  y="74"  text-anchor="middle" font-family="'Barlow Condensed', sans-serif" font-size="17"   font-weight="700" fill="#fff">3</text>
+                            <text x="78"  y="38"  text-anchor="middle" font-family="'Barlow Condensed', sans-serif" font-size="13.5" font-weight="700" fill="rgba(255,255,255,0.9)">Gather</text>
+                            <text x="78"  y="54"  text-anchor="middle" font-family="'Barlow Condensed', sans-serif" font-size="13.5" font-weight="700" fill="rgba(255,255,255,0.9)">Participants</text>
+                            <circle cx="422" cy="68"  r="26" fill="rgba(216,44,46,0.9)" />
+                            <text x="422" y="74"  text-anchor="middle" font-family="'Barlow Condensed', sans-serif" font-size="17"   font-weight="700" fill="#fff">4</text>
+                            <text x="422" y="38"  text-anchor="middle" font-family="'Barlow Condensed', sans-serif" font-size="13.5" font-weight="700" fill="rgba(255,255,255,0.9)">Analyse</text>
+                            <text x="422" y="54"  text-anchor="middle" font-family="'Barlow Condensed', sans-serif" font-size="13.5" font-weight="700" fill="rgba(255,255,255,0.9)">Results</text>
+                            <circle cx="78"  cy="184" r="26" fill="rgba(216,44,46,0.9)" />
+                            <text x="78"  y="190" text-anchor="middle" font-family="'Barlow Condensed', sans-serif" font-size="17"   font-weight="700" fill="#fff">2</text>
+                            <text x="78"  y="222" text-anchor="middle" font-family="'Barlow Condensed', sans-serif" font-size="13.5" font-weight="700" fill="rgba(255,255,255,0.9)">Survey</text>
+                            <text x="78"  y="238" text-anchor="middle" font-family="'Barlow Condensed', sans-serif" font-size="13.5" font-weight="700" fill="rgba(255,255,255,0.9)">Design</text>
+                            <circle cx="422" cy="184" r="26" fill="rgba(216,44,46,0.9)" />
+                            <text x="422" y="190" text-anchor="middle" font-family="'Barlow Condensed', sans-serif" font-size="17"   font-weight="700" fill="#fff">1</text>
+                            <text x="422" y="222" text-anchor="middle" font-family="'Barlow Condensed', sans-serif" font-size="13.5" font-weight="700" fill="rgba(255,255,255,0.9)">Research around</text>
+                            <text x="422" y="238" text-anchor="middle" font-family="'Barlow Condensed', sans-serif" font-size="13.5" font-weight="700" fill="rgba(255,255,255,0.9)">problem space</text>
+                        </svg>
+                        <span style="height:48px;display:block;" aria-hidden="true"></span>
+                    </article>
+                </li>
+            </ol>
+        </section>
+        <!-- ------- Section 2: Design ------- -->
+        <section class="wf-section wf-section--cycling" id="s2" aria-labelledby="s2-ex">
+            <span class="wf-section__dot-bg" aria-hidden="true"></span>
+            <div class="wf-exercise-node wf-exercise-node--cycling">
+                <p class="wf-exercise-node__num">Exercise 2</p>
+                <strong id="s2-ex" class="wf-exercise-node__name">Design</strong>
+            </div>
+            <ol class="wf-steps">
+                <!-- Step 01: Ideation -->
+                <li class="wf-step wf-step--right">
+                    <header class="wf-step__header">
+                        <span class="wf-step__pill wf-step__pill--cycling">Step 01</span>
+                        <h2 class="wf-step__name">Ideation</h2>
+                    </header>
+                    <article class="wf-card" aria-labelledby="s2-card-title">
+                        <span class="wf-card__dot-bg" aria-hidden="true"></span>
+                        <header class="wf-card__header">
+                            <h3 id="s2-card-title" class="wf-card__title">Crazy 8s Sketching <span class="wf-card__check" aria-hidden="true">✓</span></h3>
+                            <p class="wf-card__subtitle">Crazy 8s sketching to rapidly explore interface ideas.</p>
+                        </header>
+                        <img src="workflow_images/cycling_section/sketches_image.webp" alt="Crazy 8s sketches" loading="eager" width="600" height="400" class="wf-card__img" />
+                    </article>
+                </li>
+                <!-- Step 02: Low-Fi -->
+                <li class="wf-step wf-step--left wf-step--lowfi">
+                    <header class="wf-step__header wf-step__header--flip">
+                        <span class="wf-step__pill wf-step__pill--cycling">Step 02</span>
+                        <h2 class="wf-step__name">Low Fidelity<br>Prototype</h2>
+                    </header>
+                    <article class="wf-card wf-card--lowfi" aria-labelledby="s2b-card-title">
+                        <span class="wf-card__dot-bg" aria-hidden="true"></span>
+                        <header class="wf-card__header">
+                            <h3 id="s2b-card-title" class="wf-card__title">Low-Fi Wireframes <span class="wf-card__check" aria-hidden="true">✓</span></h3>
+                            <p class="wf-card__subtitle">Low-fidelity wireframes for mobile and desktop layouts.</p>
+                        </header>
+                        <figure class="wf-figma-badge" aria-label="Designed in Figma">
+                            <svg class="wf-figma-logo" viewBox="0 0 38 57" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M19 28.5C19 23.806 22.806 20 27.5 20C32.194 20 36 23.806 36 28.5C36 33.194 32.194 37 27.5 37C22.806 37 19 33.194 19 28.5Z" fill="#1ABCFE"/>
+                                <path d="M2 47C2 42.306 5.806 38.5 10.5 38.5H19V47C19 51.694 15.194 55.5 10.5 55.5C5.806 55.5 2 51.694 2 47Z" fill="#0ACF83"/>
+                                <path d="M19 2V20H27.5C32.194 20 36 16.194 36 11.5C36 6.806 32.194 3 27.5 3L19 2Z" fill="#FF7262"/>
+                                <path d="M2 11.5C2 16.194 5.806 20 10.5 20H19V3H10.5C5.806 3 2 6.806 2 11.5Z" fill="#F24E1E"/>
+                                <path d="M2 28.5C2 33.194 5.806 37 10.5 37H19V20H10.5C5.806 20 2 23.806 2 28.5Z" fill="#A259FF"/>
+                            </svg>
+                            <figcaption class="wf-figma-badge__text"><span aria-hidden="true">✦</span> Designed in Figma</figcaption>
+                        </figure>
+                    </article>
+                </li>
+                <!-- Step 03: High-Fi -->
+                <li class="wf-step wf-step--right">
+                    <header class="wf-step__header">
+                        <span class="wf-step__pill wf-step__pill--cycling">Step 03</span>
+                        <h2 class="wf-step__name">High Fidelity<br>Prototype</h2>
+                    </header>
+                    <article class="wf-card" aria-labelledby="s2c-card-title">
+                        <span class="wf-card__dot-bg" aria-hidden="true"></span>
+                        <header class="wf-card__header">
+                            <h3 id="s2c-card-title" class="wf-card__title">High-Fi Prototype <span class="wf-card__check" aria-hidden="true">✓</span></h3>
+                            <p class="wf-card__subtitle">Interactive high-fidelity prototype with motion and transitions.</p>
+                        </header>
+                        <figure class="wf-figma-badge" aria-label="Designed in Figma">
+                            <svg class="wf-figma-logo" viewBox="0 0 38 57" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M19 28.5C19 23.806 22.806 20 27.5 20C32.194 20 36 23.806 36 28.5C36 33.194 32.194 37 27.5 37C22.806 37 19 33.194 19 28.5Z" fill="#1ABCFE"/>
+                                <path d="M2 47C2 42.306 5.806 38.5 10.5 38.5H19V47C19 51.694 15.194 55.5 10.5 55.5C5.806 55.5 2 51.694 2 47Z" fill="#0ACF83"/>
+                                <path d="M19 2V20H27.5C32.194 20 36 16.194 36 11.5C36 6.806 32.194 3 27.5 3L19 2Z" fill="#FF7262"/>
+                                <path d="M2 11.5C2 16.194 5.806 20 10.5 20H19V3H10.5C5.806 3 2 6.806 2 11.5Z" fill="#F24E1E"/>
+                                <path d="M2 28.5C2 33.194 5.806 37 10.5 37H19V20H10.5C5.806 20 2 23.806 2 28.5Z" fill="#A259FF"/>
+                            </svg>
+                            <figcaption class="wf-figma-badge__text"><span aria-hidden="true">✦</span> Designed in Figma</figcaption>
+                        </figure>
+                    </article>
+                </li>
+            </ol>
+            <img src="workflow_images/cycling_section/bike_image.webp" alt="" loading="lazy" class="wf-scatter wf-scatter--bike"      aria-hidden="true" />
+            <img src="workflow_images/cycling_section/bike_pump.webp"  alt="" loading="lazy" class="wf-scatter wf-scatter--bike-pump" aria-hidden="true" />
+        </section>
+        <!-- ------- Section 3: Testing ------- -->
+        <section class="wf-section wf-section--chess" id="s3" aria-labelledby="s3-ex">
+            <span class="wf-section__dot-bg" aria-hidden="true"></span>
+            <div class="wf-exercise-node wf-exercise-node--chess">
+                <p class="wf-exercise-node__num">Exercise 3</p>
+                <strong id="s3-ex" class="wf-exercise-node__name">Testing</strong>
+            </div>
+            <ol class="wf-steps">
+                <!-- Step 01: UX Methodology -->
+                <li class="wf-step wf-step--left wf-step--topalign">
+                    <header class="wf-step__header wf-step__header--flip">
+                        <span class="wf-step__pill wf-step__pill--chess">Step 01</span>
+                        <h2 class="wf-step__name">♟ UX<br>Methodology</h2>
+                    </header>
+                    <article class="wf-card wf-card--topalign" aria-labelledby="s3-card-title">
+                        <span class="wf-card__dot-bg" aria-hidden="true"></span>
+                        <header class="wf-card__header">
+                            <h3 id="s3-card-title" class="wf-card__title">UX Methodology <span class="wf-card__check" aria-hidden="true">✓</span></h3>
+                            <p class="wf-card__subtitle">Data collected by observing participants and applying UX research methodologies, including think-aloud protocols and collaborative workshops.</p>
+                        </header>
+                    </article>
+                </li>
+                <!-- Step 02: Data Analysis -->
+                <li class="wf-step wf-step--right">
+                    <header class="wf-step__header">
+                        <span class="wf-step__pill wf-step__pill--chess">Step 02</span>
+                        <h2 class="wf-step__name">♜ Data<br>Analysis</h2>
+                    </header>
+                    <article class="wf-card" aria-labelledby="s3b-card-title">
+                        <span class="wf-card__dot-bg" aria-hidden="true"></span>
+                        <header class="wf-card__header">
+                            <h3 id="s3b-card-title" class="wf-card__title">Data Analysis <span class="wf-card__check" aria-hidden="true">✓</span></h3>
+                            <p class="wf-card__subtitle">Analysing collected data to generate insights into the problem space, visualised through graphs highlighting key areas of focus.</p>
+                        </header>
+                        <img src="workflow_images/chess_section/workshop.webp" alt="Analysis workshop" loading="eager" width="600" height="400" class="wf-card__img" />
+                    </article>
+                </li>
+            </ol>
+            <img src="workflow_images/chess_section/chess_board_image.webp" alt="" loading="lazy" class="wf-scatter wf-scatter--chess-board" aria-hidden="true" />
+            <img src="workflow_images/chess_section/king_chess_piece.webp"  alt="" loading="lazy" class="wf-scatter wf-scatter--chess-king"  aria-hidden="true" />
+            <img src="workflow_images/chess_section/queen_chess_piece.webp" alt="" loading="lazy" class="wf-scatter wf-scatter--chess-queen" aria-hidden="true" />
+        </section>
+        <!-- ------- Section 4: Coding ------- -->
+        <section class="wf-section wf-section--coding" id="s4" aria-labelledby="s4-ex">
+            <span class="wf-section__dot-bg" aria-hidden="true"></span>
+            <div class="wf-exercise-node wf-exercise-node--coding">
+                <p class="wf-exercise-node__num">Exercise 4</p>
+                <strong id="s4-ex" class="wf-exercise-node__name">Coding</strong>
+            </div>
+            <ol class="wf-steps">
+                <!-- Step 01: Build -->
+                <li class="wf-step wf-step--left wf-step--topalign">
+                    <header class="wf-step__header wf-step__header--flip">
+                        <span class="wf-step__pill wf-step__pill--coding">Step 01</span>
+                        <h2 class="wf-step__name">Build</h2>
+                    </header>
+                    <article class="wf-card wf-card--topalign" aria-labelledby="s4-card-title">
+                        <span class="wf-card__dot-bg" aria-hidden="true"></span>
+                        <header class="wf-card__header">
+                            <h3 id="s4-card-title" class="wf-card__title">Build &lt;/&gt; HTML · CSS · JS <span class="wf-card__check" aria-hidden="true">✓</span></h3>
+                            <p class="wf-card__subtitle">Developed the final website using HTML, CSS, and JavaScript, transforming the prototype into a responsive coded experience.</p>
+                        </header>
+                    </article>
+                </li>
+            </ol>
+            <img src="workflow_images/coding_section/programming_image.webp"          alt="" loading="lazy" class="wf-scatter wf-scatter--code-editor" aria-hidden="true" />
+            <img src="workflow_images/coding_section/coding_languages_container.webp" alt="" loading="lazy" class="wf-scatter wf-scatter--code-langs"  aria-hidden="true" />
+            <img src="workflow_images/coding_section/console_tool_image.webp"         alt="" loading="lazy" class="wf-scatter wf-scatter--console"      aria-hidden="true" />
+        </section>
+        <!-- ------- Section 5: Evaluation ------- -->
+        <section class="wf-section wf-section--evaluation" id="s5" aria-labelledby="s5-ex">
+            <span class="wf-section__dot-bg" aria-hidden="true"></span>
+            <div class="wf-exercise-node wf-exercise-node--evaluation">
+                <p class="wf-exercise-node__num">Exercise 5</p>
+                <strong id="s5-ex" class="wf-exercise-node__name">Evaluation</strong>
+            </div>
+            <ol class="wf-steps">
+                <!-- Step 01: Lighthouse -->
+                <li class="wf-step wf-step--left wf-step--topalign">
+                    <header class="wf-step__header wf-step__header--flip">
+                        <span class="wf-step__pill wf-step__pill--evaluation">Step 01</span>
+                        <h2 class="wf-step__name">Lighthouse<br>Audit</h2>
+                    </header>
+                    <article class="wf-card wf-card--topalign" aria-labelledby="s5-card-title">
+                        <span class="wf-card__dot-bg" aria-hidden="true"></span>
+                        <header class="wf-card__header">
+                            <h3 id="s5-card-title" class="wf-card__title">Lighthouse Audit <span class="wf-card__check" aria-hidden="true">✓</span></h3>
+                            <p class="wf-card__subtitle">Ran a Lighthouse audit on the final build to identify opportunities for improvement across performance, accessibility, best practices, and SEO.</p>
+                        </header>
+                    </article>
+                </li>
+                <!-- Step 02: Heuristic Evaluation -->
+                <li class="wf-step wf-step--right">
+                    <header class="wf-step__header">
+                        <span class="wf-step__pill wf-step__pill--evaluation">Step 02</span>
+                        <h2 class="wf-step__name">Heuristic<br>Evaluation</h2>
+                    </header>
+                    <article class="wf-card" aria-labelledby="s5b-card-title">
+                        <span class="wf-card__dot-bg" aria-hidden="true"></span>
+                        <header class="wf-card__header">
+                            <h3 id="s5b-card-title" class="wf-card__title">Heuristic Evaluation <span class="wf-card__check" aria-hidden="true">✓</span></h3>
+                            <p class="wf-card__subtitle">Reviewed the coded platform against Nielsen's 10 usability heuristics to uncover usability issues and areas for refinement.</p>
+                        </header>
+                    </article>
+                </li>
+            </ol>
+            <img src="workflow_images/evaluation_section/performance_speedometer.webp" alt="" loading="lazy" class="wf-scatter wf-scatter--speedometer" aria-hidden="true" />
+            <img src="workflow_images/evaluation_section/lighthouse_report.webp"       alt="" loading="lazy" class="wf-scatter wf-scatter--lighthouse"   aria-hidden="true" />
+        </section>
+        <!-- ------- Deliverable ------- -->
+        <section class="wf-section wf-section--deliverable" id="deliverable" aria-labelledby="deliverable-title">
+            <span class="wf-section__dot-bg" aria-hidden="true"></span>
+            <div class="wf-deliverable__body">
+                <h2 id="deliverable-title" class="wf-deliverable__heading">Deliverable</h2>
+                <ol class="wf-deliverable__trail" aria-label="Complete design workflow">
+                    <li>Research</li>
+                    <li>Design</li>
+                    <li>Prototype</li>
+                    <li>Testing</li>
+                    <li>Code</li>
+                    <li>Optimisation</li>
+                    <li class="wf-deliverable__trail-end">Deliverable</li>
+                </ol>
+                <p class="wf-deliverable__desc">From the first insight to the final build. Every step assists the next phase. Research shapes design. Design drives prototypes. Testing validates code. The result: polished, accessible, performant interfaces that solve real problems.</p>
+                <a href="projects.html" class="btn-outline wf-deliverable__cta">See the work <span aria-hidden="true">→</span></a>
+            </div>
+        </section>
+    </main>
+    <!-- ------- Footer ------- -->
+    <footer class="site-footer">
+        <div class="footer__grid">
+            <div class="footer__col">
+                <h2>Explore</h2>
+                <nav aria-label="Explore">
+                    <a href="workflow.html">Workflow</a>
+                    <a href="projects.html">Projects</a>
+                </nav>
+            </div>
+            <div class="footer__col footer__col--contact">
+                <p class="footer__contact-label">Get in touch <span aria-hidden="true">→</span></p>
+                <a href="mailto:benthoma0s03@gmail.com" class="footer__email">benthoma0s03@gmail.com</a>
+            </div>
+            <div class="footer__col">
+                <h2>Discover</h2>
+                <nav aria-label="Discover">
+                    <a href="https://www.linkedin.com/in/benjamin-david-thomas/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a href="https://github.com/BenjaminDThomas" target="_blank" rel="noopener noreferrer">Github</a>
+                </nav>
+            </div>
+        </div>
+        <hr class="footer__divider" />
+        <p class="footer__copy">All content on this site is the creation and property of Benjamin Thomas.</p>
+    </footer>
+    <!-- ------- Scroll to top ------- -->
+    <button class="scroll-top" id="scrollTop" aria-label="Scroll back to top" hidden>
+        <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+            <path d="M8 2l6 6-1.4 1.4L9 5.8V14H7V5.8L3.4 9.4 2 8l6-6z" fill="currentColor"/>
+        </svg>
+        <span class="scroll-top__label">Top</span>
+    </button>
+    <!-- ------- Scripts ------- -->
+    <script src="js/workflow.js"></script>
 </body>
 </html>
