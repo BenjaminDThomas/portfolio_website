@@ -247,7 +247,7 @@ Scattered images
 .wf-scatter--code-editor{ top: 4%;   left: 2%;  width: 340px; transform: rotate(-2deg); }
 .wf-scatter--code-langs { bottom: 5%; left: 3%; width: 300px; transform: rotate(3deg); }
 .wf-scatter--console    { bottom: 5%; right: 8%; width: 280px; transform: rotate(-4deg); }
-.wf-scatter--speedometer{ top: 8%;   left: 2%;  width: 360px; transform: rotate(-3deg); }
+.wf-scatter--speedometer{ top: 8%;   left: 2%;  width: 360px; transform: rotate(-3deg); z-index: 0; }
 .wf-scatter--lighthouse { top: 4%;   right: 8%; width: 460px; transform: rotate(2deg); }
 /*
 -----------
