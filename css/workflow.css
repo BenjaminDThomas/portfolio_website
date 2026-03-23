@@ -295,6 +295,11 @@ Animations
 .wf-section--deliverable.is-visible .wf-deliverable__trail   { opacity: 1; transform: none; transition: opacity 0.7s ease 0.15s, transform 0.7s ease 0.15s; }
 .wf-section--deliverable.is-visible .wf-deliverable__desc    { opacity: 1; transform: none; transition: opacity 0.7s ease 0.3s,  transform 0.7s ease 0.3s; }
 .wf-card { transition: box-shadow 0.4s ease, border-color 0.4s ease; }
+.wf-card:focus { outline: none; border-color: rgba(216,44,46,0.7); box-shadow: 0 0 0 3px rgba(216,44,46,0.3), 0 8px 40px rgba(0,0,0,0.6); }
+.wf-section--cycling    .wf-card:focus { border-color: rgba(74,222,128,0.7);  box-shadow: 0 0 0 3px rgba(74,222,128,0.25); }
+.wf-section--chess      .wf-card:focus { border-color: rgba(167,139,250,0.7); box-shadow: 0 0 0 3px rgba(167,139,250,0.25); }
+.wf-section--coding     .wf-card:focus { border-color: rgba(96,165,250,0.7);  box-shadow: 0 0 0 3px rgba(96,165,250,0.25); }
+.wf-section--evaluation .wf-card:focus { border-color: rgba(248,113,113,0.7); box-shadow: 0 0 0 3px rgba(248,113,113,0.25); }
 .wf-measuring, .wf-measuring * { scroll-behavior: auto !important; }
 .wf-measuring .wf-exercise-node, .wf-measuring .wf-step, .wf-measuring .wf-deliverable__heading, .wf-measuring .wf-deliverable__trail, .wf-measuring .wf-deliverable__desc { transform: none !important; transition: none !important; }
 /*

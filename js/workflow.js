@@ -221,9 +221,18 @@ Workflow — Road + connectors
     Array.prototype.forEach.call(document.querySelectorAll('img'), function (img) {
         if (!img.complete) { img.addEventListener('load', checkAndRebuild); img.addEventListener('error', checkAndRebuild); }
     });
+    /* smooth scroll focused cards to centre of viewport */
+    document.querySelectorAll('.wf-card').forEach(function (card) {
+        card.addEventListener('focus', function () {
+            setTimeout(function () {
+                card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 50);
+        });
+    });
+
     scheduleRebuild();
     window.addEventListener('load', function () {
         roadReady = false; scheduleRebuild();
         setTimeout(function () { roadReady = false; scheduleRebuild(); }, 300);
     });
-}());
+}());   
