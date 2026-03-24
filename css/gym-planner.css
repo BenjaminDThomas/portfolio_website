@@ -1,0 +1,86 @@
+/*
+-----------
+Gym Planner Case Study
+Page-scoped overrides — gp- prefix ensures no bleed into other pages
+-----------
+*/
+/*
+-----------
+Text colour fix
+-----------
+*/
+/* Even sections (#E8E4D8 background) fail contrast with default #333 — corrected to #444140 */
+/* Scoped to .case-study-page so only applies when gym-planner.css is loaded */
+.case-study-page .cs-section:nth-child(even) p,
+.case-study-page .cs-section:nth-child(even) li,
+.case-study-page .cs-section:nth-child(even) .cs-text,
+.case-study-page .cs-section:nth-child(even) .cs-section__heading,
+.case-study-page .cs-section:nth-child(even) .cs-findings__title,
+.case-study-page .cs-section:nth-child(even) .cs-findings__list li,
+.case-study-page .cs-section:nth-child(even) .cs-callout__title,
+.case-study-page .cs-section:nth-child(even) .cs-callout__list li,
+.case-study-page .cs-section:nth-child(even) .cs-tech span,
+.case-study-page .cs-section:nth-child(even) .cs-feature p,
+.case-study-page .cs-section:nth-child(even) .cs-outcome p { color: #444140; }
+/*
+-----------
+Research
+-----------
+*/
+.gp-ref-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 20px 0; }
+.gp-ref-card { display: flex; flex-direction: column; }
+.gp-ref-card__title { font-family: var(--font-condensed); font-size: 1rem; font-weight: 700; letter-spacing: 0.06em; color: #111; padding: 10px 14px; background: rgba(0,0,0,0.06); border: 1px solid rgba(0,0,0,0.1); border-bottom: none; border-radius: 6px 6px 0 0; }
+.gp-ref-card__img { width: 100%; height: 180px; object-fit: cover; object-position: top; display: block; border-radius: 0 0 6px 6px; border: 1px solid rgba(0,0,0,0.1); margin: 0; }
+/*
+-----------
+Persona
+-----------
+*/
+.gp-persona-img { max-width: 44%; margin: 0 auto 16px; display: block; border-radius: 8px; }
+/*
+-----------
+Lo-fi wireframes
+-----------
+*/
+.gp-lofi-mobile-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 20px 0; max-width: 60%; }
+.gp-lofi-mobile-grid .cs-wireframe__scroll { max-height: 320px; }
+.gp-lofi-desktop-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 28px 0; }
+.gp-lofi-desktop-grid .cs-wireframe__scroll { max-height: 280px; }
+.gp-lofi-label { font-family: var(--font-condensed); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #666; margin-bottom: 8px; display: block; }
+.gp-lofi-label--desktop { margin-top: 28px; }
+/*
+-----------
+Hi-fi prototype
+-----------
+*/
+.gp-hifi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 20px 0; }
+.gp-hifi-img { width: 100%; border-radius: 6px; object-fit: contain; object-position: top center; max-height: 320px; display: block; margin-bottom: 0; background: rgba(255,255,255,0.5); }
+/*
+-----------
+Lighthouse
+-----------
+*/
+.gp-before-after .cs-img { background: #fff !important; box-shadow: 0 4px 16px rgba(0,0,0,0.12); }
+/*
+-----------
+Contrast
+-----------
+*/
+.gp-contrast-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 20px 0; }
+.gp-contrast-card { background: rgba(255,255,255,0.7); border: 1px solid rgba(0,0,0,0.08); border-radius: 6px; padding: 16px 18px; }
+.gp-contrast-card__label { font-family: var(--font-condensed); font-size: 0.875rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #111; margin-bottom: 2px; display: block; }
+.gp-contrast-card__sub { font-size: 0.8rem; color: #555; margin-bottom: 12px; display: block; }
+.gp-contrast-card__img { width: 100%; max-width: 320px; display: block; margin: 0 auto; border-radius: 4px; }
+/*
+-----------
+Responsive
+-----------
+*/
+@media (max-width: 900px) {
+    .gp-ref-grid { grid-template-columns: 1fr; }
+    .gp-lofi-mobile-grid { max-width: 100%; grid-template-columns: 1fr; }
+    .gp-lofi-desktop-grid { grid-template-columns: 1fr; }
+    .gp-hifi-grid { grid-template-columns: 1fr; }
+    .gp-contrast-grid { grid-template-columns: 1fr; }
+    .gp-persona-img { max-width: 70%; }
+}
