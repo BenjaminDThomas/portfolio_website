@@ -13,7 +13,7 @@ Nav override
 .case-study-page .site-nav { background: #0a0a0a !important; border-bottom: 1px solid rgba(255,255,255,0.08) !important; display: flex; align-items: center; justify-content: space-between; padding: 18px 28px; }
 .case-study-page .nav__logo { border: none; outline: none; box-shadow: none; }
 .case-study-page .nav__logo img { border: none; outline: none; box-shadow: none; }
-.case-study-page .nav__links { position: static; transform: none; top: auto; }
+.case-study-page .nav__links { position: static !important; transform: none !important; top: auto !important; display: flex !important; flex-direction: row !important; align-items: center; gap: 8px; background: none; box-shadow: none; padding: 0; margin: 0; list-style: none; }
 .nav__back { font-family: var(--font-condensed); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.9); text-decoration: none; border: 1.5px solid rgba(255,255,255,0.4); padding: 7px 16px; border-radius: 20px; transition: background 0.2s, color 0.2s, border-color 0.2s; }
 .nav__back:hover { background: #fff; color: #0a0a0a; border-color: #fff; }
 /*
