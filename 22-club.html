@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>document.documentElement.classList.add('js-loading');</script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>22 Club Case Study — Benjamin Thomas</title>
+    <meta name="description" content="UX case study: Redesign of 22 Club, a local snooker and pool venue, creating a user-centred environment." />
+    <meta property="og:title" content="22 Club Case Study — Benjamin Thomas" />
+    <meta property="og:description" content="UX case study: Redesign of 22 Club — improving usability for a local venue website." />
+    <meta property="og:type" content="website" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600;700&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/grid.css" />
+    <link rel="stylesheet" href="css/case-study.css" />
+</head>
+<body class="case-study-page">
+    <!-- ------- Navigation ------- -->
+    <nav class="site-nav" aria-label="Site navigation">
+        <a href="index.html" class="nav__logo" aria-label="Ben Thomas — Homepage">
+            <img src="images/logo.webp" alt="Ben Thomas logo" width="110" height="42" />
+        </a>
+        <ul class="nav__links" role="list">
+            <li><a href="projects.html" class="nav__link nav__back">← My Work</a></li>
+        </ul>
+    </nav>
+    <!-- ------- Hero ------- -->
+    <header class="cs-hero" aria-label="22 Club Case Study Hero">
+        <img src="case_studies/22_club/hero_banner.webp" alt="22 Club snooker venue interior" class="cs-hero__img" />
+        <div class="cs-hero__overlay" aria-hidden="true"></div>
+        <div class="cs-hero__content">
+            <p class="cs-hero__label">Case Study</p>
+            <h1 class="cs-hero__title">22 Club Case Study</h1>
+            <p class="cs-hero__sub">Redesign of local business, creating a user-centered environment</p>
+        </div>
+    </header>
+    <!-- ------- Section nav ------- -->
+    <nav class="cs-section-nav" aria-label="Jump to section">
+        <!-- Desktop: full horizontal list -->
+        <ul class="cs-section-nav__list" role="list">
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#problem">Problem</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#persona">Persona</a></li>
+            <li><a href="#ideation">Ideation</a></li>
+            <li><a href="#lofi">Wireframes</a></li>
+            <li><a href="#hifi">Prototype</a></li>
+            <li><a href="#build">Build</a></li>
+            <li><a href="#performance">Performance</a></li>
+            <li><a href="#testing">Testing</a></li>
+            <li><a href="#version-control">Git</a></li>
+            <li><a href="#result">Result</a></li>
+        </ul>
+        <!-- Mobile: contents dropdown -->
+        <div class="cs-section-nav__mobile">
+            <button class="cs-section-nav__toggle" aria-expanded="false" aria-controls="cs-section-dropdown" aria-label="Open section contents">
+                <span class="cs-section-nav__toggle-label">Contents</span>
+                <svg class="cs-section-nav__toggle-icon" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true">
+                    <path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <ul class="cs-section-nav__dropdown" id="cs-section-dropdown" role="list" hidden>
+                <li><a href="#overview">00 — Overview</a></li>
+                <li><a href="#services">01 — Services</a></li>
+                <li><a href="#problem">02 — Problem</a></li>
+                <li><a href="#research">03 — Research</a></li>
+                <li><a href="#persona">04 — Persona</a></li>
+                <li><a href="#ideation">05 — Ideation</a></li>
+                <li><a href="#lofi">06 — Wireframes</a></li>
+                <li><a href="#hifi">07 — Prototype</a></li>
+                <li><a href="#build">08 — Build</a></li>
+                <li><a href="#performance">09 — Performance</a></li>
+                <li><a href="#testing">10 — Testing</a></li>
+                <li><a href="#version-control">11 — Git</a></li>
+                <li><a href="#result">12 — Result</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- ------- Reading progress bar ------- -->
+    <div class="cs-progress-bar" id="csProgressBar" aria-hidden="true" role="presentation">
+        <div class="cs-progress-bar__fill" id="csProgressFill"></div>
+    </div>
+    <!-- ------- Main ------- -->
+    <main class="cs-main" id="cs-main">
+        <!-- ------- Overview ------- -->
+        <section class="cs-section" id="overview" aria-labelledby="overview-title" tabindex="0">
+            <div class="cs-container">
+                <div class="cs-section__meta">
+                    <span class="cs-section__num">00</span>
+                    <h2 class="cs-section__label" id="overview-title">About<br><span>OVERVIEW</span></h2>
+                </div>
+                <div class="cs-section__body">
+                    <h3 class="cs-section__heading">Project Overview</h3>
+                    <div class="cs-rule" aria-hidden="true"></div>
+                    <img src="case_studies/22_club/new_hero_banner.webp" alt="Redesigned 22 Club website hero banner" class="cs-img cs-img--full" loading="lazy" />
+                    <p class="cs-text">The goal of this project was to redesign the website for the local business 22 Club, a snooker and pool venue. The redesign focused on improving usability, readability, and accessibility for users searching for information about facilities, membership, and location.</p>
+                    <p class="cs-text">To avoid copyright issues when presenting the work publicly, the redesigned concept was renamed 01 Club. The project focused on UX research, interface design, and front-end development, while the existing administrative portal was excluded from the redesign scope as it falls outside a front-end UX role.</p>
+                    <a href="https://22clubnewdesign.netlify.app/" target="_blank" rel="noopener noreferrer" class="cs-btn" aria-label="View the 22 Club redesign project (opens in new tab)">View Project</a>
+                </div>
+            </div>
+        </section>
+        <!-- ------- Services Used ------- -->
+        <section class="cs-section" id="services" aria-labelledby="services-title" tabindex="0">
+            <div class="cs-container cs-container--center">
+                <div class="cs-section__meta">
+                    <span class="cs-section__num">01</span>
+                    <h2 class="cs-section__label" id="services-title">Services<br><span>TOOLS</span></h2>
+                </div>
+                <div class="cs-section__body cs-section__body--center">
+                    <h3 class="cs-section__heading cs-section__heading--center">Services Used</h3>
+                    <div class="cs-rule cs-rule--center" aria-hidden="true"></div>
+                    <p class="cs-text cs-text--center">Each tool served a defined role across the design and development workflow.</p>
+                    <ul class="cs-tools" role="list" aria-label="Tools used in this project">
+                        <li class="cs-tool">
+                            <a href="#lofi" class="cs-tool__link" aria-label="Figma — used for wireframing and prototyping, see Lo-Fi Wireframes section">
+                                <img src="case_studies/22_club/figma_logo.webp" alt="Figma" class="cs-tool__logo" loading="lazy" />
+                                <strong class="cs-tool__name">Figma</strong>
+                                <span class="cs-tool__desc">Wireframing, Prototyping</span>
+                            </a>
+                        </li>
+                        <li class="cs-tool">
+                            <a href="#build" class="cs-tool__link" aria-label="VS Code — used for front-end development, see Build section">
+                                <img src="case_studies/22_club/vs_code_logo.webp" alt="VS Code" class="cs-tool__logo" loading="lazy" />
+                                <strong class="cs-tool__name">VS Code</strong>
+                                <span class="cs-tool__desc">HTML5, CSS3, JavaScript</span>
+                            </a>
+                        </li>
+                        <li class="cs-tool">
+                            <a href="#performance" class="cs-tool__link" aria-label="Google Lighthouse — used for performance testing, see Performance Optimisation section">
+                                <img src="case_studies/22_club/google_lighthouse_logo.webp" alt="Google Lighthouse" class="cs-tool__logo" loading="lazy" />
+                                <strong class="cs-tool__name">Google Lighthouse</strong>
+                                <span class="cs-tool__desc">Performance Testing</span>
+                            </a>
+                        </li>
+                        <li class="cs-tool">
+                            <a href="#testing" class="cs-tool__link" aria-label="Contrast Checker — used for web accessibility testing, see Evaluation and Testing section">
+                                <img src="case_studies/22_club/contrast_checker_logo.webp" alt="Contrast Checker" class="cs-tool__logo" loading="lazy" />
+                                <strong class="cs-tool__name">Contrast Checker</strong>
+                                <span class="cs-tool__desc">Web Accessibility Testing</span>
+                            </a>
+                        </li>
+                        <li class="cs-tool">
+                            <a href="#version-control" class="cs-tool__link" aria-label="GitHub — used for version control, see Version Control section">
+                                <img src="case_studies/22_club/github_logo.webp" alt="GitHub" class="cs-tool__logo" loading="lazy" />
+                                <strong class="cs-tool__name">GitHub</strong>
+                                <span class="cs-tool__desc">Git version control</span>
+                            </a>
+                        </li>
+                        <li class="cs-tool">
+                            <a href="#build" class="cs-tool__link" aria-label="Claude — used for selective coding assistance, see Build section">
+                                <img src="case_studies/22_club/claude_logo.webp" alt="Claude" class="cs-tool__logo" loading="lazy" />
+                                <strong class="cs-tool__name">Claude</strong>
+                                <span class="cs-tool__desc">Selective Coding</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!-- ------- Discover / Problem ------- -->
+        <section class="cs-section" id="problem" aria-labelledby="problem-title" tabindex="0">
+            <div class="cs-container">
+                <div class="cs-section__meta">
+                    <span class="cs-section__num">02</span>
+                    <h2 class="cs-section__label" id="problem-title">Discover<br><span>PROBLEM</span></h2>
+                </div>
+                <div class="cs-section__body">
+                    <h3 class="cs-section__heading">Understanding The Problem</h3>
+                    <div class="cs-rule" aria-hidden="true"></div>
+                    <p class="cs-text">The original site created usability barriers that prevented visitors from quickly finding key information.</p>
+                    <div class="cs-problem-wrap" aria-label="Existing website issues">
+                        <div class="cs-problem-hero">
+                            <img src="case_studies/22_club/existing_hero_banner.webp" alt="Existing 22 Club homepage. Issue 1: navigation bar lacks contrast between background and text causing poor readability. Issue 2: content does not stretch across whole screen, leading to poor content layout." loading="lazy" />
+                            <div class="cs-problem-chips" aria-hidden="true">
+                                <span class="cs-chip cs-chip--1">Navigation bar lacks contrast between background and text causing poor readability.</span>
+                                <span class="cs-chip cs-chip--2">Content does not stretch across whole screen, leading to poor content layout.</span>
+                            </div>
+                        </div>
+                        <div class="cs-problem-grid3">
+                            <div class="cs-problem-grid3__item">
+                                <img src="case_studies/22_club/existing_find_us_section.webp" alt="Existing Find Us page — only a Google Maps embed with no section labelling" loading="lazy" />
+                                <p class="cs-problem-grid3__cap">The "Find Us" page only displayed a Google Maps embed without clear section labelling.</p>
+                            </div>
+                            <div class="cs-problem-grid3__item">
+                                <img src="case_studies/22_club/existing_membership_text_layout.webp" alt="Existing membership page — large sections of centre-aligned text reducing readability" loading="lazy" />
+                                <p class="cs-problem-grid3__cap">Typography and readability challenges from large sections of centre-aligned text, reducing scannability.</p>
+                            </div>
+                            <div class="cs-problem-grid3__item">
+                                <img src="case_studies/22_club/existing_club_deals.webp" alt="Existing club deals page — poor colour contrast not meeting AA or AAA requirements" loading="lazy" />
+                                <p class="cs-problem-grid3__cap">Background and text colour do not meet AA or AAA requirements. No content structure to indicate what images represent.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cs-callout" aria-label="Other key issues identified">
+                        <h4 class="cs-callout__title">Other key issues identified include:</h4>
+                        <ul class="cs-callout__list">
+                            <li>Mobile responsiveness — navigation elements became cramped on smaller screens, reducing usability</li>
+                            <li>Content hierarchy — facilities information appeared visually cluttered, reducing clarity</li>
+                            <li>Inaccessible pages — some pages contained minimal or empty content, creating dead-end navigation paths</li>
+                        </ul>
+                        <p class="cs-text">These findings highlighted the need for clearer structure, stronger visual hierarchy, and improved accessibility.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ------- Research & Inspiration ------- -->
+        <section class="cs-section" id="research" aria-labelledby="research-title" tabindex="0">
+            <div class="cs-container">
+                <div class="cs-section__meta">
+                    <span class="cs-section__num">03</span>
+                    <h2 class="cs-section__label" id="research-title">Research<br><span>INSIGHTS</span></h2>
+                </div>
+                <div class="cs-section__body">
+                    <h3 class="cs-section__heading">Research &amp; Inspiration</h3>
+                    <div class="cs-rule" aria-hidden="true"></div>
+                    <p class="cs-text">Competitive analysis of similar venue websites surfaced effective UX patterns that directly informed the redesign.</p>
+                    <div class="cs-two-col">
+                        <div class="cs-findings" aria-label="Analysis findings">
+                            <h4 class="cs-findings__title">Analysis Observed</h4>
+                            <ul class="cs-findings__list">
+                                <li>Strong visual hierarchy</li>
+                                <li>Clearly separated content sections</li>
+                                <li>High-quality imagery aligned with content</li>
+                                <li>Consistent typography</li>
+                                <li>Accessible interactions such as facilities and membership</li>
+                                <li>Responsive layouts for mobile devices</li>
+                            </ul>
+                        </div>
+                        <div class="cs-findings" aria-label="Design decisions informed">
+                            <h4 class="cs-findings__title">Decisions Informed</h4>
+                            <ul class="cs-findings__list">
+                                <li>Improved navigation contrast</li>
+                                <li>Consistent typography with left-aligned text</li>
+                                <li>Cleaner section structure</li>
+                                <li>Improved spacing and visual hierarchy</li>
+                                <li>Accessible colour contrast combinations</li>
+                                <li>Consistent image placement across the layout</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <figure class="cs-ref-grid" aria-label="Reference website screenshots">
+                        <img src="case_studies/22_club/otaqo_reference_website3.webp" alt="Reference website 3 — showing strong visual hierarchy and section separation" class="cs-img" loading="lazy" />
+                        <img src="case_studies/22_club/otaqo_reference_website2.webp" alt="Reference website 2 — showing consistent typography and imagery use" class="cs-img" loading="lazy" />
+                        <img src="case_studies/22_club/otaqo_reference_website.webp"  alt="Reference website 1 — showing responsive layout and accessible navigation" class="cs-img" loading="lazy" />
+                    </figure>
+                </div>
+            </div>
+        </section>
+        <!-- ------- User Persona ------- -->
+        <section class="cs-section" id="persona" aria-labelledby="persona-title" tabindex="0">
+            <div class="cs-container cs-container--center">
+                <div class="cs-section__meta">
+                    <span class="cs-section__num">04</span>
+                    <h2 class="cs-section__label" id="persona-title">User<br><span>PERSONA</span></h2>
+                </div>
+                <div class="cs-section__body cs-section__body--center">
+                    <h3 class="cs-section__heading cs-section__heading--center">User Persona</h3>
+                    <div class="cs-rule cs-rule--center" aria-hidden="true"></div>
+                    <p class="cs-text cs-text--center">To better understand typical visitors, a persona was created based on expected users of the club website.</p>
+                    <img src="case_studies/22_club/persona.webp" alt="User persona: Daniel Hughes — a local club visitor seeking venue information and membership details" class="cs-img cs-img--contained" loading="lazy" />
+                    <p class="cs-text cs-text--center">Designing with Daniel in mind helped prioritise clear navigation, improved readability, and easily accessible location information.</p>
+                </div>
+            </div>
+        </section>
+        <!-- ------- Ideation ------- -->
+        <section class="cs-section" id="ideation" aria-labelledby="ideation-title" tabindex="0">
+            <div class="cs-container">
+                <div class="cs-section__meta">
+                    <span class="cs-section__num">05</span>
+                    <h2 class="cs-section__label" id="ideation-title">Ideas<br><span>CRAZY 8'S</span></h2>
+                </div>
+                <div class="cs-section__body">
+                    <h3 class="cs-section__heading">Ideation — Crazy 8's</h3>
+                    <div class="cs-rule" aria-hidden="true"></div>
+                    <p class="cs-text">Eight layout concepts generated rapidly to explore structure before committing to digital wireframes.</p>
+                    <figure class="cs-img-pair cs-img-pair--equal" aria-label="Crazy 8s sketches">
+                        <img src="case_studies/22_club/crazy8_1.webp" alt="Crazy 8s sketching sheet 1 — eight rapid layout concepts" class="cs-img" loading="lazy" />
+                        <img src="case_studies/22_club/crazy8_2.webp" alt="Crazy 8s sketching sheet 2 — eight rapid layout concepts" class="cs-img" loading="lazy" />
+                    </figure>
+                </div>
+            </div>
+        </section>
+        <!-- ------- Low Fidelity ------- -->
+        <section class="cs-section" id="lofi" aria-labelledby="lofi-title" tabindex="0">
+            <div class="cs-container">
+                <div class="cs-section__meta">
+                    <span class="cs-section__num">06</span>
+                    <h2 class="cs-section__label" id="lofi-title">Lo-Fi<br><span>WIREFRAMES</span></h2>
+                </div>
+                <div class="cs-section__body">
+                    <h3 class="cs-section__heading">Low-Fidelity Wireframes</h3>
+                    <div class="cs-rule" aria-hidden="true"></div>
+                    <p class="cs-text">Figma wireframes to test layout structure and information hierarchy to create a basic mock-up.</p>
+                    <div class="cs-wireframes" aria-label="Low fidelity wireframes — mobile and desktop">
+                        <div class="cs-wireframe">
+                            <div class="cs-wireframe__label" aria-hidden="true">
+                                <span class="cs-wireframe__device">📱 Mobile</span>
+                            </div>
+                            <div class="cs-wireframe__scroll">
+                                <img src="case_studies/22_club/low_fidelity_mobile.webp" alt="Low fidelity mobile wireframe — navigation, hero, facilities and footer structure across a vertical scroll layout" class="cs-wireframe__img" loading="lazy" />
+                            </div>
+                        </div>
+                        <div class="cs-wireframe cs-wireframe--desktop">
+                            <div class="cs-wireframe__label" aria-hidden="true">
+                                <span class="cs-wireframe__device">🖥 Desktop</span>
+                            </div>
+                            <div class="cs-wireframe__scroll">
+                                <img src="case_studies/22_club/low_fidelity_desktop.webp" alt="Low fidelity desktop wireframe — full layout showing header, hero, facilities grid, find us section and footer" class="cs-wireframe__img" loading="lazy" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ------- High Fidelity ------- -->
+        <section class="cs-section" id="hifi" aria-labelledby="hifi-title" tabindex="0">
+            <div class="cs-container">
+                <div class="cs-section__meta">
+                    <span class="cs-section__num">07</span>
+                    <h2 class="cs-section__label" id="hifi-title">Hi-Fi<br><span>PROTOTYPE</span></h2>
+                </div>
+                <div class="cs-section__body">
+                    <h3 class="cs-section__heading">High-Fidelity Prototype</h3>
+                    <div class="cs-rule" aria-hidden="true"></div>
+                    <p class="cs-text">Figma prototypes refining the final visual design that includes validating colour, typography, spacing, and imagery before coding.</p>
+                    <figure class="cs-hifi-grid" aria-label="High fidelity prototype screens">
+                        <img src="case_studies/22_club/navbar.webp"       alt="High fidelity prototype — navbar design with accessible contrast" class="cs-img cs-img--navbar" loading="lazy" />
+                        <img src="case_studies/22_club/hero_hover.webp"   alt="High fidelity prototype — hero section with hover state" class="cs-img cs-img--hifi" loading="lazy" />
+                        <img src="case_studies/22_club/find_us_page.webp" alt="High fidelity prototype — Find Us page with map and location details" class="cs-img cs-img--hifi" loading="lazy" />
+                    </figure>
+                </div>
+            </div>
+        </section>
+        <!-- ------- Build ------- -->
+        <section class="cs-section" id="build" aria-labelledby="build-title" tabindex="0">
+            <div class="cs-container">
+                <div class="cs-section__meta">
+                    <span class="cs-section__num">08</span>
+                    <h2 class="cs-section__label" id="build-title">Build<br><span>DEV</span></h2>
+                </div>
+                <div class="cs-section__body">
+                    <h3 class="cs-section__heading">Front-End Development</h3>
+                    <div class="cs-rule" aria-hidden="true"></div>
+                    <p class="cs-text">Implemented using semantic front-end technologies, following accessibility regulations.</p>
+                    <ul class="cs-tech-grid" role="list" aria-label="Technologies used">
+                        <li class="cs-tech"><strong>HTML5</strong><span>Semantic structure, ARIA</span></li>
+                        <li class="cs-tech"><strong>CSS3</strong><span>Style, grid</span></li>
+                        <li class="cs-tech"><strong>JavaScript</strong><span>Scroll, navigation</span></li>
+                    </ul>
+                    <ul class="cs-feature-grid" role="list" aria-label="Accessibility features implemented">
+                        <li class="cs-feature"><span class="cs-feature__check" aria-hidden="true">✓</span><strong>Semantic HTML</strong><p>Heading hierarchy and roles tags for screen reader support.</p></li>
+                        <li class="cs-feature"><span class="cs-feature__check" aria-hidden="true">✓</span><strong>Keyboard Navigation</strong><p>Full Tab navigation.</p></li>
+                        <li class="cs-feature"><span class="cs-feature__check" aria-hidden="true">✓</span><strong>Image Alt Text</strong><p>Descriptive alt attributes on all images.</p></li>
+                        <li class="cs-feature"><span class="cs-feature__check" aria-hidden="true">✓</span><strong>WCAG AA/AAA</strong><p>All focus and colour pairs tested and verified.</p></li>
+                    </ul>
+                    <div class="cs-code-viewer" role="region" aria-label="01 Club HTML source code — scroll to explore">
+                        <div class="cs-code-viewer__bar" aria-hidden="true">
+                            <span class="cs-code-viewer__dot cs-code-viewer__dot--r"></span>
+                            <span class="cs-code-viewer__dot cs-code-viewer__dot--y"></span>
+                            <span class="cs-code-viewer__dot cs-code-viewer__dot--g"></span>
+                            <span class="cs-code-viewer__file">index.html</span>
+                        </div>
+                        <div class="cs-scroll-hint" aria-hidden="true">scroll to explore ↓</div>
+                        <pre class="cs-code-viewer__pre" tabindex="0" aria-label="Semantic HTML source code for 01 Club homepage"><code class="cs-code-viewer__code">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8" /&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+    &lt;title&gt;01 Club&lt;/title&gt;
+    &lt;meta name="description" content="01 Club is a social snooker and pool club."&gt;
+    &lt;link rel="preconnect" href="https://fonts.googleapis.com" fetchpriority="high" /&gt;
+    &lt;link rel="stylesheet" href="css/style.css" /&gt;
+    &lt;link rel="stylesheet" href="css/grid.css" /&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- Navigation --&gt;
+    &lt;nav class="site-nav" role="navigation" aria-label="Main navigation"&gt;
+        &lt;div class="nav-inner"&gt;
+            &lt;a href="index.html" class="nav-logo" aria-label="01 Club &#8211; Home"&gt;
+                &lt;span class="logo-number"&gt;01&lt;/span&gt;
+                &lt;span class="logo-word"&gt;Club&lt;/span&gt;
+            &lt;/a&gt;
+            &lt;ul class="nav-links" role="list"&gt;
+                &lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="club-deals.html"&gt;Deals&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="index.html#facilities"&gt;Facilities&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="index.html#find-us"&gt;Find Us&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="club-rules.html"&gt;Club Rules&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;a href="membership.html" class="nav-cta" aria-current="page"&gt;Membership&lt;/a&gt;
+            &lt;button class="hamburger" aria-controls="mobile-menu"
+                    aria-expanded="false" aria-label="Open navigation menu"&gt;
+                &lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;
+            &lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/nav&gt;
+    &lt;!-- Mobile drawer --&gt;
+    &lt;nav id="mobile-menu" class="mobile-drawer" aria-label="Mobile navigation"&gt;
+        &lt;ul role="list"&gt;
+            &lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="club-deals.html"&gt;Deals&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="index.html#facilities"&gt;Facilities&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="index.html#find-us"&gt;Find Us&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="club-rules.html"&gt;Club Rules&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/nav&gt;
+    &lt;!-- Hero --&gt;
+    &lt;header class="hero home-hero" role="banner"&gt;
+        &lt;img src="images/hero_banner_container.jpg"
+             alt="01 Club Ormskirk interior" fetchpriority="high" /&gt;
+        &lt;span class="hero-overlay" aria-hidden="true"&gt;&lt;/span&gt;
+        &lt;div class="hero-content"&gt;
+            &lt;h1&gt;01 Club Ormskirk&lt;/h1&gt;
+            &lt;p&gt;Home of Snooker, Pool and Darts&lt;/p&gt;
+            &lt;a href="membership.html" class="hero-cta"&gt;Become a Member&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;aside class="hero-tagline" aria-label="Club summary"&gt;
+            &lt;p class="tagline-heading"&gt;A Space to Play &amp;amp; Unwind&lt;/p&gt;
+            &lt;p class="tagline-desc"&gt;Quality tables, relaxed atmosphere and a
+            fully licensed bar open 7 days a week.&lt;/p&gt;
+            &lt;a href="#facilities" class="tagline-btn"&gt;More About Us&lt;/a&gt;
+        &lt;/aside&gt;
+    &lt;/header&gt;
+    &lt;main&gt;
+        &lt;!-- Find Us --&gt;
+        &lt;section id="find-us" class="find-us" aria-labelledby="find-us-heading"&gt;
+            &lt;img src="images/find_us_background_layer.jpg" alt=""
+                 class="find-us-bg" aria-hidden="true" loading="lazy" /&gt;
+            &lt;div class="find-us-inner"&gt;
+                &lt;h2 id="find-us-heading" class="find-us-title"&gt;
+                    Find &lt;span&gt;Us&lt;/span&gt;
+                &lt;/h2&gt;
+                &lt;div class="find-us-content"&gt;
+                    &lt;div class="find-us-left"&gt;
+                        &lt;article class="info-card"&gt;
+                            &lt;h3&gt;Address&lt;/h3&gt;
+                            &lt;address&gt;
+                                22 Club Ormskirk, Moorgate&lt;br /&gt;
+                                Ormskirk L39 4RU&lt;br /&gt;
+                                United Kingdom
+                            &lt;/address&gt;
+                        &lt;/article&gt;
+                        &lt;article class="info-card"&gt;
+                            &lt;h3&gt;Opening Hours&lt;/h3&gt;
+                            &lt;p&gt;Monday - Saturday: 12:00 PM - 11:00 PM&lt;/p&gt;
+                            &lt;p&gt;Sunday: 12:00 PM - 10:00 PM&lt;/p&gt;
+                        &lt;/article&gt;
+                        &lt;a href="https://maps.google.com/..." target="_blank"
+                           rel="noopener noreferrer" class="directions-btn"&gt;
+                            Get Directions
+                        &lt;/a&gt;
+                    &lt;/div&gt;
+                    &lt;iframe src="https://www.google.com/maps/embed?..."
+                        title="01 Club Ormskirk location map" loading="lazy"&gt;
+                    &lt;/iframe&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+        &lt;!-- Facilities --&gt;
+        &lt;section id="facilities" class="facilities"
+                 aria-labelledby="facilities-heading"&gt;
+            &lt;header class="section-header"&gt;
+                &lt;h2 id="facilities-heading"&gt;Facilities&lt;/h2&gt;
+            &lt;/header&gt;
+            &lt;ul class="facilities-list" role="list"&gt;
+                &lt;li class="facility-item"&gt;
+                    &lt;img src="images/bar_header_container.png"
+                         alt="Bar" loading="lazy" /&gt;
+                    &lt;p&gt;From hand-pulled ales to cocktails, our fully stocked
+                    bar is the perfect place to relax between frames.&lt;/p&gt;
+                &lt;/li&gt;
+                &lt;li class="facility-item"&gt;
+                    &lt;img src="images/snooker_header-container.png"
+                         alt="Snooker" loading="lazy" /&gt;
+                    &lt;p&gt;Full-size professional snooker tables maintained to
+                    the highest standard.&lt;/p&gt;
+                &lt;/li&gt;
+                &lt;li class="facility-item"&gt;
+                    &lt;img src="images/pool_header-container.png"
+                         alt="Pool" loading="lazy" /&gt;
+                    &lt;p&gt;Enjoy both American and English pool at 01 Club.
+                    Available throughout opening hours for all members.&lt;/p&gt;
+                &lt;/li&gt;
+                &lt;li class="facility-item"&gt;
+                    &lt;img src="images/darts_container.webp"
+                         alt="Darts" loading="lazy" /&gt;
+                    &lt;p&gt;Test your aim on our dedicated darts boards.
+                    Available to all members during opening hours.&lt;/p&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/section&gt;
+        &lt;!-- Beer pour animation --&gt;
+        &lt;section class="beer-section" id="beer-anim" aria-hidden="true"&gt;
+            &lt;div class="beer-stage"&gt;
+                &lt;img src="images/liquid_icon.webp" alt="" class="bl-liquid" /&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+    &lt;/main&gt;
+    &lt;!-- Footer --&gt;
+    &lt;footer&gt;
+        &lt;div class="footer-inner"&gt;
+            &lt;div class="footer-grid"&gt;
+                &lt;section class="footer-col" aria-labelledby="footer-club"&gt;
+                    &lt;h3 id="footer-club"&gt;Club&lt;/h3&gt;
+                    &lt;ul role="list"&gt;
+                        &lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="index.html#facilities"&gt;Facilities&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="club-deals.html"&gt;Deals&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/section&gt;
+                &lt;section class="footer-col" aria-labelledby="footer-connect"&gt;
+                    &lt;h3 id="footer-connect"&gt;Connect&lt;/h3&gt;
+                    &lt;address&gt;
+                        &lt;p&gt;Tel: &lt;a href="tel:01695727127"&gt;01695727127&lt;/a&gt;&lt;/p&gt;
+                        &lt;a href="mailto:<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="bfdcd0d1cbdedccbff8d8ddcd3cadd91dcd091cad4">[email&#160;protected]</a>"&gt;
+                            <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="dbb8b4b5afbab8af9be9e9b8b7aeb9f5b8b4f5aeb0">[email&#160;protected]</a>
+                        &lt;/a&gt;
+                    &lt;/address&gt;
+                &lt;/section&gt;
+            &lt;/div&gt;
+            &lt;small class="footer-bar"&gt;
+                &amp;copy; 2025 01 Club. All rights reserved.
+            &lt;/small&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+    &lt;script src="js/membership.js"&gt;&lt;/script&gt;
+    &lt;script src="js/beer-pour.js" defer&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ------- Performance ------- -->
+        <section class="cs-section" id="performance" aria-labelledby="perf-title" tabindex="0">
+            <div class="cs-container">
+                <div class="cs-section__meta">
+                    <span class="cs-section__num">09</span>
+                    <h2 class="cs-section__label" id="perf-title">Optimise<br><span>PERFORMANCE</span></h2>
+                </div>
+                <div class="cs-section__body">
+                    <h3 class="cs-section__heading">Performance Optimisation</h3>
+                    <div class="cs-rule" aria-hidden="true"></div>
+                    <p class="cs-text">Lighthouse audits identified large image assets as the primary bottleneck. Two targeted fixes resolved the issues.</p>
+                    <ul class="cs-scores" role="list" aria-label="Lighthouse scores">
+                        <li class="cs-score"><span class="cs-score__num">99</span><span class="cs-score__label">PERFORMANCE</span></li>
+                        <li class="cs-score"><span class="cs-score__num">96</span><span class="cs-score__label">ACCESSIBILITY</span></li>
+                        <li class="cs-score"><span class="cs-score__num">100</span><span class="cs-score__label">BEST PRACTICES</span></li>
+                        <li class="cs-score"><span class="cs-score__num">100</span><span class="cs-score__label">SEO</span></li>
+                    </ul>
+                    <div class="cs-two-col">
+                        <div class="cs-findings">
+                            <h4 class="cs-findings__title">Image Optimisation</h4>
+                            <p class="cs-text">Converting to WebP reduced file sizes significantly while maintaining quality and preserving transparent backgrounds.</p>
+                        </div>
+                        <div class="cs-findings">
+                            <h4 class="cs-findings__title">Animation Simplification</h4>
+                            <p class="cs-text">An early pulsing animation was replaced with an in-scroll fade, using fewer assets for better performance.</p>
+                        </div>
+                    </div>
+                    <figure class="cs-before-after" aria-label="Lighthouse scores before and after optimisation">
+                        <div class="cs-before-after__col">
+                            <p class="cs-before-after__label">BEFORE</p>
+                            <img src="case_studies/22_club/desktop_lighthouse_test.webp" alt="Lighthouse test before optimisation showing lower performance scores" class="cs-img" loading="lazy" />
+                        </div>
+                        <div class="cs-before-after__col">
+                            <p class="cs-before-after__label cs-before-after__label--after">AFTER</p>
+                            <img src="case_studies/22_club/desktop_lighthouse_test_final_version.webp" alt="Lighthouse test after optimisation showing 99 performance, 96 accessibility, 100 best practices, 100 SEO" class="cs-img" loading="lazy" />
+                        </div>
+                    </figure>
+                </div>
+            </div>
+        </section>
+        <!-- ------- Evaluation & Testing ------- -->
+        <section class="cs-section" id="testing" aria-labelledby="test-title" tabindex="0">
+            <div class="cs-container">
+                <div class="cs-section__meta">
+                    <span class="cs-section__num">10</span>
+                    <h2 class="cs-section__label" id="test-title">Test<br><span>CONTRAST/AAA</span></h2>
+                </div>
+                <div class="cs-section__body">
+                    <h3 class="cs-section__heading">Evaluation and Testing</h3>
+                    <div class="cs-rule" aria-hidden="true"></div>
+                    <p class="cs-text">Accessibility validated against WCAG standards using colour contrast tools.</p>
+                    <figure class="cs-img-trio" aria-label="Contrast checker results">
+                        <img src="case_studies/22_club/contrast_checker_navbar-hero.webp"     alt="Contrast checker result: navbar and hero — background and body text confirmed compliant" class="cs-img" loading="lazy" />
+                        <img src="case_studies/22_club/contrast_checker_hero-text.webp"       alt="Contrast checker result: hero text — hero and text overlay exceeds minimum standard" class="cs-img" loading="lazy" />
+                        <img src="case_studies/22_club/contrast_checker_background-text.webp" alt="Contrast checker result: background and text — all raw elements meet requirements" class="cs-img" loading="lazy" />
+                    </figure>
+                </div>
+            </div>
+        </section>
+        <!-- ------- Version Control ------- -->
+        <section class="cs-section" id="version-control" aria-labelledby="vc-title" tabindex="0">
+            <div class="cs-container cs-container--center">
+                <div class="cs-section__meta">
+                    <span class="cs-section__num">11</span>
+                    <h2 class="cs-section__label" id="vc-title">Workflow<br><span>GITHUB</span></h2>
+                </div>
+                <div class="cs-section__body cs-section__body--center">
+                    <h3 class="cs-section__heading cs-section__heading--center">Version Control</h3>
+                    <div class="cs-rule cs-rule--center" aria-hidden="true"></div>
+                    <p class="cs-text cs-text--center">Development tracked with Git throughout with regular commits provides a clean, documented record of progress.</p>
+                    <div class="cs-git-viewer" role="region" aria-label="Git commit history for 01 Club project">
+                        <div class="cs-git-viewer__bar" aria-hidden="true">
+                            <span class="cs-git-viewer__icon">⎇</span>
+                            <span class="cs-git-viewer__branch">main</span>
+                            <span class="cs-git-viewer__repo">BenjaminDThomas / 01-club</span>
+                        </div>
+                        <div class="cs-scroll-hint cs-scroll-hint--dark" aria-hidden="true">scroll to explore ↓</div>
+                        <ol class="cs-git-viewer__list" aria-label="Commit history">
+                            <li class="cs-git-viewer__group-label">Mar 12, 2026</li>
+                            <li class="cs-git-viewer__commit">
+                                <span class="cs-git-viewer__dot" aria-hidden="true"></span>
+                                <span class="cs-git-viewer__msg">Alter text placement aligned left</span>
+                                <span class="cs-git-viewer__meta">2 weeks ago</span>
+                            </li>
+                            <li class="cs-git-viewer__commit">
+                                <span class="cs-git-viewer__dot" aria-hidden="true"></span>
+                                <span class="cs-git-viewer__msg">Alter navbar and pages font size increased</span>
+                                <span class="cs-git-viewer__meta">2 weeks ago</span>
+                            </li>
+                            <li class="cs-git-viewer__commit cs-git-viewer__commit--verified">
+                                <span class="cs-git-viewer__dot" aria-hidden="true"></span>
+                                <span class="cs-git-viewer__msg">Add contrast check navbar text and hero</span>
+                                <span class="cs-git-viewer__badge" aria-label="Verified commit">✓</span>
+                                <span class="cs-git-viewer__meta">2 weeks ago</span>
+                            </li>
+                            <li class="cs-git-viewer__group-label">Mar 9, 2026</li>
+                            <li class="cs-git-viewer__commit cs-git-viewer__commit--verified">
+                                <span class="cs-git-viewer__dot" aria-hidden="true"></span>
+                                <span class="cs-git-viewer__msg">Enhance README with project details and design process</span>
+                                <span class="cs-git-viewer__badge" aria-label="Verified commit">✓</span>
+                                <span class="cs-git-viewer__meta">2 weeks ago</span>
+                            </li>
+                            <li class="cs-git-viewer__group-label">Mar 8, 2026</li>
+                            <li class="cs-git-viewer__commit cs-git-viewer__commit--verified">
+                                <span class="cs-git-viewer__dot" aria-hidden="true"></span>
+                                <span class="cs-git-viewer__msg">Add contrast checks for nav, hero and background</span>
+                                <span class="cs-git-viewer__badge" aria-label="Verified commit">✓</span>
+                                <span class="cs-git-viewer__meta">2 weeks ago</span>
+                            </li>
+                            <li class="cs-git-viewer__commit cs-git-viewer__commit--verified">
+                                <span class="cs-git-viewer__dot" aria-hidden="true"></span>
+                                <span class="cs-git-viewer__msg">Add mobile and desktop v1, v2 and v3 testing</span>
+                                <span class="cs-git-viewer__badge" aria-label="Verified commit">✓</span>
+                                <span class="cs-git-viewer__meta">2 weeks ago</span>
+                            </li>
+                            <li class="cs-git-viewer__commit cs-git-viewer__commit--verified">
+                                <span class="cs-git-viewer__dot" aria-hidden="true"></span>
+                                <span class="cs-git-viewer__msg">Create Lighthouse testing</span>
+                                <span class="cs-git-viewer__badge" aria-label="Verified commit">✓</span>
+                                <span class="cs-git-viewer__meta">2 weeks ago</span>
+                            </li>
+                            <li class="cs-git-viewer__commit">
+                                <span class="cs-git-viewer__dot" aria-hidden="true"></span>
+                                <span class="cs-git-viewer__msg">Add more semantic tags for hero</span>
+                                <span class="cs-git-viewer__meta">2 weeks ago</span>
+                            </li>
+                            <li class="cs-git-viewer__commit">
+                                <span class="cs-git-viewer__dot" aria-hidden="true"></span>
+                                <span class="cs-git-viewer__msg">Alter images converted to WebP files</span>
+                                <span class="cs-git-viewer__meta">2 weeks ago</span>
+                            </li>
+                            <li class="cs-git-viewer__commit">
+                                <span class="cs-git-viewer__dot" aria-hidden="true"></span>
+                                <span class="cs-git-viewer__msg">Delete unused images</span>
+                                <span class="cs-git-viewer__meta">2 weeks ago</span>
+                            </li>
+                            <li class="cs-git-viewer__commit">
+                                <span class="cs-git-viewer__dot" aria-hidden="true"></span>
+                                <span class="cs-git-viewer__msg">Add homepage</span>
+                                <span class="cs-git-viewer__meta">2 weeks ago</span>
+                            </li>
+                            <li class="cs-git-viewer__group-label">Mar 7, 2026</li>
+                            <li class="cs-git-viewer__commit">
+                                <span class="cs-git-viewer__dot" aria-hidden="true"></span>
+                                <span class="cs-git-viewer__msg">Add club deals page</span>
+                                <span class="cs-git-viewer__meta">2 weeks ago</span>
+                            </li>
+                            <li class="cs-git-viewer__commit">
+                                <span class="cs-git-viewer__dot" aria-hidden="true"></span>
+                                <span class="cs-git-viewer__msg">Add club rules page</span>
+                                <span class="cs-git-viewer__meta">2 weeks ago</span>
+                            </li>
+                            <li class="cs-git-viewer__group-label">Mar 6, 2026</li>
+                            <li class="cs-git-viewer__commit">
+                                <span class="cs-git-viewer__dot" aria-hidden="true"></span>
+                                <span class="cs-git-viewer__msg">Remove old image files, compressing file size</span>
+                                <span class="cs-git-viewer__meta">2 weeks ago</span>
+                            </li>
+                            <li class="cs-git-viewer__commit">
+                                <span class="cs-git-viewer__dot" aria-hidden="true"></span>
+                                <span class="cs-git-viewer__msg">Add membership page</span>
+                                <span class="cs-git-viewer__meta">2 weeks ago</span>
+                            </li>
+                            <li class="cs-git-viewer__commit">
+                                <span class="cs-git-viewer__dot" aria-hidden="true"></span>
+                                <span class="cs-git-viewer__msg">Add initial project structure</span>
+                                <span class="cs-git-viewer__meta">2 weeks ago</span>
+                            </li>
+                            <li class="cs-git-viewer__commit cs-git-viewer__commit--verified">
+                                <span class="cs-git-viewer__dot" aria-hidden="true"></span>
+                                <span class="cs-git-viewer__msg">Add high fidelity prototype link to design directory</span>
+                                <span class="cs-git-viewer__badge" aria-label="Verified commit">✓</span>
+                                <span class="cs-git-viewer__meta">2 weeks ago</span>
+                            </li>
+                            <li class="cs-git-viewer__commit cs-git-viewer__commit--verified">
+                                <span class="cs-git-viewer__dot" aria-hidden="true"></span>
+                                <span class="cs-git-viewer__msg">Add Figma link for low fidelity desktop layout</span>
+                                <span class="cs-git-viewer__badge" aria-label="Verified commit">✓</span>
+                                <span class="cs-git-viewer__meta">2 weeks ago</span>
+                            </li>
+                            <li class="cs-git-viewer__commit cs-git-viewer__commit--verified">
+                                <span class="cs-git-viewer__dot" aria-hidden="true"></span>
+                                <span class="cs-git-viewer__msg">Add Crazy 8 sketches</span>
+                                <span class="cs-git-viewer__badge" aria-label="Verified commit">✓</span>
+                                <span class="cs-git-viewer__meta">2 weeks ago</span>
+                            </li>
+                            <li class="cs-git-viewer__commit cs-git-viewer__commit--verified">
+                                <span class="cs-git-viewer__dot" aria-hidden="true"></span>
+                                <span class="cs-git-viewer__msg">Add 22 Club persona</span>
+                                <span class="cs-git-viewer__badge" aria-label="Verified commit">✓</span>
+                                <span class="cs-git-viewer__meta">2 weeks ago</span>
+                            </li>
+                            <li class="cs-git-viewer__commit cs-git-viewer__commit--verified">
+                                <span class="cs-git-viewer__dot" aria-hidden="true"></span>
+                                <span class="cs-git-viewer__msg">Create wireframes</span>
+                                <span class="cs-git-viewer__badge" aria-label="Verified commit">✓</span>
+                                <span class="cs-git-viewer__meta">2 weeks ago</span>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ------- Result ------- -->
+        <section class="cs-section" id="result" aria-labelledby="result-title" tabindex="0">
+            <div class="cs-container cs-container--center">
+                <div class="cs-section__meta">
+                    <span class="cs-section__num">12</span>
+                    <h2 class="cs-section__label" id="result-title">Result<br><span>OUTCOME</span></h2>
+                </div>
+                <div class="cs-section__body cs-section__body--center">
+                    <h3 class="cs-section__heading cs-section__heading--center">Final Outcome</h3>
+                    <div class="cs-rule cs-rule--center" aria-hidden="true"></div>
+                    <p class="cs-text cs-text--center">The redesigned 22 Club website gives visitors a significantly cleaner, faster, and more accessible experience, making key information easy to find on any device.</p>
+                    <ul class="cs-outcomes" role="list" aria-label="Project outcomes">
+                        <li class="cs-outcome" tabindex="0"><strong>Improved Navigation</strong><p>Higher contrast nav with clearly visible links across all screen sizes.</p></li>
+                        <li class="cs-outcome" tabindex="0"><strong>Clear Content Structure</strong><p>Logical hierarchy: facilities, hours and location easy to scan.</p></li>
+                        <li class="cs-outcome" tabindex="0"><strong>Mobile Responsive</strong><p>Fully responsive across all screen sizes, no broken elements.</p></li>
+                        <li class="cs-outcome" tabindex="0"><strong>WCAG Compliant</strong><p>AA and AAA contrast met. Semantic HTML for screen readers.</p></li>
+                        <li class="cs-outcome" tabindex="0"><strong>Performance Improved</strong><p>WebP images and simplified animations lifted Lighthouse scores.</p></li>
+                        <li class="cs-outcome" tabindex="0"><strong>User-Centred Design</strong><p>Every decision anchored to Daniel's (persona's) needs.</p></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!-- ------- Similar Projects ------- -->
+        <section class="cs-section cs-section--similar" id="similar" aria-labelledby="similar-title" tabindex="0">
+            <div class="cs-container cs-container--center">
+                <h2 class="cs-section__heading cs-section__heading--center" id="similar-title">Similar Projects</h2>
+                <ul class="cs-similar" role="list" aria-label="Similar projects">
+                    <li class="cs-similar__item" tabindex="0">
+                        <a href="gym-planner.html" class="cs-similar__link" aria-label="View Gym Planner case study">
+                            <img src="case_studies/gym_planner/hero_banner.webp" alt="Gym Planner project — hero banner" class="cs-similar__img" loading="lazy" />
+                            <p class="cs-similar__name">Gym Planner</p>
+                            <span class="cs-similar__cta">View Project</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="cs-back-row">
+                <a href="projects.html" class="cs-all-projects-btn" aria-label="Back to all projects page">← Back to all projects</a>
+            </div>
+        </section>
+    </main>
+    <!-- ------- Footer ------- -->
+    <footer class="site-footer">
+        <div class="footer__grid">
+            <div class="footer__col">
+                <h2>Explore</h2>
+                <nav aria-label="Explore">
+                    <a href="workflow.html">Workflow</a>
+                    <a href="projects.html">Projects</a>
+                </nav>
+            </div>
+            <div class="footer__col footer__col--contact">
+                <p class="footer__contact-label">Get in touch <span aria-hidden="true">→</span></p>
+                <a href="mailto:benthoma0s03@gmail.com" class="footer__email">benthoma0s03@gmail.com</a>
+            </div>
+            <div class="footer__col">
+                <h2>Discover</h2>
+                <nav aria-label="Discover">
+                    <a href="https://www.linkedin.com/in/benjamin-david-thomas/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a href="https://github.com/BenjaminDThomas" target="_blank" rel="noopener noreferrer">Github</a>
+                </nav>
+            </div>
+        </div>
+        <hr class="footer__divider" />
+        <p class="footer__copy">All content on this site is the creation and property of Benjamin Thomas.</p>
+    </footer>
+    <!-- ------- Scroll to top ------- -->
+    <button class="scroll-top" id="scrollTop" aria-label="Scroll back to top" hidden>
+        <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+            <path d="M8 2l6 6-1.4 1.4L9 5.8V14H7V5.8L3.4 9.4 2 8l6-6z" fill="currentColor"/>
+        </svg>
+        <span class="scroll-top__label">Top</span>
+    </button>
+    <!-- ------- Scripts ------- -->
+    <script src="js/case-study.js"></script>
+</body>
+</html>

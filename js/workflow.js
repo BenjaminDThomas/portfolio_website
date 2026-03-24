@@ -69,7 +69,11 @@ Workflow — Road + connectors
     /* coloured progress segments — one path per section, drawn in order */
     var progressSegs = [];
     function buildProgressSegs() {
-        progressSegs.forEach(function (p) { if (p.parentNode) p.parentNode.removeChild(p); });
+        /* remove by reference */
+        progressSegs.forEach(function (p) { if (p.el && p.el.parentNode) p.el.parentNode.removeChild(p.el); });
+        /* also sweep any orphaned wf-road__progress paths left in the SVG */
+        var orphans = road.querySelectorAll('path.wf-road__progress');
+        orphans.forEach(function (o) { o.parentNode.removeChild(o); });
         progressSegs = [];
         /* hero entry segment — white (matches gym/research section) */
         var heroSeg = document.createElementNS(svgNS, 'path');
@@ -311,4 +315,4 @@ Workflow — Road + connectors
         roadReady = false; scheduleRebuild();
         setTimeout(function () { roadReady = false; scheduleRebuild(); }, 300);
     });
-}());           
+}());
