@@ -1,4 +1,7 @@
-/* ai generated */
+/* Generated with Claude — scroll-driven road animation,
+   section reveal, nav transparency, and connector lines.
+*/
+
 /*
 -----------------
 Workflow — Road + connectors
@@ -23,6 +26,35 @@ Workflow — Road + connectors
     var deliverableSection = document.querySelector('.wf-section--deliverable');
     var gCx = 0, gFirstNodeY = 0, gRoadEndY = 0;
     var svgNS = 'http://www.w3.org/2000/svg';
+
+    /* table of contents drawer */
+    var tocToggle = document.getElementById('wfTocToggle');
+    var tocDrawer = document.getElementById('wfTocDrawer');
+    var tocClose  = document.getElementById('wfTocClose');
+    var tocBackdrop = document.getElementById('wfTocBackdrop');
+
+    function openToc() {
+        if (tocDrawer) tocDrawer.classList.add('wf-toc-drawer--open');
+        if (tocBackdrop) tocBackdrop.classList.add('wf-toc-backdrop--active');
+        if (tocToggle) tocToggle.style.display = 'none';
+    }
+
+    function closeToc() {
+        if (tocDrawer) tocDrawer.classList.remove('wf-toc-drawer--open');
+        if (tocBackdrop) tocBackdrop.classList.remove('wf-toc-backdrop--active');
+        if (tocToggle) tocToggle.style.display = 'inline-block';
+    }
+
+    if (tocToggle) tocToggle.addEventListener('click', openToc);
+    if (tocClose)  tocClose.addEventListener('click', closeToc);
+    if (tocBackdrop) tocBackdrop.addEventListener('click', closeToc);
+
+    document.querySelectorAll('.wf-toc-list a').forEach(function (link) {
+        link.addEventListener('click', function () {
+            closeToc();
+        });
+    });
+
     /* helpers */
     function pageY(el) { var y = 0, cur = el; while (cur && cur !== document.body) { y += cur.offsetTop || 0; cur = cur.offsetParent; } return Math.round(y); }
     function pageX(el) { var x = 0, cur = el; while (cur && cur !== document.body) { x += cur.offsetLeft || 0; cur = cur.offsetParent; } return Math.round(x); }

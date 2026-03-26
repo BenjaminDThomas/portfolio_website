@@ -3,77 +3,100 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio Website - Benjamin Thomas</title>
+    <title>Portfolio — Benjamin Thomas</title>
     <meta name="description" content="UX design portfolio of Ben Thomas — research, ideation, prototyping, testing, coding and delivery." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600;700&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet" />
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/grid.css" />
+    <link rel="stylesheet" href="css/about.css" />
 </head>
-<body>
-    <!-- ------- Navigation ------- -->
-    <nav class="site-nav" aria-label="Site navigation">
-        <a href="index.html" class="nav__logo" aria-label="Ben Thomas — Homepage">
+<body class="home-page">
+    <!-- Navigation -->
+    <nav class="site-nav">
+        <a href="index.html" class="nav__logo">
             <img src="images/logo.webp" alt="Ben Thomas logo" />
         </a>
+        <ul class="nav__links">
+            <li><a href="about.html" class="nav__link">About</a></li>
+            <li><a href="workflow.html" class="nav__link">Workflow</a></li>
+            <li><a href="projects.html" class="nav__link">Projects</a></li>
+        </ul>
     </nav>
-    <!-- ------- Main ------- -->
-    <main>
-        <!-- ------- Hero ------- -->
-        <section class="hero" id="hero" aria-label="Hero">
-            <!-- Left panel -->
+    <main id="main">
+        <!-- Hero -->
+        <section class="hero" id="hero">
             <article class="hero__left" id="heroLeft">
                 <div class="hero__left-content">
-                    <p class="hero__label"><span>UX</span> Designer</p>
-                    <p class="hero__sub">Crafting systems through discipline.</p>
+                    <p class="hero__label"><span><strong>UX/UI</strong></span> Designer & Front-end Developer</p>
+                    <p class="hero__sub">User research to validated UI builds.</p>
                     <h1 class="hero__statement">
-                        I train<br>
-                        <em>discipline.</em><br><br>
-                        I design<br>
-                        <em>systems.</em>
+                        Design with <strong>people</strong> first.<br>
+                        Build with <strong>code</strong> second.
                     </h1>
                     <a href="projects.html" class="btn-outline">View Projects</a>
                 </div>
             </article>
-            <!-- Right panel -->
             <article class="hero__right" id="heroRight">
                 <div class="hero__right-content">
                     <p class="hero__tagline">
-                        Discipline <span class="arrow">→</span> Structure <span class="arrow">→</span><br>
-                        Performance
+                        Research <span class="arrow">&#x2192;</span> Design <span class="arrow">&#x2192;</span><br>
+                        Delivery
                     </p>
+                    <div class="hero__right-bio-wrap">
+                        <p class="hero__right-bio">UX/UI designer with a background in research, Figma, and front-end code.</p>
+                    </div>
                     <a href="workflow.html" class="btn-outline">My Workflow</a>
                 </div>
             </article>
         </section>
+        <!--
+            AI-assisted section:
+            The About Teaser strip below — layout, copy structure and CTA — was drafted with help from Claude AI,
+            then reviewed and edited for integration, styling, and accessibility within this project.
+        -->
+        <!-- About Teaser -->
+        <section class="about-teaser">
+            <div class="about-teaser__inner">
+                <div class="about-teaser__text">
+                    <span class="about-teaser__label">UX/UI Designer &#x2014; Benjamin Thomas</span>
+                    <p class="about-teaser__bio">Strong foundations in user research and design, from personas and journey mapping through to wireframing, prototyping, and usability testing. Background in web development supports accessible, technically feasible solutions.</p>
+                </div>
+                <div class="about-teaser__cta">
+                    <a href="about.html" class="btn-outline">Learn More</a>
+                </div>
+            </div>
+        </section>
     </main>
-    <!-- ------- Footer ------- -->
+    <!-- Footer -->
     <footer class="site-footer">
         <div class="footer__grid">
             <div class="footer__col">
                 <h2>Explore</h2>
-                <nav aria-label="Explore">
+                <nav>
+                    <a href="about.html">About</a>
                     <a href="workflow.html">Workflow</a>
                     <a href="projects.html">Projects</a>
                 </nav>
             </div>
             <div class="footer__col footer__col--contact">
-                <p class="footer__contact-label">Get in touch <span aria-hidden="true">→</span></p>
+                <p class="footer__contact-label">Get in touch &#x2192;</p>
                 <a href="mailto:benthoma0s03@gmail.com" class="footer__email">benthoma0s03@gmail.com</a>
             </div>
             <div class="footer__col">
                 <h2>Discover</h2>
-                <nav aria-label="Discover">
+                <nav>
                     <a href="https://www.linkedin.com/in/benjamin-david-thomas/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                    <a href="https://github.com/BenjaminDThomas" target="_blank" rel="noopener noreferrer">Github</a>
+                    <a href="https://github.com/BenjaminDThomas" target="_blank" rel="noopener noreferrer">GitHub</a>
                 </nav>
             </div>
         </div>
         <hr class="footer__divider" />
         <p class="footer__copy">All content on this site is the creation and property of Benjamin Thomas.</p>
     </footer>
-    <!-- ------- Scripts ------- -->
-    <script src="js/hero.js"></script>
+    <!-- Scripts -->
+        <script src="js/hero.js"></script>
 </body>
 </html>

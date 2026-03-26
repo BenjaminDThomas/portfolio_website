@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script>document.documentElement.classList.add('js-loading');</script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gym Planner Case Study — Benjamin Thomas</title>
@@ -12,43 +11,50 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600;700&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet" />
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/grid.css" />
     <link rel="stylesheet" href="css/case-study.css" />
     <link rel="stylesheet" href="css/gym-planner.css" />
+    <link rel="stylesheet" href="css/about.css" />
 </head>
 <body class="case-study-page">
-    <!-- ------- Navigation ------- -->
-    <nav class="site-nav" aria-label="Site navigation">
-        <a href="index.html" class="nav__logo" aria-label="Ben Thomas — Homepage">
+
+    <nav class="site-nav">
+        <a href="index.html" class="nav__logo">
             <img src="images/logo.webp" alt="Ben Thomas logo" width="110" height="42" />
         </a>
-        <ul class="nav__links" role="list">
-            <li><a href="workflow.html" class="nav__link nav__back">Workflow</a></li>
-            <li><a href="projects.html" class="nav__link nav__back">← My Work</a></li>
+        <ul class="nav__links">
+            <li><a href="about.html" class="nav__back nav__link">About</a></li>
+            <li><a href="workflow.html" class="nav__back nav__link">Workflow</a></li>
+            <li><a href="projects.html" class="nav__back nav__link">← My Work</a></li>
         </ul>
     </nav>
-    <!-- ------- Hero ------- -->
-    <header class="cs-hero" aria-label="Gym Planner Case Study Hero">
+
+    <header class="cs-hero">
         <img src="case_studies/gym_planner/hero_banner.webp" alt="Gym Planner workout planning application" class="cs-hero__img" />
-        <div class="cs-hero__overlay" aria-hidden="true"></div>
+        <div class="cs-hero__overlay"></div>
         <div class="cs-hero__content">
             <p class="cs-hero__label">Case Study</p>
             <h1 class="cs-hero__title">Gym Planner Case Study</h1>
             <p class="cs-hero__sub">Designing a user-friendly tool that helps people plan, track, and stay consistent with their workouts more effectively</p>
         </div>
     </header>
-    <!-- ------- Section nav ------- -->
-    <nav class="cs-section-nav" aria-label="Jump to section">
-        <ul class="cs-section-nav__list" role="list">
+
+    <!--
+        AI-assisted section:
+        The sticky section navigation bar and reading progress bar below were drafted with help from Claude AI,
+        then reviewed and edited for integration, styling, and accessibility within this project.
+    -->
+    <nav class="cs-section-nav">
+        <ul class="cs-section-nav__list">
             <li><a href="#overview">Overview</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#problem">Problem</a></li>
             <li><a href="#research">Research</a></li>
             <li><a href="#persona">Persona</a></li>
             <li><a href="#ideation">Ideation</a></li>
-            <li><a href="#lofi">Wireframes</a></li>
-            <li><a href="#hifi">Prototype</a></li>
+            <li><a href="#lofi">Wireframes &amp; Prototype</a></li>
             <li><a href="#testing">Testing</a></li>
             <li><a href="#build">Build</a></li>
             <li><a href="#performance">Performance</a></li>
@@ -57,21 +63,20 @@
             <li><a href="#result">Result</a></li>
         </ul>
         <div class="cs-section-nav__mobile">
-            <button class="cs-section-nav__toggle" aria-expanded="false" aria-controls="cs-section-dropdown" aria-label="Open section contents">
+            <button class="cs-section-nav__toggle">
                 <span class="cs-section-nav__toggle-label">Contents</span>
-                <svg class="cs-section-nav__toggle-icon" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true">
+                <svg class="cs-section-nav__toggle-icon" width="12" height="12" viewBox="0 0 12 12">
                     <path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
             </button>
-            <ul class="cs-section-nav__dropdown" id="cs-section-dropdown" role="list" hidden>
+            <ul class="cs-section-nav__dropdown" id="cs-section-dropdown" hidden>
                 <li><a href="#overview">00 — Overview</a></li>
                 <li><a href="#services">01 — Services</a></li>
                 <li><a href="#problem">02 — Problem</a></li>
                 <li><a href="#research">03 — Research</a></li>
                 <li><a href="#persona">04 — Persona</a></li>
                 <li><a href="#ideation">05 — Ideation</a></li>
-                <li><a href="#lofi">06 — Wireframes</a></li>
-                <li><a href="#hifi">07 — Prototype</a></li>
+                <li><a href="#lofi">06–07 — Wireframes &amp; Prototype</a></li>
                 <li><a href="#testing">08 — Testing</a></li>
                 <li><a href="#build">09 — Build</a></li>
                 <li><a href="#performance">10 — Performance</a></li>
@@ -81,14 +86,15 @@
             </ul>
         </div>
     </nav>
-    <!-- ------- Reading progress bar ------- -->
-    <div class="cs-progress-bar" id="csProgressBar" aria-hidden="true" role="presentation">
+
+    <div class="cs-progress-bar" id="csProgressBar">
         <div class="cs-progress-bar__fill" id="csProgressFill"></div>
     </div>
-    <!-- ------- Main ------- -->
-    <main class="cs-main" id="cs-main">
-        <!-- ------- Overview ------- -->
-        <section class="cs-section" id="overview" aria-labelledby="overview-title" tabindex="0">
+
+    <main class="cs-main" id="main-content">
+
+        <!-- Overview -->
+        <section class="cs-section" id="overview" tabindex="0">
             <div class="cs-container">
                 <div class="cs-section__meta">
                     <span class="cs-section__num">00</span>
@@ -96,16 +102,17 @@
                 </div>
                 <div class="cs-section__body">
                     <h3 class="cs-section__heading">Project Overview</h3>
-                    <div class="cs-rule" aria-hidden="true"></div>
+                    <div class="cs-rule"></div>
                     <img src="case_studies/gym_planner/new_hero_banner.webp" alt="Redesigned Gym Planner application dashboard" class="cs-img cs-img--full" loading="lazy" />
                     <p class="cs-text">The goal of this project was to design and develop a Gym Planner web application that helps users organise and track their workouts in a clear and structured way. The application focuses on improving the workout planning experience by providing a clean interface where users can plan training sessions, record exercises, and monitor progress.</p>
                     <p class="cs-text">The project followed a user-centred UX process, beginning with research and ideation before moving through prototyping, development, and testing. The aim was to create a clean, accessible, and responsive tool that supports gym users in maintaining consistent training routines.</p>
-                    <a href="https://gymworkoutplanner.netlify.app/" target="_blank" rel="noopener noreferrer" class="cs-btn" aria-label="View the Gym Planner project (opens in new tab)">View Project</a>
+                    <a href="https://gymworkoutplanner.netlify.app/" target="_blank" rel="noopener noreferrer" class="cs-btn">View Project</a>
                 </div>
             </div>
         </section>
-        <!-- ------- Services Used ------- -->
-        <section class="cs-section" id="services" aria-labelledby="services-title" tabindex="0">
+
+        <!-- Services -->
+        <section class="cs-section" id="services" tabindex="0">
             <div class="cs-container cs-container--center">
                 <div class="cs-section__meta">
                     <span class="cs-section__num">01</span>
@@ -113,57 +120,22 @@
                 </div>
                 <div class="cs-section__body cs-section__body--center">
                     <h3 class="cs-section__heading cs-section__heading--center">Services Used</h3>
-                    <div class="cs-rule cs-rule--center" aria-hidden="true"></div>
+                    <div class="cs-rule cs-rule--center"></div>
                     <p class="cs-text cs-text--center">Each tool served a defined role across the design and development workflow.</p>
-                    <ul class="cs-tools" role="list" aria-label="Tools used in this project">
-                        <li class="cs-tool">
-                            <a href="#lofi" class="cs-tool__link" aria-label="Figma — used for wireframing and prototyping">
-                                <img src="case_studies/22_club/figma_logo.webp" alt="Figma" class="cs-tool__logo" loading="lazy" />
-                                <strong class="cs-tool__name">Figma</strong>
-                                <span class="cs-tool__desc">Wireframing, Prototyping</span>
-                            </a>
-                        </li>
-                        <li class="cs-tool">
-                            <a href="#build" class="cs-tool__link" aria-label="VS Code — used for front-end development">
-                                <img src="case_studies/22_club/vs_code_logo.webp" alt="VS Code" class="cs-tool__logo" loading="lazy" />
-                                <strong class="cs-tool__name">VS Code</strong>
-                                <span class="cs-tool__desc">HTML5, CSS3, JavaScript</span>
-                            </a>
-                        </li>
-                        <li class="cs-tool">
-                            <a href="#performance" class="cs-tool__link" aria-label="Google Lighthouse — used for performance testing">
-                                <img src="case_studies/22_club/google_lighthouse_logo.webp" alt="Google Lighthouse" class="cs-tool__logo" loading="lazy" />
-                                <strong class="cs-tool__name">Google Lighthouse</strong>
-                                <span class="cs-tool__desc">Performance Testing</span>
-                            </a>
-                        </li>
-                        <li class="cs-tool">
-                            <a href="#contrast" class="cs-tool__link" aria-label="Contrast Checker — used for web accessibility testing">
-                                <img src="case_studies/22_club/contrast_checker_logo.webp" alt="Contrast Checker" class="cs-tool__logo" loading="lazy" />
-                                <strong class="cs-tool__name">Contrast Checker</strong>
-                                <span class="cs-tool__desc">Web Accessibility Testing</span>
-                            </a>
-                        </li>
-                        <li class="cs-tool">
-                            <a href="#version-control" class="cs-tool__link" aria-label="GitHub — used for version control">
-                                <img src="case_studies/22_club/github_logo.webp" alt="GitHub" class="cs-tool__logo" loading="lazy" />
-                                <strong class="cs-tool__name">GitHub</strong>
-                                <span class="cs-tool__desc">Git version control</span>
-                            </a>
-                        </li>
-                        <li class="cs-tool">
-                            <a href="#build" class="cs-tool__link" aria-label="Claude — used for selective coding assistance">
-                                <img src="case_studies/22_club/claude_logo.webp" alt="Claude" class="cs-tool__logo" loading="lazy" />
-                                <strong class="cs-tool__name">Claude</strong>
-                                <span class="cs-tool__desc">Selective Coding</span>
-                            </a>
-                        </li>
+                    <ul class="cs-tools">
+                        <li class="cs-tool"><a href="#lofi" class="cs-tool__link"><img src="case_studies/22_club/figma_logo.webp" alt="Figma" class="cs-tool__logo" loading="lazy" /><strong class="cs-tool__name">Figma</strong><span class="cs-tool__desc">Wireframing, Prototyping</span></a></li>
+                        <li class="cs-tool"><a href="#build" class="cs-tool__link"><img src="case_studies/22_club/vs_code_logo.webp" alt="VS Code" class="cs-tool__logo" loading="lazy" /><strong class="cs-tool__name">VS Code</strong><span class="cs-tool__desc">HTML5, CSS3, JavaScript</span></a></li>
+                        <li class="cs-tool"><a href="#performance" class="cs-tool__link"><img src="case_studies/22_club/google_lighthouse_logo.webp" alt="Google Lighthouse" class="cs-tool__logo" loading="lazy" /><strong class="cs-tool__name">Google Lighthouse</strong><span class="cs-tool__desc">Performance Testing</span></a></li>
+                        <li class="cs-tool"><a href="#contrast" class="cs-tool__link"><img src="case_studies/22_club/contrast_checker_logo.webp" alt="Contrast Checker" class="cs-tool__logo" loading="lazy" /><strong class="cs-tool__name">Contrast Checker</strong><span class="cs-tool__desc">Web Accessibility Testing</span></a></li>
+                        <li class="cs-tool"><a href="#version-control" class="cs-tool__link"><img src="case_studies/22_club/github_logo.webp" alt="GitHub" class="cs-tool__logo" loading="lazy" /><strong class="cs-tool__name">GitHub</strong><span class="cs-tool__desc">Git version control</span></a></li>
+                        <li class="cs-tool"><a href="#build" class="cs-tool__link"><img src="case_studies/22_club/claude_logo.webp" alt="Claude" class="cs-tool__logo" loading="lazy" /><strong class="cs-tool__name">Claude</strong><span class="cs-tool__desc">Selective Coding</span></a></li>
                     </ul>
                 </div>
             </div>
         </section>
-        <!-- ------- Problem ------- -->
-        <section class="cs-section" id="problem" aria-labelledby="problem-title" tabindex="0">
+
+        <!-- Problem -->
+        <section class="cs-section" id="problem" tabindex="0">
             <div class="cs-container">
                 <div class="cs-section__meta">
                     <span class="cs-section__num">02</span>
@@ -171,10 +143,10 @@
                 </div>
                 <div class="cs-section__body">
                     <h3 class="cs-section__heading">Understanding The Problem</h3>
-                    <div class="cs-rule" aria-hidden="true"></div>
-                    <p class="cs-text">Many gym users rely on scattered notes, spreadsheets, or memory to track workouts, making it difficult to maintain consistent training plans and monitor progress over time.</p>
-                    <p class="cs-text">This project aimed to solve that problem by designing a centralised workout planning interface where users can:</p>
-                    <div class="cs-callout" aria-label="Aims of the user">
+                    <div class="cs-rule"></div>
+                    <p class="cs-text">Many gym users rely on scattered notes, spreadsheets, or memory to track workouts, making it difficult to maintain consistent training plans and monitor progress over time. Without a single structured tool, it becomes easy to lose track of previous sessions, skip progressive overload, or repeat the same workouts without intention.</p>
+                    <p class="cs-text">The opportunity here was to replace that fragmented approach with a single, focused interface. The core question driving the design was: what is the minimum an app needs to do for a gym user to feel fully prepared for and supported throughout their session? This project aimed to solve that by designing a centralised workout planning interface where users can:</p>
+                    <div class="cs-callout">
                         <h4 class="cs-callout__title">Aims of the user</h4>
                         <ul class="cs-callout__list">
                             <li>Organise workout routines</li>
@@ -186,8 +158,9 @@
                 </div>
             </div>
         </section>
-        <!-- ------- Research ------- -->
-        <section class="cs-section" id="research" aria-labelledby="research-title" tabindex="0">
+
+        <!-- Research -->
+        <section class="cs-section" id="research" tabindex="0">
             <div class="cs-container">
                 <div class="cs-section__meta">
                     <span class="cs-section__num">03</span>
@@ -195,11 +168,11 @@
                 </div>
                 <div class="cs-section__body">
                     <h3 class="cs-section__heading">Research &amp; Inspiration</h3>
-                    <div class="cs-rule" aria-hidden="true"></div>
-                    <p class="cs-text">Desk research and competitor analysis were conducted on existing workout and fitness platforms to identify effective design patterns and common usability features.</p>
-                    <p class="cs-text">Example reference platforms included fitness workout planning tools, online workout libraries, and gym progress tracking platforms.</p>
+                    <div class="cs-rule"></div>
+                    <p class="cs-text">Desk research and competitor analysis were conducted across several existing workout and fitness platforms including FitnessAI and Muscle &amp; Strength. The goal was not to copy existing solutions but to understand what conventions gym users already recognise — so the design could feel immediately familiar, reducing the learning curve.</p>
+                    <p class="cs-text">Key patterns that emerged: the most usable platforms separated workout planning (building routines) from session tracking (logging sets in real time) as two distinct modes. Navigation was always kept shallow — users rarely needed to go deeper than two levels to reach their target. This directly shaped the information architecture used in the Gym Planner.</p>
                     <div class="cs-two-col">
-                        <div class="cs-findings" aria-label="Analysis findings">
+                        <div class="cs-findings">
                             <h4 class="cs-findings__title">Analysis Observed</h4>
                             <ul class="cs-findings__list">
                                 <li>Clean and minimal user interfaces</li>
@@ -209,7 +182,7 @@
                                 <li>Mobile-friendly layouts for gym use</li>
                             </ul>
                         </div>
-                        <div class="cs-findings" aria-label="Design decisions informed">
+                        <div class="cs-findings">
                             <h4 class="cs-findings__title">Decisions Informed</h4>
                             <ul class="cs-findings__list">
                                 <li>Single dashboard layout for quick access to workouts</li>
@@ -220,21 +193,16 @@
                             </ul>
                         </div>
                     </div>
-                    <figure class="gp-ref-grid" aria-label="Reference website screenshots">
-                        <div class="gp-ref-card">
-                            <span class="gp-ref-card__title">FitnessAI</span>
-                            <img src="case_studies/gym_planner/fitnessAI.webp" alt="FitnessAI — reference platform showing clean workout planning interface" class="gp-ref-card__img" loading="lazy" />
-                        </div>
-                        <div class="gp-ref-card">
-                            <span class="gp-ref-card__title">Muscle &amp; Strength</span>
-                            <img src="case_studies/gym_planner/muscle_and_strength.webp" alt="Muscle and Strength — reference platform showing structured workout library" class="gp-ref-card__img" loading="lazy" />
-                        </div>
+                    <figure class="gp-ref-grid">
+                        <div class="gp-ref-card"><span class="gp-ref-card__title">FitnessAI</span><img src="case_studies/gym_planner/fitnessAI.webp" alt="FitnessAI — reference platform showing clean workout planning interface" class="gp-ref-card__img" loading="lazy" /></div>
+                        <div class="gp-ref-card"><span class="gp-ref-card__title">Muscle &amp; Strength</span><img src="case_studies/gym_planner/muscle_and_strength.webp" alt="Muscle and Strength — reference platform showing structured workout library" class="gp-ref-card__img" loading="lazy" /></div>
                     </figure>
                 </div>
             </div>
         </section>
-        <!-- ------- Persona ------- -->
-        <section class="cs-section" id="persona" aria-labelledby="persona-title" tabindex="0">
+
+        <!-- Persona -->
+        <section class="cs-section" id="persona" tabindex="0">
             <div class="cs-container cs-container--center">
                 <div class="cs-section__meta">
                     <span class="cs-section__num">04</span>
@@ -242,15 +210,16 @@
                 </div>
                 <div class="cs-section__body cs-section__body--center">
                     <h3 class="cs-section__heading cs-section__heading--center">User Persona</h3>
-                    <div class="cs-rule cs-rule--center" aria-hidden="true"></div>
-                    <p class="cs-text cs-text--center">To better understand potential users, a persona was created based on common gym-goer behaviours and motivations.</p>
+                    <div class="cs-rule cs-rule--center"></div>
+                    <p class="cs-text cs-text--center">To ground design decisions in real user needs rather than assumptions, a persona was developed based on observed gym-goer behaviours. Rather than designing for an abstract "user", this persona gave the project a specific person to design for — with concrete goals, frustrations, and habits. Every layout decision that followed was tested against the question: would Alex find this clear and useful?</p>
                     <img src="case_studies/gym_planner/user_persona.webp" alt="User persona: Alex Turner — a regular gym-goer seeking a simple workout planning and progress tracking tool" class="gp-persona-img" loading="lazy" />
-                    <p class="cs-text cs-text--center">Designing with Alex in mind helped ensure the Gym Planner focused on simple navigation, quick workout logging, and clear progress tracking for a better user experience.</p>
+                    <p class="cs-text cs-text--center">Designing with Alex in mind kept the project focused. Features that did not serve his core goals — plan a session, log it quickly, see progress — were deprioritised. The persona prevented scope creep and helped justify design decisions like the dashboard-first layout and minimal navigation depth.</p>
                 </div>
             </div>
         </section>
-        <!-- ------- Ideation ------- -->
-        <section class="cs-section" id="ideation" aria-labelledby="ideation-title" tabindex="0">
+
+        <!-- Ideation -->
+        <section class="cs-section" id="ideation" tabindex="0">
             <div class="cs-container">
                 <div class="cs-section__meta">
                     <span class="cs-section__num">05</span>
@@ -258,87 +227,77 @@
                 </div>
                 <div class="cs-section__body">
                     <h3 class="cs-section__heading">Ideation — Crazy 8's</h3>
-                    <div class="cs-rule" aria-hidden="true"></div>
-                    <p class="cs-text">Multiple layout concepts were explored using the Crazy 8's ideation method, allowing a rapid brainstorming of interface layouts and feature placements.</p>
-                    <figure class="cs-img-pair cs-img-pair--equal" aria-label="Crazy 8s sketches">
+                    <div class="cs-rule"></div>
+                    <p class="cs-text">Before committing to any single layout direction, Crazy 8's sketching was used to generate eight distinct interface concepts in rapid succession. Each sketch was limited to one minute — forcing quick, low-fidelity thinking without overthinking. Concepts explored included a single-column timeline view, a card-grid workout library, a split-pane session builder, and a minimal list-based logger. The sketches were then compared against the persona's goals to identify which patterns best supported quick session setup and easy progress tracking.</p>
+                    <figure class="cs-img-pair cs-img-pair--equal">
                         <img src="case_studies/gym_planner/crazy8_first.webp" alt="Crazy 8s sketching sheet 1 — eight rapid layout concepts for the Gym Planner" class="cs-img" loading="lazy" />
                         <img src="case_studies/gym_planner/crazy8_second.webp" alt="Crazy 8s sketching sheet 2 — eight rapid layout concepts for the Gym Planner" class="cs-img" loading="lazy" />
                     </figure>
                 </div>
             </div>
         </section>
-        <!-- ------- Low Fidelity ------- -->
-        <section class="cs-section" id="lofi" aria-labelledby="lofi-title" tabindex="0">
+
+        <!--
+            AI-assisted section:
+            The Figma wireframe link buttons and hi-fi prototype image grid below were drafted with help from Claude AI,
+            then reviewed and edited for integration, styling, and accessibility within this project.
+        -->
+        <!-- Lo-Fi Wireframes & Hi-Fi Prototype — merged section -->
+        <section class="cs-section" id="lofi" tabindex="0">
             <div class="cs-container">
                 <div class="cs-section__meta">
-                    <span class="cs-section__num">06</span>
-                    <h2 class="cs-section__label" id="lofi-title">Lo-Fi<br><span>WIREFRAMES</span></h2>
+                    <span class="cs-section__num">06–07</span>
+                    <h2 class="cs-section__label" id="lofi-title">Design<br><span>WIREFRAMES</span></h2>
                 </div>
                 <div class="cs-section__body">
                     <h3 class="cs-section__heading">Low-Fidelity Wireframes</h3>
-                    <div class="cs-rule" aria-hidden="true"></div>
-                    <p class="cs-text">Low-fidelity wireframes were created in Figma to test the overall structure of the application across both mobile and desktop viewports.</p>
-                    <span class="gp-lofi-label">📱 Mobile</span>
-                    <div class="gp-lofi-mobile-grid" aria-label="Low fidelity mobile wireframes">
-                        <div class="cs-wireframe">
-                            <div class="cs-wireframe__label" aria-hidden="true">
-                                <span class="cs-wireframe__device">Homepage</span>
-                            </div>
-                            <div class="cs-wireframe__scroll">
-                                <img src="case_studies/gym_planner/mobile_homepage.webp" alt="Low fidelity mobile wireframe — homepage structure" class="cs-wireframe__img" loading="lazy" />
-                            </div>
-                        </div>
-                        <div class="cs-wireframe">
-                            <div class="cs-wireframe__label" aria-hidden="true">
-                                <span class="cs-wireframe__device">Session Planner</span>
-                            </div>
-                            <div class="cs-wireframe__scroll">
-                                <img src="case_studies/gym_planner/mobile_session_planner.webp" alt="Low fidelity mobile wireframe — session planner structure" class="cs-wireframe__img" loading="lazy" />
-                            </div>
-                        </div>
+                    <div class="cs-rule"></div>
+                    <p class="cs-text">Low-fidelity wireframes were created in Figma to establish the core layout structure before any visual design decisions were made. The goal at this stage was purely structural — testing whether the information architecture made sense, how sessions and exercises would be grouped, and whether navigation between views felt intuitive. Separate desktop and mobile layouts were produced to ensure the design worked across both contexts from the outset.</p>
+                    <div class="cs-figma-links cs-figma-links--lofi">
+                        <a
+                            href="https://www.figma.com/design/d3BjjsLUFQijC4HsLhpU9D/gym_workout_planner?node-id=0-1&t=JEHeeg8ydFrPYkDi-1"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="cs-figma-btn"
+                        >
+                            <svg class="cs-figma-btn__icon" viewBox="0 0 38 57" xmlns="http://www.w3.org/2000/svg" width="16" height="24"><path d="M19 28.5C19 23.806 22.806 20 27.5 20C32.194 20 36 23.806 36 28.5C36 33.194 32.194 37 27.5 37C22.806 37 19 33.194 19 28.5Z" fill="#1ABCFE"/><path d="M2 47C2 42.306 5.806 38.5 10.5 38.5H19V47C19 51.694 15.194 55.5 10.5 55.5C5.806 55.5 2 51.694 2 47Z" fill="#0ACF83"/><path d="M19 2V20H27.5C32.194 20 36 16.194 36 11.5C36 6.806 32.194 3 27.5 3L19 2Z" fill="#FF7262"/><path d="M2 11.5C2 16.194 5.806 20 10.5 20H19V3H10.5C5.806 3 2 6.806 2 11.5Z" fill="#F24E1E"/><path d="M2 28.5C2 33.194 5.806 37 10.5 37H19V20H10.5C5.806 20 2 23.806 2 28.5Z" fill="#A259FF"/></svg>
+                            <span class="cs-figma-btn__text"><strong>Desktop Wireframe</strong><span>View in Figma ↗</span></span>
+                        </a>
+                        <a
+                            href="https://www.figma.com/design/d3BjjsLUFQijC4HsLhpU9D/gym_workout_planner?node-id=1-9&t=JEHeeg8ydFrPYkDi-1"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="cs-figma-btn"
+                        >
+                            <svg class="cs-figma-btn__icon" viewBox="0 0 38 57" xmlns="http://www.w3.org/2000/svg" width="16" height="24"><path d="M19 28.5C19 23.806 22.806 20 27.5 20C32.194 20 36 23.806 36 28.5C36 33.194 32.194 37 27.5 37C22.806 37 19 33.194 19 28.5Z" fill="#1ABCFE"/><path d="M2 47C2 42.306 5.806 38.5 10.5 38.5H19V47C19 51.694 15.194 55.5 10.5 55.5C5.806 55.5 2 51.694 2 47Z" fill="#0ACF83"/><path d="M19 2V20H27.5C32.194 20 36 16.194 36 11.5C36 6.806 32.194 3 27.5 3L19 2Z" fill="#FF7262"/><path d="M2 11.5C2 16.194 5.806 20 10.5 20H19V3H10.5C5.806 3 2 6.806 2 11.5Z" fill="#F24E1E"/><path d="M2 28.5C2 33.194 5.806 37 10.5 37H19V20H10.5C5.806 20 2 23.806 2 28.5Z" fill="#A259FF"/></svg>
+                            <span class="cs-figma-btn__text"><strong>Mobile Wireframe</strong><span>View in Figma ↗</span></span>
+                        </a>
                     </div>
-                    <span class="gp-lofi-label gp-lofi-label--desktop">🖥 Desktop</span>
-                    <div class="gp-lofi-desktop-grid" aria-label="Low fidelity desktop wireframes">
-                        <div class="cs-wireframe cs-wireframe--desktop">
-                            <div class="cs-wireframe__label" aria-hidden="true">
-                                <span class="cs-wireframe__device">Homepage</span>
-                            </div>
-                            <div class="cs-wireframe__scroll">
-                                <img src="case_studies/gym_planner/desktop_homepage.webp" alt="Low fidelity desktop wireframe — homepage layout" class="cs-wireframe__img" loading="lazy" />
-                            </div>
-                        </div>
-                        <div class="cs-wireframe cs-wireframe--desktop">
-                            <div class="cs-wireframe__label" aria-hidden="true">
-                                <span class="cs-wireframe__device">Session Planner</span>
-                            </div>
-                            <div class="cs-wireframe__scroll">
-                                <img src="case_studies/gym_planner/desktop_session_planner.webp" alt="Low fidelity desktop wireframe — session planner layout" class="cs-wireframe__img" loading="lazy" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- ------- High Fidelity ------- -->
-        <section class="cs-section" id="hifi" aria-labelledby="hifi-title" tabindex="0">
-            <div class="cs-container">
-                <div class="cs-section__meta">
-                    <span class="cs-section__num">07</span>
-                    <h2 class="cs-section__label" id="hifi-title">Hi-Fi<br><span>PROTOTYPE</span></h2>
-                </div>
-                <div class="cs-section__body">
-                    <h3 class="cs-section__heading">High-Fidelity Prototype</h3>
-                    <div class="cs-rule" aria-hidden="true"></div>
-                    <p class="cs-text">A high-fidelity prototype was developed to refine the final interface design and simulate the final user experience, validating colour, typography, spacing, and layout before development.</p>
-                    <figure class="gp-hifi-grid" aria-label="High fidelity prototype screens">
+
+                    <h3 class="cs-section__heading cs-section__heading--hifi-sub" id="hifi">High-Fidelity Prototype</h3>
+                    <div class="cs-rule"></div>
+                    <p class="cs-text">With the structure validated through lo-fi wireframes, the high-fidelity prototype added the full visual layer — colour palette, typography, spacing, iconography, and component states. The prototype was made interactive in Figma so users could navigate between screens during testing. Key decisions included a dark sidebar for the dashboard, a card-based workout builder, and a consistent header pattern across all pages to reduce cognitive load.</p>
+                    <figure class="gp-hifi-grid">
                         <img src="case_studies/gym_planner/prototype_hero_banner.webp" alt="High fidelity prototype — hero banner and homepage design" class="gp-hifi-img" loading="lazy" />
                         <img src="case_studies/gym_planner/prototype_session_planner_dashboard.webp" alt="High fidelity prototype — session planner dashboard design" class="gp-hifi-img" loading="lazy" />
                     </figure>
+                    <div class="cs-figma-links cs-figma-links--hifi">
+                        <a
+                            href="https://www.figma.com/design/d3BjjsLUFQijC4HsLhpU9D/gym_workout_planner?node-id=169-874&t=JEHeeg8ydFrPYkDi-1"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="cs-figma-btn"
+                        >
+                            <svg class="cs-figma-btn__icon" viewBox="0 0 38 57" xmlns="http://www.w3.org/2000/svg" width="16" height="24"><path d="M19 28.5C19 23.806 22.806 20 27.5 20C32.194 20 36 23.806 36 28.5C36 33.194 32.194 37 27.5 37C22.806 37 19 33.194 19 28.5Z" fill="#1ABCFE"/><path d="M2 47C2 42.306 5.806 38.5 10.5 38.5H19V47C19 51.694 15.194 55.5 10.5 55.5C5.806 55.5 2 51.694 2 47Z" fill="#0ACF83"/><path d="M19 2V20H27.5C32.194 20 36 16.194 36 11.5C36 6.806 32.194 3 27.5 3L19 2Z" fill="#FF7262"/><path d="M2 11.5C2 16.194 5.806 20 10.5 20H19V3H10.5C5.806 3 2 6.806 2 11.5Z" fill="#F24E1E"/><path d="M2 28.5C2 33.194 5.806 37 10.5 37H19V20H10.5C5.806 20 2 23.806 2 28.5Z" fill="#A259FF"/></svg>
+                            <span class="cs-figma-btn__text"><strong>Interactive Prototype</strong><span>View in Figma ↗</span></span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
-        <!-- ------- User Testing ------- -->
-        <section class="cs-section" id="testing" aria-labelledby="testing-title" tabindex="0">
+
+        <!-- User Testing -->
+        <section class="cs-section" id="testing" tabindex="0">
             <div class="cs-container">
                 <div class="cs-section__meta">
                     <span class="cs-section__num">08</span>
@@ -346,9 +305,9 @@
                 </div>
                 <div class="cs-section__body">
                     <h3 class="cs-section__heading">User Testing</h3>
-                    <div class="cs-rule" aria-hidden="true"></div>
-                    <p class="cs-text">User testing was carried out to identify pain points of the developed, high-fidelity prototype, carrying out a testing workshop with 3 participants.</p>
-                    <div class="cs-callout" aria-label="Identified improvements from user testing">
+                    <div class="cs-rule"></div>
+                    <p class="cs-text">A moderated usability testing workshop was conducted with 3 participants, each given a set of tasks to complete using the high-fidelity Figma prototype. Participants were asked to think aloud throughout, surfacing both moments of confusion and points of confidence. Tasks included creating a new workout, adding exercises, scheduling a session, and navigating to progress tracking. The session was observed and notes were taken on where users hesitated, made errors, or expressed uncertainty.</p>
+                    <div class="cs-callout">
                         <h4 class="cs-callout__title">Identified Improvements</h4>
                         <ul class="cs-callout__list">
                             <li>Added an "Enter Email" field to allow booking details to be sent without requiring user login</li>
@@ -366,8 +325,15 @@
                 </div>
             </div>
         </section>
-        <!-- ------- Build ------- -->
-        <section class="cs-section" id="build" aria-labelledby="build-title" tabindex="0">
+
+        <!--
+            AI-assisted section:
+            The front-end code viewer component below — including the mock terminal bar, scrollable pre block,
+            and syntax-highlighted code — was drafted with help from Claude AI,
+            then reviewed and edited for integration, styling, and accessibility within this project.
+        -->
+        <!-- Build -->
+        <section class="cs-section" id="build" tabindex="0">
             <div class="cs-container">
                 <div class="cs-section__meta">
                     <span class="cs-section__num">09</span>
@@ -375,121 +341,130 @@
                 </div>
                 <div class="cs-section__body">
                     <h3 class="cs-section__heading">Front-End Development</h3>
-                    <div class="cs-rule" aria-hidden="true"></div>
-                    <p class="cs-text">Implemented using semantic front-end technologies, following accessibility regulations.</p>
-                    <ul class="cs-tech-grid" role="list" aria-label="Technologies used">
-                        <li class="cs-tech"><strong>HTML5</strong><span>Semantic structure, ARIA</span></li>
+                    <div class="cs-rule"></div>
+                    <p class="cs-text">The application was built from scratch using HTML5, CSS3, and vanilla JavaScript — no frameworks. This decision was deliberate: the project was an opportunity to demonstrate clean, maintainable front-end code that a team could pick up and extend. Semantic HTML was used throughout for both accessibility and SEO, with landmark elements replacing generic divs wherever possible. CSS Grid handled the session planner layout, while CSS custom properties kept the colour and spacing system consistent across all pages.</p>
+                    <ul class="cs-tech-grid">
+                        <li class="cs-tech"><strong>HTML5</strong><span>Semantic structure</span></li>
                         <li class="cs-tech"><strong>CSS3</strong><span>Style, grid</span></li>
                         <li class="cs-tech"><strong>JavaScript</strong><span>Scroll, Navigation</span></li>
                     </ul>
-                    <ul class="cs-feature-grid" role="list" aria-label="Accessibility features implemented">
-                        <li class="cs-feature"><span class="cs-feature__check" aria-hidden="true">✓</span><strong>Semantic HTML</strong><p>Heading hierarchy and roles tags for screen reader support.</p></li>
-                        <li class="cs-feature"><span class="cs-feature__check" aria-hidden="true">✓</span><strong>Keyboard Navigation</strong><p>Full Tab navigation.</p></li>
-                        <li class="cs-feature"><span class="cs-feature__check" aria-hidden="true">✓</span><strong>Image Alt Text</strong><p>Descriptive alt attributes on all images.</p></li>
-                        <li class="cs-feature"><span class="cs-feature__check" aria-hidden="true">✓</span><strong>WCAG AA/AAA</strong><p>All focus and colour pairs tested and verified.</p></li>
+                    <ul class="cs-feature-grid">
+                        <li class="cs-feature"><span class="cs-feature__check">✓</span><strong>Semantic HTML</strong><p>Heading hierarchy and landmark elements for screen reader support.</p></li>
+                        <li class="cs-feature"><span class="cs-feature__check">✓</span><strong>Keyboard Navigation</strong><p>Full Tab navigation.</p></li>
+                        <li class="cs-feature"><span class="cs-feature__check">✓</span><strong>Image Alt Text</strong><p>Descriptive alt attributes on all images.</p></li>
+                        <li class="cs-feature"><span class="cs-feature__check">✓</span><strong>WCAG AA/AAA</strong><p>All focus and colour pairs tested and verified.</p></li>
                     </ul>
-                    <div class="cs-code-viewer" role="region" aria-label="Gym Planner HTML source code — scroll to explore">
-                        <div class="cs-code-viewer__bar" aria-hidden="true">
+                    <div class="cs-code-viewer" role="region">
+                        <div class="cs-code-viewer__bar">
                             <span class="cs-code-viewer__dot cs-code-viewer__dot--r"></span>
                             <span class="cs-code-viewer__dot cs-code-viewer__dot--y"></span>
                             <span class="cs-code-viewer__dot cs-code-viewer__dot--g"></span>
                             <span class="cs-code-viewer__file">index.html</span>
                         </div>
-                        <div class="cs-scroll-hint" aria-hidden="true">scroll to explore ↓</div>
-                        <pre class="cs-code-viewer__pre" tabindex="0" aria-label="Semantic HTML source code for Gym Planner homepage"><code class="cs-code-viewer__code">&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
+                        <div class="cs-scroll-hint">scroll to explore ↓</div>
+                        <pre class="cs-code-viewer__pre" tabindex="0"><code class="cs-code-viewer__code">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
 &lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
     &lt;title&gt;Gym Planner&lt;/title&gt;
-    &lt;meta name="description" content="Plan and track your gym workouts with GymPlanner. Build personalised sessions, schedule your week, and book personal trainers."&gt;
-    &lt;link rel="stylesheet" href="css/style.css"&gt;
-    &lt;link rel="stylesheet" href="css/grid.css"&gt;
-    &lt;link rel="preload" as="image" href="images/hero_image_mobile.png" media="(max-width: 768px)" fetchpriority="high"&gt;
-    &lt;link rel="preload" as="image" href="images/hero_image_container.png" media="(min-width: 769px)" fetchpriority="high"&gt;
+    &lt;meta name=&quot;description&quot; content=&quot;Plan and track your gym workouts with GymPlanner. Build personalised sessions, schedule your week, and book personal trainers.&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;css/style.css&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;css/grid.css&quot;&gt;
+    &lt;link rel=&quot;preload&quot; as=&quot;image&quot; href=&quot;images/hero_image_mobile.png&quot; media=&quot;(max-width: 768px)&quot; fetchpriority=&quot;high&quot;&gt;
+    &lt;link rel=&quot;preload&quot; as=&quot;image&quot; href=&quot;images/hero_image_container.png&quot; media=&quot;(min-width: 769px)&quot; fetchpriority=&quot;high&quot;&gt;
 &lt;/head&gt;
 &lt;body&gt;
     &lt;header&gt;
-        &lt;nav class="site-nav" aria-label="Main navigation"&gt;
-            &lt;a href="#home" class="site-nav__logo" aria-label="GymPlanner home"&gt;
-                &lt;img class="logo" src="images/logo.png" alt="GymPlanner logo" width="95" height="62"&gt;
+        &lt;nav class=&quot;site-nav&quot;&gt;
+            &lt;a href=&quot;#home&quot; class=&quot;site-nav__logo&quot;&gt;
+                &lt;img class=&quot;logo&quot; src=&quot;images/logo.png&quot; alt=&quot;GymPlanner logo&quot; width=&quot;95&quot; height=&quot;62&quot;&gt;
             &lt;/a&gt;
-            &lt;ul class="site-nav__links"&gt;
-                &lt;li&gt;&lt;a href="#home"&gt;Home&lt;/a&gt;&lt;/li&gt;
-                &lt;li&gt;&lt;a href="#about"&gt;About Us&lt;/a&gt;&lt;/li&gt;
-                &lt;li&gt;&lt;a href="session_planner.html"&gt;Session Planner&lt;/a&gt;&lt;/li&gt;
-                &lt;li&gt;&lt;a href="#footer"&gt;Contact Us&lt;/a&gt;&lt;/li&gt;
+            &lt;ul class=&quot;site-nav__links&quot;&gt;
+                &lt;li&gt;&lt;a href=&quot;#home&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#about&quot;&gt;About Us&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;session_planner.html&quot;&gt;Session Planner&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#footer&quot;&gt;Contact Us&lt;/a&gt;&lt;/li&gt;
             &lt;/ul&gt;
-            &lt;div class="site-nav__right"&gt;
-                &lt;a href="bookings.html" class="btn-bookings"&gt;Bookings&lt;/a&gt;
-                &lt;button id="hamburger" class="btn-hamburger"
-                        aria-controls="mobileMenu"
-                        aria-expanded="false"
-                        aria-label="Open navigation menu"&gt;&amp;#9776;&lt;/button&gt;
+            &lt;div class=&quot;site-nav__right&quot;&gt;
+                &lt;a href=&quot;bookings.html&quot; class=&quot;btn-bookings&quot;&gt;Bookings&lt;/a&gt;
+                &lt;button id=&quot;hamburger&quot; class=&quot;btn-hamburger&quot; aria-controls=&quot;mobileMenu&quot; aria-expanded=&quot;false&quot; aria-label=&quot;Open navigation menu&quot;&gt;&amp;#9776;&lt;/button&gt;
             &lt;/div&gt;
         &lt;/nav&gt;
-        &lt;nav id="mobileMenu" class="mobile-menu"
-             role="dialog" aria-modal="true" aria-label="Mobile navigation"&gt;
-            &lt;ul class="mobile-menu__list"&gt;
-                &lt;li&gt;&lt;a href="#home"&gt;Home&lt;/a&gt;&lt;/li&gt;
-                &lt;li&gt;&lt;a href="#about"&gt;About Us&lt;/a&gt;&lt;/li&gt;
-                &lt;li&gt;&lt;a href="session_planner.html"&gt;Session Planner&lt;/a&gt;&lt;/li&gt;
-                &lt;li&gt;&lt;a href="#footer"&gt;Contact Us&lt;/a&gt;&lt;/li&gt;
+        &lt;nav id=&quot;mobileMenu&quot; class=&quot;mobile-menu&quot;&gt;
+            &lt;ul class=&quot;mobile-menu__list&quot;&gt;
+                &lt;li&gt;&lt;a href=&quot;#home&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#about&quot;&gt;About Us&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;session_planner.html&quot;&gt;Session Planner&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#footer&quot;&gt;Contact Us&lt;/a&gt;&lt;/li&gt;
             &lt;/ul&gt;
         &lt;/nav&gt;
     &lt;/header&gt;
-    &lt;section class="hero" id="home" aria-label="Hero"&gt;
+    &lt;section class=&quot;hero&quot; id=&quot;home&quot;&gt;
         &lt;picture&gt;
-            &lt;source srcset="images/hero_image_mobile.png" media="(max-width: 768px)"&gt;
-            &lt;img class="hero__img"
-                 src="images/hero_image_container.png"
-                 alt="GymPlanner workout planning preview"
-                 width="1905" height="1092"
-                 fetchpriority="high" decoding="async"&gt;
+            &lt;source srcset=&quot;images/hero_image_mobile.png&quot; media=&quot;(max-width: 768px)&quot;&gt;
+            &lt;img class=&quot;hero__img&quot;
+                 src=&quot;images/hero_image_container.png&quot;
+                 alt=&quot;GymPlanner workout planning preview&quot;
+                 width=&quot;1905&quot; height=&quot;1092&quot;
+                 fetchpriority=&quot;high&quot; decoding=&quot;async&quot;&gt;
         &lt;/picture&gt;
-        &lt;div class="hero__content"&gt;
-            &lt;h1 class="hero__title"&gt;Plan smarter. Train harder.&lt;/h1&gt;
-            &lt;p class="hero__sub"&gt;Build and follow personalised workouts,&lt;br&gt;
-            track your progress, and see results.&lt;/p&gt;
-            &lt;a href="session_planner.html" class="hero__cta"&gt;Get Started&lt;/a&gt;
+        &lt;div class=&quot;hero__content&quot;&gt;
+            &lt;h1 class=&quot;hero__title&quot;&gt;Plan smarter. Train harder.&lt;/h1&gt;
+            &lt;p class=&quot;hero__sub&quot;&gt;Build and follow personalised workouts,&lt;br&gt;track your progress, and see results.&lt;/p&gt;
+            &lt;a href=&quot;session_planner.html&quot; class=&quot;hero__cta&quot;&gt;Get Started&lt;/a&gt;
         &lt;/div&gt;
     &lt;/section&gt;
-    &lt;section class="about" id="about" aria-label="About Us"&gt;
-        &lt;article class="about__row about__row--1"&gt;
-            &lt;img class="about__deco" src="images/mini_bars.png"
-                 alt="" aria-hidden="true" width="95" height="95" loading="lazy"&gt;
-            &lt;div class="about__text-block"&gt;
-                &lt;p&gt;We created this gym journal to make fitness
-                tracking simple, flexible, and effective.&lt;/p&gt;
+    &lt;section class=&quot;about&quot; id=&quot;about&quot;&gt;
+        &lt;article class=&quot;about__row about__row--1&quot;&gt;
+            &lt;img class=&quot;about__deco about__deco--mini-bars&quot; src=&quot;images/mini_bars.png&quot; alt=&quot;&quot; aria-hidden=&quot;true&quot; width=&quot;95&quot; height=&quot;95&quot; loading=&quot;lazy&quot;&gt;
+            &lt;div class=&quot;about__text-block&quot;&gt;
+                &lt;p&gt;We created this gym journal to make fitness tracking simple, flexible, and effective.&lt;/p&gt;
+                &lt;p&gt;Training isn&#x27;t always perfect. Plans change, schedules shift, and goals evolve.&lt;/p&gt;
             &lt;/div&gt;
         &lt;/article&gt;
-        &lt;div class="about__headline-row"&gt;
-            &lt;h2 class="about__headline"&gt;ALL IN ONE PLACE!&lt;/h2&gt;
+        &lt;article class=&quot;about__row about__row--2&quot;&gt;
+            &lt;p class=&quot;about__text-mid&quot;&gt;
+                That&#x27;s why our platform is built to let you plan workouts, edit them as needed,
+                and delete what no longer serves you…
+            &lt;/p&gt;
+            &lt;img class=&quot;about__deco about__deco--top-bar&quot; src=&quot;images/top_bar.png&quot; alt=&quot;&quot; aria-hidden=&quot;true&quot; width=&quot;95&quot; height=&quot;40&quot; loading=&quot;lazy&quot;&gt;
+        &lt;/article&gt;
+        &lt;div class=&quot;about__headline-row&quot;&gt;
+            &lt;h2 class=&quot;about__headline&quot;&gt;ALL IN ONE PLACE!&lt;/h2&gt;
         &lt;/div&gt;
-        &lt;footer class="about__closing"&gt;
-            &lt;p&gt;Your goals. Your journey. Your journal.&lt;/p&gt;
+        &lt;article class=&quot;about__row about__row--3&quot;&gt;
+            &lt;figure class=&quot;about__lifter-wrap&quot;&gt;
+                &lt;!-- SVG animated lifter figure --&gt;
+            &lt;/figure&gt;
+            &lt;p class=&quot;about__text-right&quot;&gt;Whether you&#x27;re starting your fitness journey or refining your routine, our goal is to give you a tool that supports real progress without unnecessary complexity.&lt;/p&gt;
+        &lt;/article&gt;
+        &lt;footer class=&quot;about__closing&quot;&gt;
+            &lt;p&gt;Fitness is built on small, daily actions.&lt;br&gt;Plan your workouts. Put in the work. Grow over time.&lt;br&gt;Your goals. Your journey. Your journal.&lt;/p&gt;
         &lt;/footer&gt;
     &lt;/section&gt;
-    &lt;footer class="site-footer" id="footer"&gt;
-        &lt;div class="footer-inner"&gt;
-            &lt;address class="footer-contact"&gt;
-                &lt;span&gt;Phone: &lt;a href="tel:+441234567"&gt;+44 1234 567&lt;/a&gt;&lt;/span&gt;
-                &lt;span&gt;Email: &lt;a href="mailto:gymplanner@gmail.com"&gt;
-                    gymplanner@gmail.com&lt;/a&gt;&lt;/span&gt;
+    &lt;footer class=&quot;site-footer&quot; id=&quot;footer&quot;&gt;
+        &lt;div class=&quot;footer-inner&quot;&gt;
+            &lt;a href=&quot;#home&quot; class=&quot;site-footer__logo&quot;&gt;
+                &lt;img src=&quot;images/logo.png&quot; alt=&quot;GymPlanner logo&quot; width=&quot;95&quot; height=&quot;62&quot; loading=&quot;lazy&quot;&gt;
+            &lt;/a&gt;
+            &lt;address class=&quot;footer-contact&quot;&gt;
+                &lt;span&gt;Phone: &lt;a href=&quot;tel:+441234567&quot;&gt;+44 1234 567&lt;/a&gt;&lt;/span&gt;
+                &lt;span&gt;Email: &lt;a href=&quot;mailto:<a href="/cdn-cgi/l/email-protection#6d0f0803190502000c5d1e5d5e2d0a000c0401430e0200" class="__cf_email__" data-cfemail="6e0917031e020f00000b1c2e09030f0702400d0103">[email&#160;protected]</a>&quot;&gt;<a href="/cdn-cgi/l/email-protection#2143444f55494e4c401152111261464c40484d0f424e4c" class="__cf_email__" data-cfemail="4a2d33273a262b24242f380a2d272b232664292527">[email&#160;protected]</a>&lt;/a&gt;&lt;/span&gt;
             &lt;/address&gt;
-            &lt;small&gt;&amp;copy; 2025 Gym Planner&lt;/small&gt;
         &lt;/div&gt;
     &lt;/footer&gt;
-    &lt;script src="js/hamburger.js" defer&gt;&lt;/script&gt;
-    &lt;script src="js/about.js" defer&gt;&lt;/script&gt;
+    &lt;script src=&quot;js/hamburger.js&quot; defer&gt;&lt;/script&gt;
+    &lt;script src=&quot;js/about.js&quot; defer&gt;&lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;</code></pre>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- ------- Performance ------- -->
-        <section class="cs-section" id="performance" aria-labelledby="perf-title" tabindex="0">
+
+        <!-- Performance -->
+        <section class="cs-section" id="performance" tabindex="0">
             <div class="cs-container">
                 <div class="cs-section__meta">
                     <span class="cs-section__num">10</span>
@@ -497,39 +472,28 @@
                 </div>
                 <div class="cs-section__body">
                     <h3 class="cs-section__heading">Performance Optimisation</h3>
-                    <div class="cs-rule" aria-hidden="true"></div>
-                    <p class="cs-text">Lighthouse audits identified large image assets as the primary bottleneck. Two targeted fixes resolved the issues.</p>
-                    <ul class="cs-scores" role="list" aria-label="Lighthouse scores">
+                    <div class="cs-rule"></div>
+                    <p class="cs-text">Once the build was complete, a Google Lighthouse audit was run against the deployed site to identify real-world performance gaps. The initial scores revealed that large uncompressed images were the primary drag on performance. A structured optimisation pass was carried out, targeting the specific issues the audit flagged rather than applying blanket changes.</p>
+                    <ul class="cs-scores">
                         <li class="cs-score"><span class="cs-score__num">80</span><span class="cs-score__label">PERFORMANCE</span></li>
                         <li class="cs-score"><span class="cs-score__num">100</span><span class="cs-score__label">ACCESSIBILITY</span></li>
                         <li class="cs-score"><span class="cs-score__num">100</span><span class="cs-score__label">BEST PRACTICES</span></li>
                         <li class="cs-score"><span class="cs-score__num">100</span><span class="cs-score__label">SEO</span></li>
                     </ul>
                     <div class="cs-two-col">
-                        <div class="cs-findings">
-                            <h4 class="cs-findings__title">Image Optimisation</h4>
-                            <p class="cs-text">Converting to WebP reduced file sizes significantly while maintaining quality and preserving transparent backgrounds.</p>
-                        </div>
-                        <div class="cs-findings">
-                            <h4 class="cs-findings__title">Animation Simplification</h4>
-                            <p class="cs-text">Added a meta description tag to improve search engine optimisation to provide an overview of the purpose of the page.</p>
-                        </div>
+                        <div class="cs-findings"><h4 class="cs-findings__title">Image Optimisation</h4><p class="cs-text">Converting to WebP reduced file sizes significantly while maintaining quality and preserving transparent backgrounds.</p></div>
+                        <div class="cs-findings"><h4 class="cs-findings__title">Animation Simplification</h4><p class="cs-text">Added a meta description tag to improve search engine optimisation to provide an overview of the purpose of the page.</p></div>
                     </div>
-                    <figure class="cs-before-after gp-before-after" aria-label="Lighthouse scores before and after optimisation">
-                        <div class="cs-before-after__col">
-                            <p class="cs-before-after__label">BEFORE</p>
-                            <img src="case_studies/gym_planner/desktop_lighthouse_test_before.webp" alt="Lighthouse test before optimisation — 60 performance, 100 accessibility, 100 best practices, 91 SEO" class="cs-img" loading="lazy" />
-                        </div>
-                        <div class="cs-before-after__col">
-                            <p class="cs-before-after__label cs-before-after__label--after">AFTER</p>
-                            <img src="case_studies/gym_planner/desktop_lighthouse_test_after.webp" alt="Lighthouse test after optimisation — 80 performance, 100 accessibility, 100 best practices, 100 SEO" class="cs-img" loading="lazy" />
-                        </div>
+                    <figure class="cs-before-after gp-before-after">
+                        <div class="cs-before-after__col"><p class="cs-before-after__label">BEFORE</p><img src="case_studies/gym_planner/desktop_lighthouse_test_before.webp" alt="Lighthouse test before optimisation — 60 performance, 100 accessibility, 100 best practices, 91 SEO" class="cs-img" loading="lazy" /></div>
+                        <div class="cs-before-after__col"><p class="cs-before-after__label cs-before-after__label--after">AFTER</p><img src="case_studies/gym_planner/desktop_lighthouse_test_after.webp" alt="Lighthouse test after optimisation — 80 performance, 100 accessibility, 100 best practices, 100 SEO" class="cs-img" loading="lazy" /></div>
                     </figure>
                 </div>
             </div>
         </section>
-        <!-- ------- Contrast ------- -->
-        <section class="cs-section" id="contrast" aria-labelledby="contrast-title" tabindex="0">
+
+        <!-- Contrast -->
+        <section class="cs-section" id="contrast" tabindex="0">
             <div class="cs-container">
                 <div class="cs-section__meta">
                     <span class="cs-section__num">11</span>
@@ -537,25 +501,23 @@
                 </div>
                 <div class="cs-section__body">
                     <h3 class="cs-section__heading">Evaluation and Testing</h3>
-                    <div class="cs-rule" aria-hidden="true"></div>
-                    <p class="cs-text">Accessibility validated against WCAG standards using colour contrast tools.</p>
-                    <div class="gp-contrast-grid" aria-label="Contrast checker results">
-                        <div class="gp-contrast-card">
-                            <span class="gp-contrast-card__label">WCAG AA &amp; AAA ✓</span>
-                            <span class="gp-contrast-card__sub">Background &amp; Body Text</span>
-                            <img src="case_studies/gym_planner/contrast_checker_background-text.webp" alt="Contrast checker result: background and body text — 13.05:1 ratio, confirmed WCAG AA and AAA compliant" class="gp-contrast-card__img" loading="lazy" />
-                        </div>
-                        <div class="gp-contrast-card">
-                            <span class="gp-contrast-card__label">WCAG AA &amp; AAA ✓</span>
-                            <span class="gp-contrast-card__sub">Navbar &amp; Text</span>
-                            <img src="case_studies/gym_planner/contrast_checker_navbar-text.webp" alt="Contrast checker result: navbar and text — 9.69:1 ratio, confirmed WCAG AA and AAA compliant" class="gp-contrast-card__img" loading="lazy" />
-                        </div>
+                    <div class="cs-rule"></div>
+                    <p class="cs-text">Every foreground/background colour pairing in the application was tested using the WebAIM Contrast Checker to validate compliance against WCAG 2.1 AA and AAA standards. This included the navbar text on its background, body text on the page background, and button states. The results confirmed all key pairings exceeded the minimum 4.5:1 ratio required for AA compliance, with the primary text pair achieving a 13.05:1 ratio — well into AAA territory.</p>
+                    <div class="gp-contrast-grid">
+                        <div class="gp-contrast-card"><span class="gp-contrast-card__label">WCAG AA &amp; AAA ✓</span><span class="gp-contrast-card__sub">Background &amp; Body Text</span><img src="case_studies/gym_planner/contrast_checker_background-text.webp" alt="Contrast checker result: background and body text — 13.05:1 ratio, confirmed WCAG AA and AAA compliant" class="gp-contrast-card__img" loading="lazy" /></div>
+                        <div class="gp-contrast-card"><span class="gp-contrast-card__label">WCAG AA &amp; AAA ✓</span><span class="gp-contrast-card__sub">Navbar &amp; Text</span><img src="case_studies/gym_planner/contrast_checker_navbar-text.webp" alt="Contrast checker result: navbar and text — 9.69:1 ratio, confirmed WCAG AA and AAA compliant" class="gp-contrast-card__img" loading="lazy" /></div>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- ------- Version Control ------- -->
-        <section class="cs-section" id="version-control" aria-labelledby="vc-title" tabindex="0">
+
+        <!--
+            AI-assisted section:
+            The version control section and GitHub repository link button below were drafted with help from Claude AI,
+            then reviewed and edited for integration, styling, and accessibility within this project.
+        -->
+        <!-- Version Control -->
+        <section class="cs-section" id="version-control" tabindex="0">
             <div class="cs-container cs-container--center">
                 <div class="cs-section__meta">
                     <span class="cs-section__num">12</span>
@@ -563,164 +525,20 @@
                 </div>
                 <div class="cs-section__body cs-section__body--center">
                     <h3 class="cs-section__heading cs-section__heading--center">Version Control</h3>
-                    <div class="cs-rule cs-rule--center" aria-hidden="true"></div>
-                    <p class="cs-text cs-text--center">Development tracked with Git throughout with regular commits provides a clean, documented record of progress.</p>
-                    <div class="cs-git-viewer" role="region" aria-label="Git commit history for Gym Planner project">
-                        <div class="cs-git-viewer__bar" aria-hidden="true">
-                            <span class="cs-git-viewer__icon">⎇</span>
-                            <span class="cs-git-viewer__branch">main</span>
-                            <span class="cs-git-viewer__repo">BenjaminDThomas / gym_planner</span>
-                        </div>
-                        <div class="cs-scroll-hint cs-scroll-hint--dark" aria-hidden="true">scroll to explore ↓</div>
-                        <ol class="cs-git-viewer__list" aria-label="Commit history">
-                            <li class="cs-git-viewer__group-label">Mar 16, 2026</li>
-                            <li class="cs-git-viewer__commit">
-                                <span class="cs-git-viewer__dot" aria-hidden="true"></span>
-                                <span class="cs-git-viewer__msg">Merge branch 'main' of https://github.com/BenjaminDThomas/gym_planner</span>
-                                <span class="cs-git-viewer__meta">last week</span>
-                            </li>
-                            <li class="cs-git-viewer__commit">
-                                <span class="cs-git-viewer__dot" aria-hidden="true"></span>
-                                <span class="cs-git-viewer__msg">alter image reference links corrected</span>
-                                <span class="cs-git-viewer__meta">last week</span>
-                            </li>
-                            <li class="cs-git-viewer__group-label">Mar 15, 2026</li>
-                            <li class="cs-git-viewer__commit cs-git-viewer__commit--verified">
-                                <span class="cs-git-viewer__dot" aria-hidden="true"></span>
-                                <span class="cs-git-viewer__msg">Delete design/sketches/craz8(1).jpeg</span>
-                                <span class="cs-git-viewer__badge" aria-label="Verified commit">✓</span>
-                                <span class="cs-git-viewer__meta">last week</span>
-                            </li>
-                            <li class="cs-git-viewer__commit cs-git-viewer__commit--verified">
-                                <span class="cs-git-viewer__dot" aria-hidden="true"></span>
-                                <span class="cs-git-viewer__msg">Delete design/sketches/craz8(2).jpeg</span>
-                                <span class="cs-git-viewer__badge" aria-label="Verified commit">✓</span>
-                                <span class="cs-git-viewer__meta">last week</span>
-                            </li>
-                            <li class="cs-git-viewer__commit cs-git-viewer__commit--verified">
-                                <span class="cs-git-viewer__dot" aria-hidden="true"></span>
-                                <span class="cs-git-viewer__msg">updated sketches with corrupted files</span>
-                                <span class="cs-git-viewer__badge" aria-label="Verified commit">✓</span>
-                                <span class="cs-git-viewer__meta">last week</span>
-                            </li>
-                            <li class="cs-git-viewer__group-label">Mar 6, 2026</li>
-                            <li class="cs-git-viewer__commit">
-                                <span class="cs-git-viewer__dot" aria-hidden="true"></span>
-                                <span class="cs-git-viewer__msg">Merge branch 'main' of https://github.com/BenjaminDThomas/gym_planner</span>
-                                <span class="cs-git-viewer__meta">3 weeks ago</span>
-                            </li>
-                            <li class="cs-git-viewer__commit">
-                                <span class="cs-git-viewer__dot" aria-hidden="true"></span>
-                                <span class="cs-git-viewer__msg">ammend code semantics, replacing non essentials divs</span>
-                                <span class="cs-git-viewer__meta">3 weeks ago</span>
-                            </li>
-                            <li class="cs-git-viewer__commit cs-git-viewer__commit--verified">
-                                <span class="cs-git-viewer__dot" aria-hidden="true"></span>
-                                <span class="cs-git-viewer__msg">Add README for Gym Planner web application</span>
-                                <span class="cs-git-viewer__badge" aria-label="Verified commit">✓</span>
-                                <span class="cs-git-viewer__meta">3 weeks ago</span>
-                            </li>
-                            <li class="cs-git-viewer__commit cs-git-viewer__commit--verified">
-                                <span class="cs-git-viewer__dot" aria-hidden="true"></span>
-                                <span class="cs-git-viewer__msg">Delete testing/contrast checks/.gitignore</span>
-                                <span class="cs-git-viewer__badge" aria-label="Verified commit">✓</span>
-                                <span class="cs-git-viewer__meta">3 weeks ago</span>
-                            </li>
-                            <li class="cs-git-viewer__commit cs-git-viewer__commit--verified">
-                                <span class="cs-git-viewer__dot" aria-hidden="true"></span>
-                                <span class="cs-git-viewer__msg">Delete testing/lighthouse/.gitignore</span>
-                                <span class="cs-git-viewer__badge" aria-label="Verified commit">✓</span>
-                                <span class="cs-git-viewer__meta">3 weeks ago</span>
-                            </li>
-                            <li class="cs-git-viewer__commit cs-git-viewer__commit--verified">
-                                <span class="cs-git-viewer__dot" aria-hidden="true"></span>
-                                <span class="cs-git-viewer__msg">add mobile and desktop v1 and v2 improved</span>
-                                <span class="cs-git-viewer__badge" aria-label="Verified commit">✓</span>
-                                <span class="cs-git-viewer__meta">3 weeks ago</span>
-                            </li>
-                            <li class="cs-git-viewer__commit cs-git-viewer__commit--verified">
-                                <span class="cs-git-viewer__dot" aria-hidden="true"></span>
-                                <span class="cs-git-viewer__msg">add contrast check tests</span>
-                                <span class="cs-git-viewer__badge" aria-label="Verified commit">✓</span>
-                                <span class="cs-git-viewer__meta">3 weeks ago</span>
-                            </li>
-                            <li class="cs-git-viewer__commit cs-git-viewer__commit--verified">
-                                <span class="cs-git-viewer__dot" aria-hidden="true"></span>
-                                <span class="cs-git-viewer__msg">Create contrast checks</span>
-                                <span class="cs-git-viewer__badge" aria-label="Verified commit">✓</span>
-                                <span class="cs-git-viewer__meta">3 weeks ago</span>
-                            </li>
-                            <li class="cs-git-viewer__commit cs-git-viewer__commit--verified">
-                                <span class="cs-git-viewer__dot" aria-hidden="true"></span>
-                                <span class="cs-git-viewer__msg">Create lighthouse testing</span>
-                                <span class="cs-git-viewer__badge" aria-label="Verified commit">✓</span>
-                                <span class="cs-git-viewer__meta">3 weeks ago</span>
-                            </li>
-                            <li class="cs-git-viewer__commit">
-                                <span class="cs-git-viewer__dot" aria-hidden="true"></span>
-                                <span class="cs-git-viewer__msg">Merge branch 'main' of https://github.com/BenjaminDThomas/gym_planner</span>
-                                <span class="cs-git-viewer__meta">3 weeks ago</span>
-                            </li>
-                            <li class="cs-git-viewer__commit">
-                                <span class="cs-git-viewer__dot" aria-hidden="true"></span>
-                                <span class="cs-git-viewer__msg">add serve file to run locally and compressed images and set fetchpriotiy high</span>
-                                <span class="cs-git-viewer__meta">3 weeks ago</span>
-                            </li>
-                            <li class="cs-git-viewer__commit cs-git-viewer__commit--verified">
-                                <span class="cs-git-viewer__dot" aria-hidden="true"></span>
-                                <span class="cs-git-viewer__msg">Add improved prototype design details</span>
-                                <span class="cs-git-viewer__badge" aria-label="Verified commit">✓</span>
-                                <span class="cs-git-viewer__meta">3 weeks ago</span>
-                            </li>
-                            <li class="cs-git-viewer__commit cs-git-viewer__commit--verified">
-                                <span class="cs-git-viewer__dot" aria-hidden="true"></span>
-                                <span class="cs-git-viewer__msg">Add first prototype design link to documentation</span>
-                                <span class="cs-git-viewer__badge" aria-label="Verified commit">✓</span>
-                                <span class="cs-git-viewer__meta">3 weeks ago</span>
-                            </li>
-                            <li class="cs-git-viewer__commit cs-git-viewer__commit--verified">
-                                <span class="cs-git-viewer__dot" aria-hidden="true"></span>
-                                <span class="cs-git-viewer__msg">Rename design/craz8(2).jpeg to design/sketches/craz8(2).jpeg</span>
-                                <span class="cs-git-viewer__badge" aria-label="Verified commit">✓</span>
-                                <span class="cs-git-viewer__meta">3 weeks ago</span>
-                            </li>
-                            <li class="cs-git-viewer__commit cs-git-viewer__commit--verified">
-                                <span class="cs-git-viewer__dot" aria-hidden="true"></span>
-                                <span class="cs-git-viewer__msg">Rename design/craz8(1).jpeg to design/sketches/craz8(1).jpeg</span>
-                                <span class="cs-git-viewer__badge" aria-label="Verified commit">✓</span>
-                                <span class="cs-git-viewer__meta">3 weeks ago</span>
-                            </li>
-                            <li class="cs-git-viewer__commit cs-git-viewer__commit--verified">
-                                <span class="cs-git-viewer__dot" aria-hidden="true"></span>
-                                <span class="cs-git-viewer__msg">Add low fidelity desktop layout design link</span>
-                                <span class="cs-git-viewer__badge" aria-label="Verified commit">✓</span>
-                                <span class="cs-git-viewer__meta">3 weeks ago</span>
-                            </li>
-                            <li class="cs-git-viewer__commit cs-git-viewer__commit--verified">
-                                <span class="cs-git-viewer__dot" aria-hidden="true"></span>
-                                <span class="cs-git-viewer__msg">Add low fidelity mobile layout wireframe link</span>
-                                <span class="cs-git-viewer__badge" aria-label="Verified commit">✓</span>
-                                <span class="cs-git-viewer__meta">3 weeks ago</span>
-                            </li>
-                            <li class="cs-git-viewer__commit cs-git-viewer__commit--verified">
-                                <span class="cs-git-viewer__dot" aria-hidden="true"></span>
-                                <span class="cs-git-viewer__msg">Add crazy 8 sketches</span>
-                                <span class="cs-git-viewer__badge" aria-label="Verified commit">✓</span>
-                                <span class="cs-git-viewer__meta">3 weeks ago</span>
-                            </li>
-                            <li class="cs-git-viewer__commit cs-git-viewer__commit--verified">
-                                <span class="cs-git-viewer__dot" aria-hidden="true"></span>
-                                <span class="cs-git-viewer__msg">Add gym planner researched websites</span>
-                                <span class="cs-git-viewer__badge" aria-label="Verified commit">✓</span>
-                                <span class="cs-git-viewer__meta">3 weeks ago</span>
-                            </li>
-                        </ol>
-                    </div>
+                    <div class="cs-rule cs-rule--center"></div>
+                    <p class="cs-text cs-text--center">Development tracked with Git throughout. Regular commits provide a clean, documented record of progress.</p>
+                                                            <a href="https://github.com/BenjaminDThomas/gym_planner" target="_blank" rel="noopener noreferrer" class="cs-gh-btn">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+                        View on GitHub &#x2197;
+                    </a>
                 </div>
             </div>
+        </section>             </div>
+            </div>
         </section>
-        <!-- ------- Result ------- -->
-        <section class="cs-section" id="result" aria-labelledby="result-title" tabindex="0">
+
+        <!-- Result -->
+        <section class="cs-section" id="result" tabindex="0">
             <div class="cs-container cs-container--center">
                 <div class="cs-section__meta">
                     <span class="cs-section__num">13</span>
@@ -728,9 +546,9 @@
                 </div>
                 <div class="cs-section__body cs-section__body--center">
                     <h3 class="cs-section__heading cs-section__heading--center">Final Outcome</h3>
-                    <div class="cs-rule cs-rule--center" aria-hidden="true"></div>
+                    <div class="cs-rule cs-rule--center"></div>
                     <p class="cs-text cs-text--center">The Gym Planner web application provides a simple and effective workout planning experience, helping users organise and track their training sessions more easily.</p>
-                    <ul class="cs-outcomes" role="list" aria-label="Project outcomes">
+                    <ul class="cs-outcomes">
                         <li class="cs-outcome" tabindex="0"><strong>Clear Workout Structure</strong><p>Users can organise workouts and exercises in a structured format.</p></li>
                         <li class="cs-outcome" tabindex="0"><strong>User-Friendly Interface</strong><p>Clean design makes logging workouts quick and intuitive.</p></li>
                         <li class="cs-outcome" tabindex="0"><strong>Mobile Responsive</strong><p>The interface works across desktop and mobile devices.</p></li>
@@ -741,13 +559,14 @@
                 </div>
             </div>
         </section>
-        <!-- ------- Similar Projects ------- -->
-        <section class="cs-section cs-section--similar" id="similar" aria-labelledby="similar-title" tabindex="0">
+
+        <!-- Similar Projects -->
+        <section class="cs-section cs-section--similar" id="similar" tabindex="0">
             <div class="cs-container cs-container--center">
                 <h2 class="cs-section__heading cs-section__heading--center" id="similar-title">Similar Projects</h2>
-                <ul class="cs-similar" role="list" aria-label="Similar projects">
+                <ul class="cs-similar">
                     <li class="cs-similar__item" tabindex="0">
-                        <a href="22-club.html" class="cs-similar__link" aria-label="View 22 Club case study">
+                        <a href="22-club.html" class="cs-similar__link">
                             <img src="case_studies/22_club/new_hero_banner.webp" alt="22 Club project — redesigned website hero banner" class="cs-similar__img" loading="lazy" />
                             <p class="cs-similar__name">22 Club</p>
                             <span class="cs-similar__cta">View Project</span>
@@ -756,43 +575,44 @@
                 </ul>
             </div>
             <div class="cs-back-row">
-                <a href="projects.html" class="cs-all-projects-btn" aria-label="Back to all projects page">← Back to all projects</a>
+                <a href="projects.html" class="cs-all-projects-btn">← Back to all projects</a>
             </div>
         </section>
+
     </main>
-    <!-- ------- Footer ------- -->
+
+    <!-- Footer -->
     <footer class="site-footer">
         <div class="footer__grid">
             <div class="footer__col">
                 <h2>Explore</h2>
-                <nav aria-label="Explore">
+                <nav>
+                    <a href="about.html">About</a>
                     <a href="workflow.html">Workflow</a>
                     <a href="projects.html">Projects</a>
                 </nav>
             </div>
             <div class="footer__col footer__col--contact">
-                <p class="footer__contact-label">Get in touch <span aria-hidden="true">→</span></p>
+                <p class="footer__contact-label">Get in touch &#x2192;</p>
                 <a href="mailto:benthoma0s03@gmail.com" class="footer__email">benthoma0s03@gmail.com</a>
             </div>
             <div class="footer__col">
                 <h2>Discover</h2>
-                <nav aria-label="Discover">
+                <nav>
                     <a href="https://www.linkedin.com/in/benjamin-david-thomas/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                    <a href="https://github.com/BenjaminDThomas" target="_blank" rel="noopener noreferrer">Github</a>
+                    <a href="https://github.com/BenjaminDThomas" target="_blank" rel="noopener noreferrer">GitHub</a>
                 </nav>
             </div>
         </div>
         <hr class="footer__divider" />
         <p class="footer__copy">All content on this site is the creation and property of Benjamin Thomas.</p>
     </footer>
-    <!-- ------- Scroll to top ------- -->
-    <button class="scroll-top" id="scrollTop" aria-label="Scroll back to top" hidden>
-        <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
-            <path d="M8 2l6 6-1.4 1.4L9 5.8V14H7V5.8L3.4 9.4 2 8l6-6z" fill="currentColor"/>
-        </svg>
+    <!-- Scroll to top -->
+    <button class="scroll-top" id="scrollTop" hidden>
+        <svg width="16" height="16" viewBox="0 0 16 16"><path d="M8 2l6 6-1.4 1.4L9 5.8V14H7V5.8L3.4 9.4 2 8l6-6z" fill="currentColor"/></svg>
         <span class="scroll-top__label">Top</span>
     </button>
-    <!-- ------- Scripts ------- -->
-    <script src="js/case-study.js"></script>
+    <!-- Scripts -->
+        <script src="js/case-study.js"></script>
 </body>
 </html>

@@ -3,114 +3,124 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Projects — Benjamin Thomas</title>
+    <title>My Projects &#x2014; Benjamin Thomas</title>
     <meta name="description" content="A selection of UX design and web development work by Benjamin Thomas, spanning research, prototyping, and front-end development." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600;700&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet" />
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/grid.css" />
     <link rel="stylesheet" href="css/projects.css" />
+    <link rel="stylesheet" href="css/about.css" />
 </head>
 <body class="projects-page">
-    <!-- ------- Navigation ------- -->
-    <nav class="site-nav" aria-label="Site navigation">
-        <a href="index.html" class="nav__logo" aria-label="Ben Thomas — Homepage">
+    <!-- Navigation -->
+    <nav class="site-nav">
+        <a href="index.html" class="nav__logo">
             <img src="images/logo.webp" alt="Ben Thomas logo" width="110" height="42" />
         </a>
-        <ul class="nav__links" role="list">
+        <ul class="nav__links">
+            <li><a href="about.html" class="nav__link">About</a></li>
             <li><a href="workflow.html" class="nav__link">Workflow</a></li>
         </ul>
     </nav>
-    <!-- ------- Page header ------- -->
-    <header class="proj-header">
+    <!-- Page Header -->
+    <header class="proj-header proj-header--centred">
         <div class="proj-header__inner">
-            <span class="proj-header__label">Portfolio</span>
-            <h1 class="proj-header__title">My Projects</h1>
-            <p class="proj-header__sub">A selection of work spanning UX design and web development — from research and ideation through to built, tested products.</p>
+            <span class="proj-header__label">UX + Front-end Portfolio</span>
+            <h1 class="proj-header__title">Featured Projects</h1>
+            <p class="proj-header__sub">A portfolio of UX strategy, prototyping, accessibility testing, and front-end web implementation with code samples and user outcomes.</p>
             <div class="proj-header__count-row">
-                <span class="proj-header__count-line" aria-hidden="true"></span>
+                <span class="proj-header__count-line"></span>
                 <span class="proj-header__count">2 Projects</span>
-                <span class="proj-header__count-line" aria-hidden="true"></span>
+                <span class="proj-header__count-line"></span>
             </div>
         </div>
     </header>
-    <!-- ------- Main ------- -->
     <main id="main-content">
-        <ul class="proj-list" role="list" aria-label="Project list">
-
-            <!-- Gym Planner -->
-            <li>
-                <a href="gym-planner.html" class="proj-card" aria-label="View Gym Planner case study">
-                    <div class="proj-card__img-wrap">
-                        <img src="case_studies/gym_planner/hero_banner.webp" alt="Gym Planner — workout planning web application hero banner" class="proj-card__img" loading="lazy" />
-                    </div>
-                    <div class="proj-card__body">
-                        <div class="proj-card__top">
-                            <span class="proj-card__category">UX Project</span>
-                            <h2 class="proj-card__title">Gym Planner</h2>
-                            <p class="proj-card__desc">A web application that helps users organise and track their workouts. Built following a structured UX workflow from research to delivery.</p>
-                        </div>
-                        <ul class="proj-card__tags" role="list" aria-label="Skills used">
-                            <li class="proj-card__tag">Figma</li>
-                            <li class="proj-card__tag">UX/UI</li>
-                            <li class="proj-card__tag">HTML/CSS/JS</li>
-                            <li class="proj-card__tag">Testing</li>
-                        </ul>
-                        <div class="proj-card__footer">
-                            <span class="proj-card__link">View Case Study <span aria-hidden="true">→</span></span>
-                            <span class="proj-card__date">3 weeks ago</span>
-                        </div>
-                    </div>
-                </a>
-            </li>
+        <ul class="proj-list">
+            <!--
+                AI-assisted section:
+                The project card markup and tag structure below were drafted with help from Claude AI,
+                then reviewed and edited for integration, styling, and accessibility within this project.
+            -->
             <!-- 22 Club -->
             <li>
-                <a href="22-club.html" class="proj-card" aria-label="View 22 Club Rebuild case study">
+                <a href="22-club.html" class="proj-card">
                     <div class="proj-card__img-wrap">
-                        <img src="case_studies/22_club/new_hero_banner.webp" alt="22 Club — redesigned website hero banner showing the updated layout" class="proj-card__img" loading="lazy" />
+                        <img src="case_studies/22_club/new_hero_banner.webp" alt="22 Club &#x2014; redesigned website hero banner showing the updated layout" class="proj-card__img" loading="lazy" />
                     </div>
                     <div class="proj-card__body">
                         <div class="proj-card__top">
-                            <span class="proj-card__category">UX Project</span>
+                            <span class="proj-card__category">UX Research &amp; Front-End Rebuild</span>
                             <h2 class="proj-card__title">22 Club Rebuild</h2>
                             <p class="proj-card__desc">Redesign of the website for a local business called the 22 Club, a snooker and pool venue. The redesign focused on improving usability, readability, and accessibility.</p>
                         </div>
-                        <ul class="proj-card__tags" role="list" aria-label="Skills used">
-                            <li class="proj-card__tag">Figma</li>
-                            <li class="proj-card__tag">UX/UI</li>
-                            <li class="proj-card__tag">HTML/CSS/JS</li>
-                            <li class="proj-card__tag">Testing</li>
+                        <ul class="proj-card__tags">
+                            <li class="proj-card__tag" data-tooltip="Reviewed venue websites to identify effective navigation and content patterns">Competitor Analysis</li>
+                            <li class="proj-card__tag" data-tooltip="Full desktop wireframes and hi-fi prototype with WCAG-validated colour decisions">Figma</li>
+                            <li class="proj-card__tag" data-tooltip="All colour pairs tested against AA and AAA contrast ratios using WebAIM Checker">Accessibility (WCAG)</li>
+                            <li class="proj-card__tag" data-tooltip="Interactive Figma prototype tested with users before any code was written">Prototyping</li>
+                            <li class="proj-card__tag" data-tooltip="Moderated sessions evaluating the prototype against key visitor tasks">Usability Testing</li>
+                            <li class="proj-card__tag" data-tooltip="Rebuilt from scratch with semantic HTML, mobile-first CSS and accessible interactions">HTML / CSS / JS</li>
                         </ul>
                         <div class="proj-card__footer">
-                            <span class="proj-card__link">View Case Study <span aria-hidden="true">→</span></span>
+                            <span class="proj-card__link">View Case Study &#x2192;</span>
                             <span class="proj-card__date">2 weeks ago</span>
                         </div>
                     </div>
                 </a>
             </li>
-
+            <!-- Gym Planner -->
+            <li>
+                <a href="gym-planner.html" class="proj-card">
+                    <div class="proj-card__img-wrap">
+                        <img src="case_studies/gym_planner/hero_banner.webp" alt="Gym Planner &#x2014; workout planning web application hero banner" class="proj-card__img" loading="lazy" />
+                    </div>
+                    <div class="proj-card__body">
+                        <div class="proj-card__top">
+                            <span class="proj-card__category">UX Design &amp; Front-End Development</span>
+                            <h2 class="proj-card__title">Gym Planner</h2>
+                            <p class="proj-card__desc">A web application that helps users organise and track their workouts. Built following a structured UX workflow from research to delivery.</p>
+                        </div>
+                        <ul class="proj-card__tags">
+                            <li class="proj-card__tag" data-tooltip="Surveys, personas and journey maps to understand gym-goers&apos; planning habits">User Research</li>
+                            <li class="proj-card__tag" data-tooltip="Wireframes and interactive hi-fi prototype built and iterated in Figma">Figma</li>
+                            <li class="proj-card__tag" data-tooltip="Lo-fi desktop and mobile layouts to validate structure before visual design">Wireframing</li>
+                            <li class="proj-card__tag" data-tooltip="Clickable hi-fi prototype used in moderated usability testing sessions">Prototyping</li>
+                            <li class="proj-card__tag" data-tooltip="Think-aloud testing with 3 participants to surface pain points and refine the UI">Usability Testing</li>
+                            <li class="proj-card__tag" data-tooltip="Fully hand-coded responsive front-end with semantic HTML and vanilla JavaScript">HTML / CSS / JS</li>
+                        </ul>
+                        <div class="proj-card__footer">
+                            <span class="proj-card__link">View Case Study &#x2192;</span>
+                            <span class="proj-card__date">3 weeks ago</span>
+                        </div>
+                    </div>
+                </a>
+            </li>
         </ul>
     </main>
-    <!-- ------- Footer ------- -->
+    <!-- Footer -->
     <footer class="site-footer">
         <div class="footer__grid">
             <div class="footer__col">
                 <h2>Explore</h2>
-                <nav aria-label="Explore">
+                <nav>
+                    <a href="about.html">About</a>
                     <a href="workflow.html">Workflow</a>
                     <a href="projects.html">Projects</a>
                 </nav>
             </div>
             <div class="footer__col footer__col--contact">
-                <p class="footer__contact-label">Get in touch <span aria-hidden="true">→</span></p>
+                <p class="footer__contact-label">Get in touch &#x2192;</p>
                 <a href="mailto:benthoma0s03@gmail.com" class="footer__email">benthoma0s03@gmail.com</a>
             </div>
             <div class="footer__col">
                 <h2>Discover</h2>
-                <nav aria-label="Discover">
+                <nav>
                     <a href="https://www.linkedin.com/in/benjamin-david-thomas/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                    <a href="https://github.com/BenjaminDThomas" target="_blank" rel="noopener noreferrer">Github</a>
+                    <a href="https://github.com/BenjaminDThomas" target="_blank" rel="noopener noreferrer">GitHub</a>
                 </nav>
             </div>
         </div>

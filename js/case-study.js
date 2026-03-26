@@ -1,4 +1,8 @@
-/* ai generated */
+/* Generated with Claude — progress bar, section-nav active
+   highlight on scroll, section reveal animations, mobile dropdown,
+   and scroll-to-top behaviour.
+*/
+
 /*
 -----------------
 Case Study
@@ -74,8 +78,6 @@ window.scrollTo(0, 0);
         /* fallback — just show everything */
         allSections.forEach(function (s) { s.classList.add('is-visible'); });
     } else {
-        /* Step 1: sections below the fold get cs-reveal added NOW (hidden, ready to animate).
-           Sections already on screen get nothing — they stay fully visible. */
         allSections.forEach(function (s) {
             if (s.getBoundingClientRect().top > window.innerHeight) {
                 s.classList.add('cs-reveal');

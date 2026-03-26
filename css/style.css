@@ -20,6 +20,12 @@ Global
 html { min-height: 100%; } body { min-height: 100%; background: #0a0a0a; color: var(--white); font-family: 'Barlow', sans-serif; overflow-x: hidden; }
 /*
 -----------
+Skip Link
+-----------
+*/
+
+/*
+-----------
 Navigation
 -----------
 */
@@ -74,11 +80,11 @@ Hero — Content
 .hero__right-content { padding-top: 8vh; align-items: center; }
 .hero__right-content .hero__tagline { align-self: center; white-space: nowrap; font-size: clamp(1.6rem, 2.6vw, 2.4rem); }
 .hero__right-content .btn-outline { align-self: center; margin-top: auto; }
-.hero__label { font-family: var(--font-condensed); font-size: 1.6rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 6px; opacity: 0.9; }
-.hero__label span { font-weight: 300; margin-right: 2px; }
-.hero__sub { font-size: 1.1rem; font-weight: 300; color: rgba(255,255,255,0.7); margin-bottom: 28px; letter-spacing: 0.02em; }
-.hero__statement { font-family: var(--font-condensed); font-size: clamp(2.4rem, 4vw, 3.8rem); font-weight: 700; line-height: 1.1; text-transform: uppercase; letter-spacing: 0.03em; margin-bottom: 40px; }
-.hero__statement em { font-style: normal; color: var(--red); }
+.hero__label { font-family: var(--font-condensed); font-size: 1.6rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 6px; opacity: 0.9; color: var(--white); }
+.hero__label span { font-weight: 300; margin-right: 2px; color: var(--red); }
+.hero__sub { font-size: 1.1rem; font-weight: 300; color: var(--white); margin-bottom: 28px; letter-spacing: 0.02em; }
+.hero__statement { font-family: var(--font-condensed); font-size: clamp(2.4rem, 4vw, 3.8rem); font-weight: 700; line-height: 1.1; text-transform: uppercase; letter-spacing: 0.03em; margin-bottom: 40px; color: var(--white); }
+.hero__statement strong { color: var(--red); font-weight: 900; }
 .hero__tagline { font-family: var(--font-condensed); font-size: clamp(1.4rem, 2.2vw, 2rem); font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; line-height: 1.4; margin-bottom: 40px; white-space: nowrap; }
 .hero__tagline .arrow { color: rgba(255,255,255,0.6); font-weight: 300; margin: 0 6px; }
 /*

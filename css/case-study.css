@@ -66,8 +66,6 @@ Sections
 .cs-section:target { animation: cs-highlight 1.2s ease; }
 .cs-section--similar { padding: 64px 0; background: #f5f5f0 !important; border-bottom: none; }
 @keyframes cs-highlight { 0% { box-shadow: inset 0 0 0 3px rgba(0,0,0,0.15); } 100% { box-shadow: none; } }
-
-/* Scroll-reveal state — JS removes is-visible and restores these for below-fold sections */
 .cs-section.cs-reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
 .cs-section.cs-reveal.is-visible { opacity: 1; transform: none; }
 /*
@@ -311,9 +309,7 @@ Scroll to top
 Responsive
 -----------
 */
-@media (max-width: 1100px) {
-    .cs-container, .cs-container--center { max-width: 90%; }
-}
+@media (max-width: 1100px) { .cs-container, .cs-container--center { max-width: 90%; } }
 @media (max-width: 900px) {
     .cs-container, .cs-container--center { grid-template-columns: 1fr; max-width: 90%; gap: 12px; }
     .cs-section__meta { position: static; margin-bottom: 8px; display: flex; align-items: baseline; gap: 10px; padding-right: 0; }
@@ -348,3 +344,65 @@ Responsive
     .cs-section { padding: 44px 0; }
     .case-study-page .scroll-top { bottom: 16px; right: 16px; width: 48px; height: 48px; }
 }
+/*
+-----------
+Figma button row — spacing variants
+-----------
+*/
+.cs-figma-links { display: flex !important; flex-wrap: wrap !important; gap: 12px !important; margin-top: 28px !important; }
+.cs-figma-links--lofi { margin-bottom: 40px !important; }
+.cs-figma-links--hifi { margin-top: 28px !important; margin-bottom: 8px !important; }
+/*
+-----------
+Figma button — dark styled card
+-----------
+*/
+a.cs-figma-btn { display: inline-flex !important; align-items: center !important; gap: 10px !important; padding: 10px 16px !important; background: #1e1e1e !important; border: 1.5px solid rgba(255,255,255,0.2) !important; border-radius: 8px !important; text-decoration: none !important; color: #fff !important; min-width: 185px; cursor: pointer; font-family: var(--font-condensed), "Barlow Condensed", sans-serif !important; transition: background 0.2s, border-color 0.2s, transform 0.15s; }
+a.cs-figma-btn:hover { background: #2c2c2c !important; border-color: rgba(255,255,255,0.36) !important; transform: translateY(-2px); text-decoration: none !important; color: #fff !important; }
+a.cs-figma-btn svg { flex-shrink: 0 !important; display: block !important; }
+a.cs-figma-btn .cs-figma-btn__text { display: flex !important; flex-direction: column !important; gap: 2px !important; }
+a.cs-figma-btn .cs-figma-btn__text strong { font-size: 0.88rem !important; font-weight: 700 !important; letter-spacing: 0.07em !important; text-transform: uppercase !important; color: #fff !important; line-height: 1 !important; display: block !important; font-family: var(--font-condensed), "Barlow Condensed", sans-serif !important; }
+a.cs-figma-btn .cs-figma-btn__text span { font-size: 0.68rem !important; color: rgba(255,255,255,0.42) !important; letter-spacing: 0.04em !important; line-height: 1 !important; }
+/*
+-----------
+Hi-fi image grid — gym planner (boxed, uniform height)
+-----------
+*/
+.gp-hifi-grid { display: flex !important; justify-content: center !important; align-items: flex-start !important; gap: 32px !important; margin: 28px 0 36px !important; background: transparent !important; border: none !important; box-shadow: none !important; padding: 0 !important; }
+.gp-hifi-img { display: block !important; width: auto !important; max-width: 44% !important; height: auto !important; max-height: 380px !important; object-fit: contain !important; border: none !important; border-radius: 6px !important; box-shadow: 0 8px 32px rgba(0,0,0,0.18) !important; padding: 0 !important; background: transparent !important; }
+/*
+-----------
+Hi-fi image layout — 22 Club (navbar full-width, 2-col below)
+-----------
+*/
+.cs-hifi-fig { display: grid; grid-template-columns: 1fr; gap: 12px; margin: 24px 0 0; }
+.cs-hifi-navbar { width: 100%; height: auto; object-fit: cover; object-position: top; border-radius: 6px; display: block; }
+.cs-hifi-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.cs-hifi-img-tall { width: 100%; height: 260px; object-fit: cover; object-position: top; border-radius: 6px; display: block; }
+/*
+-----------
+GitHub button — styled dark box
+-----------
+*/
+a.cs-gh-btn { display: inline-flex !important; align-items: center !important; gap: 8px !important; padding: 10px 18px !important; background: #161b22 !important; border: 1.5px solid rgba(255,255,255,0.22) !important; border-radius: 8px !important; text-decoration: none !important; font-size: 0.88rem !important; font-weight: 700 !important; letter-spacing: 0.1em !important; text-transform: uppercase !important; color: #fff !important; cursor: pointer; font-family: var(--font-condensed), "Barlow Condensed", sans-serif !important; transition: background 0.2s, border-color 0.2s, transform 0.15s; margin-top: 8px !important; }
+a.cs-gh-btn:hover { background: #21262d !important; border-color: rgba(255,255,255,0.38) !important; transform: translateY(-1px); text-decoration: none !important; color: #fff !important; }
+a.cs-gh-btn svg { flex-shrink: 0; }
+/*
+-----------
+Hi-fi heading spacing in merged section
+-----------
+*/
+.cs-section__heading--hifi-sub { margin-top: 52px; }
+/*
+-----------
+Section nav active link
+-----------
+*/
+.cs-section-nav__list a.is-active { color: var(--red) !important; font-weight: 700; }
+/*
+-----------
+Responsive additions
+-----------
+*/
+@media (max-width: 900px) { .cs-hifi-2col { grid-template-columns: 1fr 1fr; } .cs-hifi-img-tall { height: 200px; }  }
+@media (max-width: 700px) { .gp-hifi-grid { grid-template-columns: 1fr !important; } .cs-figma-links { flex-direction: column !important; } .cs-figma-btn { min-width: unset !important; width: 100% !important; } .cs-hifi-2col { grid-template-columns: 1fr; } }
