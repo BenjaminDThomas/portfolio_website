@@ -80,7 +80,7 @@ Legend
 .wf-toc-backdrop--active { opacity: 1; visibility: visible; }
 
 @media (max-width: 900px) {
-    .wf-toc-toggle { top: auto; bottom: 14px; right: 14px; }
+    .wf-toc-toggle { top: auto; bottom: 92px; right: 14px; }
 }
 
 
@@ -445,6 +445,7 @@ Responsive — ≤1200px
     .wf-section--deliverable .wf-deliverable__trail   { justify-content: center; padding: 0; }
     .wf-section--deliverable .wf-deliverable__desc    { text-align: left; margin: 0 auto; max-width: 88vw; font-size: clamp(0.92rem,2.5vw,1rem); line-height: 1.9; padding: 0; }
     .wf-exercise-node { width: 110px; height: 110px; margin: 0 auto 32px; }
+    .wf-exercise-node__name { font-size: 0.78rem; line-height: 1.2; max-width: 88%; overflow-wrap: anywhere; }
     .wf-steps { display: flex; flex-direction: column; gap: 0; padding: 0 16px; max-width: 80vw; margin: 0 auto; border-left: none; margin-left: 20px; padding-left: 0; }
     .wf-step, .wf-step--left, .wf-step--right { display: flex; flex-direction: column; align-items: stretch; gap: 16px; grid-column: unset; grid-template-columns: unset; }
     .wf-step__header, .wf-step--left .wf-step__header, .wf-step--left .wf-step__header--flip { display: flex; flex-direction: row; align-items: center; gap: 12px; position: relative; overflow: visible; }
@@ -462,8 +463,11 @@ Responsive — ≤1200px
     .persona-quad:nth-child(1) { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); }
     .persona-quad:nth-child(2) { border-bottom: 1px solid rgba(255,255,255,0.07); }
     .persona-quad:nth-child(3) { border-right: none; }
-    .empathy-map__compass { max-width: 260px; }
-    .journey-phases { grid-template-columns: repeat(5,minmax(130px,1fr)); overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: 12px; scrollbar-width: thin; scrollbar-color: rgba(216,44,46,0.3) transparent; }
+    .empathy-map__compass { max-width: 300px; }
+    .journey-phases { grid-template-columns: 1fr; overflow: visible; padding-bottom: 0; gap: 10px; }
+    .journey-phase { display: grid; grid-template-columns: minmax(90px,110px) 1fr; align-items: stretch; gap: 6px 10px; }
+    .journey-phase__label { grid-column: 1; grid-row: 1 / span 3; display: flex; align-items: center; justify-content: center; }
+    .journey-phase__row { grid-column: 2; }
     .survey-svg { min-height: 200px; }
     .wf-section--deliverable { padding: 40px 0; }
     .wf-deliverable__trail { flex-direction: row; flex-wrap: wrap; align-items: center; justify-content: flex-start; padding: 0 16px; }
@@ -479,4 +483,32 @@ Responsive — ≤1200px
     .wf-section--gym        .wf-step::before { background: rgba(216,44,46,0.9); border-color: var(--red); box-shadow: 0 0 8px rgba(216,44,46,0.8); }
     .wf-exercise-node { margin-left: 20px; margin-right: auto; margin-bottom: 0; }
     .scroll-top { bottom: 16px; right: 16px; width: 48px; height: 48px; }
+}
+
+@media (max-width: 600px) {
+    .empathy-map__compass { max-width: 280px; }
+    .empathy-map__center img { width: 88px; height: 88px; }
+    .empathy-map__label { font-size: 0.72rem; letter-spacing: 0.08em; }
+    .empathy-map__note { font-size: 0.62rem; max-width: 32%; line-height: 1.35; }
+    .empathy-map__note--tl { top: 6%; left: 2%; }
+    .empathy-map__note--tr { top: 6%; right: 2%; }
+    .empathy-map__note--bl { bottom: 6%; left: 2%; }
+    .empathy-map__note--br { bottom: 6%; right: 2%; }
+}
+@media (max-width: 360px) {
+    .wf-toc-toggle {
+        bottom: 88px;
+        right: 10px;
+        font-size: 0.66rem;
+        letter-spacing: 0.1em;
+        padding: 8px 10px;
+    }
+    .scroll-top { right: 10px; }
+    .wf-exercise-node { width: 102px; height: 102px; }
+    .wf-exercise-node__num { font-size: 0.52rem; letter-spacing: 0.12em; }
+    .wf-exercise-node__name { font-size: 0.68rem; line-height: 1.15; }
+    .wf-step__name { width: 82px; height: 82px; font-size: 0.64rem; }
+    .journey-phase { grid-template-columns: 86px 1fr; }
+    .journey-phase__label { font-size: 0.58rem; letter-spacing: 0.11em; padding: 4px; }
+    .journey-phase__row { font-size: 0.66rem; padding: 6px; }
 }

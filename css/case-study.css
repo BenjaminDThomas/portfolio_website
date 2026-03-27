@@ -14,6 +14,11 @@ Nav override
 .case-study-page .nav__logo { border: none; outline: none; box-shadow: none; }
 .case-study-page .nav__logo img { border: none; outline: none; box-shadow: none; }
 .case-study-page .nav__links { position: static !important; transform: none !important; top: auto !important; display: flex !important; flex-direction: row !important; align-items: center; gap: 8px; background: none; box-shadow: none; padding: 0; margin: 0; list-style: none; }
+.cs-nav-toggle { display: none; width: 42px; height: 42px; border: 1px solid rgba(255,255,255,0.35); border-radius: 8px; background: rgba(255,255,255,0.04); color: #fff; cursor: pointer; align-items: center; justify-content: center; flex-direction: column; gap: 5px; }
+.cs-nav-toggle__bar { width: 18px; height: 2px; background: #fff; border-radius: 2px; }
+.cs-nav-toggle[aria-expanded="true"] .cs-nav-toggle__bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.cs-nav-toggle[aria-expanded="true"] .cs-nav-toggle__bar:nth-child(2) { opacity: 0; }
+.cs-nav-toggle[aria-expanded="true"] .cs-nav-toggle__bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 .nav__back { font-family: var(--font-condensed); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.9); text-decoration: none; border: 1.5px solid rgba(255,255,255,0.4); padding: 7px 16px; border-radius: 20px; transition: background 0.2s, color 0.2s, border-color 0.2s; }
 .nav__back:hover { background: #fff; color: #0a0a0a; border-color: #fff; }
 /*
@@ -21,7 +26,7 @@ Nav override
 Hero
 -----------
 */
-.cs-hero { position: relative; width: 100%; height: 380px; overflow: hidden; display: flex; align-items: flex-end; }
+.cs-hero { position: relative; width: 100%; height: 380px; overflow: hidden; display: flex; align-items: flex-end; margin-top: var(--nav-h); }
 .cs-hero__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
 .cs-hero__overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0.1) 100%); }
 .cs-hero__content { position: relative; z-index: 2; padding: 40px 60px; }
@@ -33,7 +38,7 @@ Hero
 Section nav
 -----------
 */
-.cs-section-nav { position: sticky; top: 78px; z-index: 9; background: rgba(255,255,255,0.96); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(0,0,0,0.08); padding: 0 40px; }
+.cs-section-nav { position: sticky; top: var(--nav-h); z-index: 9; background: rgba(255,255,255,0.96); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(0,0,0,0.08); padding: 0 40px; }
 .cs-section-nav__list { list-style: none; padding: 0; margin: 0; display: flex; overflow-x: auto; scrollbar-width: none; }
 .cs-section-nav__list::-webkit-scrollbar { display: none; }
 .cs-section-nav__list a { display: block; padding: 10px 20px; font-family: var(--font-condensed); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #666; text-decoration: none; border-bottom: 3px solid transparent; border-radius: 4px 4px 0 0; white-space: nowrap; transition: color 0.15s, border-color 0.15s, background 0.15s; }
@@ -320,14 +325,39 @@ Responsive
     .cs-tech-grid { flex-direction: column; }
     .cs-ref-grid, .cs-img-trio { grid-template-columns: 1fr 1fr; }
     .cs-img-pair, .cs-hifi-grid { grid-template-columns: 1fr; }
+    .cs-img-pair .cs-img { height: auto; max-height: none; }
+    .cs-img-pair--equal { max-width: 100%; }
     .cs-scores { grid-template-columns: repeat(2,1fr); }
     .cs-outcomes { grid-template-columns: 1fr 1fr; }
     .cs-before-after { flex-direction: column; align-items: center; }
 }
 @media (max-width: 768px) {
-    .cs-section-nav { top: 78px; padding: 0 20px; }
+    .case-study-page { --nav-h: 64px; }
+    .cs-section-nav { top: 64px; padding: 0 20px; }
     .cs-section-nav__list { display: none; }
     .cs-section-nav__mobile { display: block; }
+    .case-study-page .site-nav { padding: 12px 16px; min-height: 64px; }
+    .case-study-page .nav__logo img { height: 34px; width: auto; }
+    .cs-nav-toggle { display: inline-flex; }
+    .case-study-page .nav__links {
+        position: absolute !important;
+        top: calc(100% + 8px) !important;
+        right: 16px;
+        left: auto;
+        width: min(240px, 84vw);
+        display: none !important;
+        flex-direction: column !important;
+        align-items: stretch;
+        gap: 8px;
+        padding: 12px;
+        border-radius: 10px;
+        background: rgba(10,10,10,0.98);
+        border: 1px solid rgba(255,255,255,0.12);
+        box-shadow: 0 10px 28px rgba(0,0,0,0.35);
+        z-index: 21;
+    }
+    .case-study-page .nav__links.is-open { display: flex !important; }
+    .case-study-page .nav__links .nav__back { display: block; text-align: left; }
     .cs-tools { flex-wrap: wrap; border-top: none; border-bottom: none; gap: 4px; }
     .cs-tool { flex: 0 0 calc(33.33% - 8px); border-right: none; border-bottom: 1px solid rgba(0,0,0,0.08); }
     .cs-tool:nth-last-child(-n+3) { border-bottom: none; }
@@ -342,7 +372,23 @@ Responsive
     .cs-problem-grid3, .cs-img-trio, .cs-ref-grid, .cs-outcomes { grid-template-columns: 1fr; }
     .cs-scores { grid-template-columns: repeat(2,1fr); }
     .cs-section { padding: 44px 0; }
+    .cs-img--contained { max-width: 94%; }
+    .cs-img-pair { gap: 12px; }
+    .cs-img-pair .cs-img { height: auto; max-height: none; }
+    .cs-img-pair--equal { max-width: 100%; }
     .case-study-page .scroll-top { bottom: 16px; right: 16px; width: 48px; height: 48px; }
+}
+@media (max-width: 360px) {
+    .case-study-page .site-nav { padding: 10px 12px; }
+    .case-study-page .nav__logo img { height: 30px; }
+    .cs-nav-toggle { width: 38px; height: 38px; }
+    .case-study-page .nav__links { right: 12px; left: auto; }
+    .cs-hero { min-height: 250px; }
+    .cs-hero__content { padding: 20px 16px; }
+    .cs-hero__title { font-size: clamp(1.4rem, 8vw, 1.8rem); }
+    .cs-hero__sub { font-size: 0.9rem; }
+    .cs-section-nav { top: 64px; padding: 0 12px; }
+    .cs-section-nav__toggle { padding: 10px 0; font-size: 0.76rem; }
 }
 /*
 -----------

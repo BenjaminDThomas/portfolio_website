@@ -84,3 +84,6 @@ Responsive
     .gp-contrast-grid { grid-template-columns: 1fr; }
     .gp-persona-img { max-width: 70%; }
 }
+@media (max-width: 600px) {
+    .gp-persona-img { max-width: 92%; }
+}

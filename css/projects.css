@@ -28,9 +28,10 @@ Project list
 Project card
 -----------
 */
-.proj-card { background: #fff; border: 1px solid rgba(0,0,0,0.08); border-radius: 10px; overflow: hidden; display: grid; grid-template-columns: 420px 1fr; transition: box-shadow 0.3s, border-color 0.3s, transform 0.3s; text-decoration: none; color: inherit; cursor: pointer; }
-.proj-card:focus { outline: 3px solid #111; outline-offset: 3px; border-radius: 10px; }
+.proj-card { background: #fff; border: 1px solid rgba(0,0,0,0.08); border-radius: 10px; overflow: hidden; display: grid; grid-template-columns: 420px 1fr; transition: box-shadow 0.3s, border-color 0.3s, transform 0.3s; color: inherit; cursor: pointer; }
 .proj-card:hover { box-shadow: 0 16px 56px rgba(0,0,0,0.12); border-color: rgba(0,0,0,0.18); transform: translateY(-4px); }
+.proj-card:focus { outline: 3px solid #111; outline-offset: 3px; border-radius: 10px; }
+.proj-card__tag:focus { outline: none; }
 /*
 -----------
 Card image
@@ -60,7 +61,7 @@ Tags
 -----------
 */
 .proj-card__tags { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 0; }
-.proj-card__tag { font-family: var(--font-condensed); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 5px 13px; border: 1.5px solid rgba(0,0,0,0.15); color: #555; border-radius: 20px; background: #f5f5f0; transition: border-color 0.2s, color 0.2s; }
+.proj-card__tag { font-family: var(--font-condensed); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 5px 13px; border: 1.5px solid rgba(0,0,0,0.15); color: #555; border-radius: 20px; background: #f5f5f0; transition: border-color 0.2s, color 0.2s; max-width: 100%; line-height: 1.4; }
 .proj-card:hover .proj-card__tag { border-color: rgba(0,0,0,0.25); color: #333; }
 /*
 -----------
@@ -117,6 +118,27 @@ Tag tooltips
 }
 .proj-card__tag[data-tooltip]:hover::after,
 .proj-card__tag[data-tooltip]:hover::before { opacity: 1; }
+.proj-card__tag[data-tooltip].is-active::after,
+.proj-card__tag[data-tooltip].is-active::before { opacity: 1; }
+
+.proj-card__tags .proj-card__tag:first-child[data-tooltip]::after {
+    left: 0;
+    transform: none;
+}
+.proj-card__tags .proj-card__tag:first-child[data-tooltip]::before {
+    left: 18px;
+    transform: none;
+}
+.proj-card__tags .proj-card__tag:last-child[data-tooltip]::after {
+    left: auto;
+    right: 0;
+    transform: none;
+}
+.proj-card__tags .proj-card__tag:last-child[data-tooltip]::before {
+    left: auto;
+    right: 18px;
+    transform: none;
+}
 /*
 -----------
 Responsive
@@ -136,4 +158,22 @@ Responsive
     .proj-header__inner, .proj-list { max-width: 94%; }
     .proj-card__body { padding: 20px; }
     .proj-card__footer { flex-direction: column; align-items: flex-start; gap: 10px; }
+    .proj-card__tags { gap: 6px; }
+    .proj-card__tag { white-space: normal; }
+    .proj-card__tag[data-tooltip]::after {
+        width: min(220px, 76vw);
+        left: 0;
+        right: auto;
+        transform: none;
+    }
+    .proj-card__tag[data-tooltip]::before {
+        left: 18px;
+        right: auto;
+        transform: none;
+    }
+    .proj-card { cursor: default; }
+    .proj-card:focus,
+    .proj-card__link:focus {
+        outline: none;
+    }
 }

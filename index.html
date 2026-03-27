@@ -19,7 +19,17 @@
         <a href="index.html" class="nav__logo">
             <img src="images/logo.webp" alt="Ben Thomas logo" />
         </a>
-        <ul class="nav__links">
+        <!--
+            AI-assisted section:
+            The mobile hamburger navigation toggle below was drafted with help from GitHub Copilot,
+            then reviewed and edited for integration, styling, and accessibility within this project.
+        -->
+        <button class="nav-toggle" type="button" aria-controls="siteNavLinks" aria-expanded="false" aria-label="Open navigation menu">
+            <span class="nav-toggle__bar"></span>
+            <span class="nav-toggle__bar"></span>
+            <span class="nav-toggle__bar"></span>
+        </button>
+        <ul class="nav__links" id="siteNavLinks">
             <li><a href="about.html" class="nav__link">About</a></li>
             <li><a href="workflow.html" class="nav__link">Workflow</a></li>
             <li><a href="projects.html" class="nav__link">Projects</a></li>
@@ -97,6 +107,7 @@
         <p class="footer__copy">All content on this site is the creation and property of Benjamin Thomas.</p>
     </footer>
     <!-- Scripts -->
+        <script src="js/nav.js"></script>
         <script src="js/hero.js"></script>
 </body>
 </html>

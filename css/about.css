@@ -15,6 +15,31 @@ NAV — base layout: logo left, links right on all pages
     justify-content: space-between;
 }
 
+.nav-toggle {
+    display: none;
+    width: 42px;
+    height: 42px;
+    border: 1px solid rgba(216,44,46,0.5);
+    border-radius: 8px;
+    background: rgba(216,44,46,0.08);
+    color: #fff;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+}
+.nav-toggle__bar {
+    width: 18px;
+    height: 2px;
+    background: currentColor;
+    border-radius: 2px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+.nav-toggle[aria-expanded="true"] .nav-toggle__bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] .nav-toggle__bar:nth-child(2) { opacity: 0; }
+.nav-toggle[aria-expanded="true"] .nav-toggle__bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
 /*
 -----------
 NAV — inline row layout for all page classes
@@ -23,8 +48,7 @@ NAV — inline row layout for all page classes
 .home-page .nav__links,
 .about-page .nav__links,
 .workflow-page .nav__links,
-.projects-page .nav__links,
-.case-study-page .nav__links {
+.projects-page .nav__links {
     position: static !important;
     transform: none !important;
     top: auto !important;
@@ -47,8 +71,7 @@ NAV — red pill links on all pages
 .home-page .nav__link,
 .about-page .nav__link,
 .workflow-page .nav__link,
-.projects-page .nav__link,
-.case-study-page .nav__link {
+.projects-page .nav__link {
     font-family: var(--font-condensed);
     font-size: 0.82rem;
     font-weight: 700;
@@ -64,8 +87,7 @@ NAV — red pill links on all pages
 .home-page .nav__link:hover,
 .about-page .nav__link:hover,
 .workflow-page .nav__link:hover,
-.projects-page .nav__link:hover,
-.case-study-page .nav__link:hover {
+.projects-page .nav__link:hover {
     color: #fff;
     background: var(--red);
     border-color: var(--red);
@@ -119,8 +141,7 @@ NAV — solid dark bg on all non-home pages
 */
 .about-page .site-nav,
 .workflow-page .site-nav,
-.projects-page .site-nav,
-.case-study-page .site-nav {
+.projects-page .site-nav {
     background: rgba(10,10,10,0.97);
     border-bottom: 1px solid rgba(255,255,255,0.07);
 }
@@ -495,9 +516,128 @@ Responsive
         padding: 0 24px;
     }
     .about-cta__links { flex-direction: column; align-items: center; }
+
+    .home-page .nav-toggle,
+    .about-page .nav-toggle,
+    .workflow-page .nav-toggle,
+    .projects-page .nav-toggle {
+        display: inline-flex;
+        color: var(--red);
+    }
+
+    .home-page .nav__links,
+    .about-page .nav__links,
+    .workflow-page .nav__links,
+    .projects-page .nav__links {
+        position: absolute !important;
+        top: calc(100% + 8px) !important;
+        left: auto;
+        right: 12px;
+        width: min(240px, 84vw);
+        display: none !important;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+        padding: 12px;
+        border-radius: 10px;
+        background: rgba(10,10,10,0.98);
+        border: 1px solid rgba(255,255,255,0.12);
+        box-shadow: 0 10px 28px rgba(0,0,0,0.35);
+        z-index: 22;
+    }
+
+    .home-page .nav__links.is-open,
+    .about-page .nav__links.is-open,
+    .workflow-page .nav__links.is-open,
+    .projects-page .nav__links.is-open {
+        display: flex !important;
+    }
+
+    .home-page .nav__link,
+    .about-page .nav__link,
+    .workflow-page .nav__link,
+    .projects-page .nav__link {
+        font-size: 0.84rem;
+        letter-spacing: 0.12em;
+        padding: 10px 12px;
+        border: none;
+        border-radius: 6px;
+        background: transparent;
+        color: rgba(255,255,255,0.92);
+        text-align: left;
+    }
+    .home-page .nav__link:hover,
+    .about-page .nav__link:hover,
+    .workflow-page .nav__link:hover,
+    .projects-page .nav__link:hover {
+        background: rgba(216,44,46,0.16);
+        color: #fff;
+    }
+
+    .case-study-page .cs-nav-toggle {
+        display: inline-flex !important;
+    }
+    .case-study-page .nav__links {
+        display: none !important;
+    }
+    .case-study-page .nav__links.is-open {
+        display: flex !important;
+    }
+}
+@media (max-width: 520px) {
+    .home-page .site-nav,
+    .about-page .site-nav,
+    .workflow-page .site-nav,
+    .projects-page .site-nav {
+        padding: 10px 12px;
+    }
+    .home-page .nav__links,
+    .about-page .nav__links,
+    .workflow-page .nav__links,
+.projects-page .nav__links {
+        gap: 6px;
+    }
+    .home-page .nav__link,
+    .about-page .nav__link,
+    .workflow-page .nav__link,
+.projects-page .nav__link {
+        font-size: 0.7rem;
+        letter-spacing: 0.1em;
+        padding: 6px 10px;
+    }
+}
+@media (max-width: 360px) {
+    .home-page .nav__links,
+    .about-page .nav__links,
+    .workflow-page .nav__links,
+.projects-page .nav__links {
+        gap: 4px;
+    }
+    .home-page .nav__link,
+    .about-page .nav__link,
+    .workflow-page .nav__link,
+.projects-page .nav__link {
+        font-size: 0.64rem;
+        letter-spacing: 0.08em;
+        padding: 5px 8px;
+    }
 }
 @media (max-width: 480px) {
     .about-skills { grid-template-columns: 1fr 1fr; }
     .about-container { max-width: 94%; }
     .about-cta { max-width: 94%; }
+}
+
+@media (hover: none) and (pointer: coarse) {
+    .proj-card:focus,
+    .proj-card__link:focus,
+    .proj-card__tag:focus,
+    .cs-all-projects-btn:focus,
+    .cs-tool__link:focus,
+    .nav__link:focus,
+    .nav__back:focus,
+    .btn-outline:focus {
+        outline: none !important;
+        box-shadow: none !important;
+    }
 }

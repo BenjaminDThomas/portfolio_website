@@ -24,7 +24,17 @@
         <a href="index.html" class="nav__logo">
             <img src="images/logo.webp" alt="Ben Thomas logo" width="110" height="42" />
         </a>
-        <ul class="nav__links">
+        <!--
+            AI-assisted section:
+            The mobile hamburger navigation toggle below was drafted with help from GitHub Copilot,
+            then reviewed and edited for integration, styling, and accessibility within this project.
+        -->
+        <button class="cs-nav-toggle" id="csNavToggle" type="button" aria-controls="csNavLinks" aria-expanded="false" aria-label="Open case study navigation menu">
+            <span class="cs-nav-toggle__bar"></span>
+            <span class="cs-nav-toggle__bar"></span>
+            <span class="cs-nav-toggle__bar"></span>
+        </button>
+        <ul class="nav__links" id="csNavLinks">
             <li><a href="about.html" class="nav__back nav__link">About</a></li>
             <li><a href="workflow.html" class="nav__back nav__link">Workflow</a></li>
             <li><a href="projects.html" class="nav__back nav__link">← My Work</a></li>
@@ -63,7 +73,7 @@
             <li><a href="#result">Result</a></li>
         </ul>
         <div class="cs-section-nav__mobile">
-            <button class="cs-section-nav__toggle">
+            <button class="cs-section-nav__toggle" type="button" aria-controls="cs-section-dropdown" aria-expanded="false">
                 <span class="cs-section-nav__toggle-label">Contents</span>
                 <svg class="cs-section-nav__toggle-icon" width="12" height="12" viewBox="0 0 12 12">
                     <path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
