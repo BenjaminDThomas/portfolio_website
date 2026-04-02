@@ -60,7 +60,8 @@ Hi-fi prototype
 Lighthouse
 -----------
 */
-.gp-before-after .cs-img { background: #fff !important; box-shadow: 0 4px 16px rgba(0,0,0,0.12); }
+.gp-before-after .cs-before-after__col:first-child .cs-img { background: #fff; box-shadow: 0 4px 16px rgba(0,0,0,0.12); }
+.gp-before-after .cs-before-after__col:last-child .cs-img { background: #1a1a1a; box-shadow: 0 4px 16px rgba(0,0,0,0.18); }
 /*
 -----------
 Contrast
